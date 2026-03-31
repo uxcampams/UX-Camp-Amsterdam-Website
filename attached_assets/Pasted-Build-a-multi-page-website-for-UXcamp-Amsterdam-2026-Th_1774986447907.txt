@@ -1,0 +1,144 @@
+Build a multi-page website for UXcamp Amsterdam 2026. This is an annual UX unconference event in Amsterdam. Use the following spec exactly.
+
+---
+
+## BRAND & COLORS
+- Primary background: #FFFFFF
+- Page section alternate background: #F5F5F5
+- Dark text / navbar background: #333333
+- Light border / divider: #CCCCCC
+- Accent color (buttons, highlights, hover states): #B20101
+- Font: Use 'Inter' from Google Fonts. Fallback: Helvetica, sans-serif
+- Headings: ALL CAPS, bold, tracked (letter-spacing: 0.05em)
+
+---
+
+## LOGO
+- The logo file is called UX_Camp_Amsterdam_Logo.png — place it in an /assets/ folder
+- Display it in the navbar on the left side
+- Set logo height to 40px in the navbar
+- On white backgrounds, show the dark version of the logo
+
+---
+
+## NAVIGATION BAR
+- Sticky navbar, stays at top on scroll
+- Background: #FFFFFF, bottom border: 1px solid #CCCCCC
+- Left: Logo (UX_Camp_Amsterdam_Logo.png)
+- Right side nav links (in this order):
+  1. "Ticket" — styled as a filled button: background #B20101, white text, no border-radius (sharp corners), padding 10px 20px. Links to "#" for now.
+  2. "How it works" — text link with dropdown on hover:
+     - About UXcamp Amsterdam → /how-it-works
+     - Sponsorship → /sponsorship
+     - Running a Session → /running-a-session
+     - Prepare for the Day → /prepare
+  3. "Updates" — text link with dropdown:
+     - Instagram → https://www.instagram.com/uxcampamsterdam/ (opens in new tab)
+  4. "Previous" — text link with dropdown:
+     - UXcamp Ams '25 → #
+     - UXcamp Ams '24 → #
+     - UXcamp Ams '23 → #
+- Dropdown: white background, 1px solid #CCCCCC border, subtle box-shadow, links in #333333 turning #B20101 on hover
+- Mobile: collapse to hamburger menu at <768px. Hamburger icon color: #333333. Opens a full-width dropdown with all links stacked vertically.
+
+---
+
+## PAGES TO BUILD
+
+### 1. Home — index.html
+
+**Hero section:**
+- Full-width, background: #333333, text: #FFFFFF
+- Large all-caps heading: "UX CAMP AMSTERDAM 2026"
+- Subheading: "A BarCamp around User Experience Design & Research"
+- Event details line: "4th July, 2026 · Hogeschool van Amsterdam"
+- CTA button: "Get Your Ticket" → links to "#", style: background #B20101, white text, sharp corners, padding 14px 32px
+- Secondary link below button: "Information for participants →" → /prepare
+
+**About section:**
+- White background, centered, max-width 800px
+- Heading: "UX Stories From the Community For the Community"
+- Body text: "UX Camp Amsterdam is a BarCamp where you can share your knowledge, stories, and ideas about User Experience Design and related disciplines. As a one-day unconference event, it's made by the community for the community. There are no spectators, only contributors. Come and join in!"
+
+**How to Contribute section:**
+- Background: #F5F5F5
+- 3 columns, each with an all-caps bold heading and short paragraph:
+  1. "Run a Session" — Everyone who visits is offered the opportunity to give a talk, workshop, or lead a discussion. You pitch your ideas first thing in the morning and the audience votes.
+  2. "Support the Event" — We ask participants to volunteer some of their time to help make the event a success — moving chairs, assisting with registration, or directing attendees.
+  3. "Spread the Word" — Share your experience using #UXcampAMS26. If you see, hear or learn something cool, let the community know!
+- Link below: "More on How it works →" → /how-it-works
+
+**Where and When section:**
+- White background, 2-column layout
+- Left column:
+  - Heading: "WHERE AND WHEN?"
+  - Date & Time: July 4, 2026 · 9:30–17:15
+  - Location: Hogeschool van Amsterdam
+  - Program schedule (same structure as 2025): Registration 9:30, Welcome & Madness 10:00, Rounds 1-3 at 11:00, Lunch 12:30, Rounds 4-6 at 13:30, Break 15:00, Rounds 7-8 at 15:30, Closing 17:00, Drinks & After Party 17:15
+- Right column: embed Google Maps iframe for Hogeschool van Amsterdam
+
+**Footer:**
+- Background: #333333, text: #FFFFFF
+- Left: Logo (white version — use CSS filter: brightness(10) to invert the dark logo)
+- Center: nav links (Home, How it Works, Sponsorship, Instagram)
+- Right: "© 2026 UXcamp Amsterdam"
+- Bottom micro-line: hashtag #UXcampAMS26
+
+---
+
+### 2. How It Works / About — how-it-works.html
+- Hero: #333333 background, white text, heading "HOW IT WORKS"
+- Subheading: "Everything you need to know about the unconference format"
+- Content sections (white and #F5F5F5 alternating):
+  - What is a BarCamp / Unconference?
+  - The Madness Session (pitching talks in the morning)
+  - Voting & Schedule
+  - What kind of sessions happen?
+- All sections use placeholder text for now, clearly marked with [PLACEHOLDER] so it's easy to replace later
+- Include the same footer as homepage
+
+---
+
+### 3. Prepare for the Day — prepare.html
+- Hero: #333333 background, heading "PREPARE FOR THE DAY"
+- Sections with placeholder content marked [PLACEHOLDER]:
+  - What to bring
+  - How to get there (link to Google Maps)
+  - What to expect on the day
+  - Code of conduct summary
+- Include the same footer
+
+---
+
+### 4. Ticket Page — ticket.html
+- Hero: #B20101 background (red), white text
+- Large heading: "GET YOUR TICKET"
+- Subheading: "Tickets for UXcamp Amsterdam 2026 will be available soon."
+- A countdown or "Coming Soon" badge (simple styled box)
+- CTA area with placeholder button: "Register Your Interest" → mailto:info@uxcampams.com
+- Short blurb about what's included (community event, free/low cost unconference, etc.) — use [PLACEHOLDER] for price
+- Include same footer
+
+---
+
+## FILE STRUCTURE
+/index.html
+/how-it-works.html
+/prepare.html
+/ticket.html
+/style.css         ← all shared styles
+/nav.js            ← hamburger menu + dropdown hover logic
+/assets/
+  UX_Camp_Amsterdam_Logo.png
+
+---
+
+## GENERAL RULES
+- No frameworks — plain HTML, CSS, vanilla JS only
+- All pages share the same navbar and footer (copy-paste the HTML or use JS includes)
+- All headings: ALL CAPS, bold, letter-spacing 0.05em
+- All buttons: sharp corners (border-radius: 0), never rounded
+- Hover on red buttons: darken to #8B0000
+- Responsive at 768px breakpoint
+- Clean, minimal — no unnecessary decorative elements
+- Add HTML comments throughout so a beginner can follow the structure
