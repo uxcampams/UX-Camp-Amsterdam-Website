@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import path from "path";
 
 const rawPort = process.env.PORT;
@@ -26,6 +27,7 @@ if (!basePath) {
 export default defineConfig({
   base: basePath,
   plugins: [
+    react(),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [
@@ -44,17 +46,14 @@ export default defineConfig({
       : []),
   ],
   root: path.resolve(import.meta.dirname),
+  resolve: {
+    alias: {
+      "@": path.resolve(import.meta.dirname, "src"),
+    },
+  },
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: path.resolve(import.meta.dirname, "index.html"),
-        howItWorks: path.resolve(import.meta.dirname, "how-it-works.html"),
-        prepare: path.resolve(import.meta.dirname, "prepare.html"),
-        ticket: path.resolve(import.meta.dirname, "ticket.html"),
-      },
-    },
   },
   server: {
     port,
