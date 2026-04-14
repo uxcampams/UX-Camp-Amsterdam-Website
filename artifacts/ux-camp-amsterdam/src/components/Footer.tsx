@@ -13,11 +13,12 @@ export default function Footer() {
           </div>
           <ul className="footer__nav" aria-label="Footer navigation">
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/how-it-works">How It Works</Link></li>
+            <li><Link href="/about">About</Link></li>
             <li><Link href="/sponsorship">Sponsorship</Link></li>
+            <li><Link href="/prepare">Prepare for the Day</Link></li>
             <li>
               <a href="https://www.instagram.com/uxcampamsterdam/" target="_blank" rel="noopener noreferrer">
-                Instagram
+                Instagram ↗
               </a>
             </li>
           </ul>

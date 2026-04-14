@@ -10,28 +10,32 @@ export default function Prepare() {
       />
 
       <ContentSection>
-        <span className="placeholder-notice">[PLACEHOLDER]</span>
-        <h2>What to Bring</h2>
-        <p>
-          UX Camp Amsterdam is a casual, collaborative day — dress comfortably and come ready to
-          engage. Here's what we recommend bringing along:
-        </p>
-        <p>
-          [PLACEHOLDER — Add a bulleted list: laptop/notebook, business cards, sticky notes, a
-          session idea, open mind, etc. Keep it friendly and practical.]
-        </p>
+        <h2>Key Event Details</h2>
+        <table>
+          <tbody>
+            <tr><td><strong>Start Time</strong></td><td>9:30 AM</td></tr>
+            <tr><td><strong>Registration closes</strong></td><td>12:30 PM</td></tr>
+            <tr>
+              <td><strong>Venue</strong></td>
+              <td>HvA Corry Tendeloohuis (CTH), Fraijlemaborg 133, 1102 CV Amsterdam</td>
+            </tr>
+          </tbody>
+        </table>
       </ContentSection>
 
       <ContentSection alt>
-        <span className="placeholder-notice">[PLACEHOLDER]</span>
-        <h2>How to Get There</h2>
+        <h2>Getting There</h2>
         <p>
-          The event is held at <strong>Hogeschool van Amsterdam</strong>, located in the heart of
-          Amsterdam. It's easily reachable by public transport, bike, and on foot.
+          The closest transit hub is <strong>Station Bijlmer ArenA</strong>, accessible via Metro 50
+          and 54, and train.
+        </p>
+        <p>
+          <strong>Do not drive.</strong> Large parts of the A10 highway will be blocked, and general
+          city congestion is expected. Construction surrounds the venue — plan your journey in advance.
         </p>
         <p>
           <a
-            href="https://maps.google.com/?q=Hogeschool+van+Amsterdam"
+            href="https://maps.google.com/?q=Fraijlemaborg+133,+1102+CV+Amsterdam"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "#B20101", textDecoration: "underline" }}
@@ -39,39 +43,45 @@ export default function Prepare() {
             View on Google Maps &rarr;
           </a>
         </p>
+      </ContentSection>
+
+      <ContentSection>
+        <h2>What to Bring</h2>
+        <ul>
+          <li><strong>Your Eventbrite ticket</strong> — volunteers will scan it at arrival</li>
+          <li><strong>Lunch</strong> — there is a restaurant on-site, or bring your own</li>
+          <li>
+            <strong>Reusable water bottle and coffee tumbler</strong> — disposable cups are banned
+            at the university
+          </li>
+        </ul>
+      </ContentSection>
+
+      <ContentSection alt>
+        <h2>For Session Facilitators</h2>
         <p>
-          [PLACEHOLDER — Add directions by tram/metro, bicycle tips, nearest station, and any
-          parking information. Note if there are any entry requirements on the day.]
+          All rooms feature both <strong>USB-C and HDMI ports</strong> for laptop connectivity.
+          Bring appropriate adapters if needed.
+        </p>
+        <p>
+          See also:{" "}
+          <a href="/running-a-session" style={{ color: "#B20101", textDecoration: "underline" }}>
+            Running a Session &rarr;
+          </a>
         </p>
       </ContentSection>
 
       <ContentSection>
-        <span className="placeholder-notice">[PLACEHOLDER]</span>
-        <h2>What to Expect on the Day</h2>
-        <p>
-          Doors open at 9:30 for registration. The Madness Session (where participants pitch and
-          vote on sessions) starts at 10:00. From there, the day unfolds organically — you choose
-          which sessions to attend, and you're free to move between rooms.
-        </p>
-        <p>
-          [PLACEHOLDER — Describe the day flow in more detail. Mention catering/lunch arrangements,
-          whether there's Wi-Fi, how the rooms are set up, and what a typical session looks like.]
-        </p>
-      </ContentSection>
-
-      <ContentSection alt>
-        <span className="placeholder-notice">[PLACEHOLDER]</span>
-        <h2>Code of Conduct</h2>
-        <p>
-          UX Camp Amsterdam is committed to creating a welcoming, inclusive, and respectful
-          environment for everyone. All participants are expected to follow our code of conduct
-          throughout the day.
-        </p>
-        <p>
-          [PLACEHOLDER — Add the full or summarised code of conduct. Key points typically include:
-          be respectful, no harassment, inclusive language, reporting procedures, and consequences
-          for violations.]
-        </p>
+        <h2>Venue Layout</h2>
+        <table>
+          <thead>
+            <tr><th>Floor</th><th>What's There</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>First Floor</strong></td><td>Registration &amp; opening room</td></tr>
+            <tr><td><strong>Second Floor</strong></td><td>Session rooms 1–5</td></tr>
+          </tbody>
+        </table>
       </ContentSection>
     </main>
   );

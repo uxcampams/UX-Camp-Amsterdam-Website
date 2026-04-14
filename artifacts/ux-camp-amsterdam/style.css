@@ -118,6 +118,14 @@ h1, h2, h3, h4 {
   background: var(--color-accent-dk);
 }
 
+/* Button-style dropdown trigger */
+.nav-link--dropdown {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 /* Generic nav link */
 .navbar__links .nav-link {
   display: inline-block;
