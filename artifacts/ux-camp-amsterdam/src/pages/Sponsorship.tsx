@@ -1,80 +1,126 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 
+const tiers = [
+  {
+    name: "Main Sponsor",
+    price: "€3,025",
+    note: "Limited to 4 slots",
+    description: "Main sponsors gain maximum visibility of their brand before, during, and after the camp to engage with attendees.",
+    includes: [
+      "Mentioning on the website",
+      "Dedicated social media post introducing the company",
+      "Stand at the venue",
+      "2 min onstage at opening",
+      "Branded room (on schedule + banners in the room)",
+      "Mention in follow-up email to participants",
+      "5 tickets",
+    ],
+  },
+  {
+    name: "Event Sponsor",
+    price: "€1,210",
+    note: "Multiple slots available",
+    description: "Event sponsors get a physical presence at the camp to engage with attendees during and after the event.",
+    includes: [
+      "Mentioning on the website",
+      "Stand at the venue",
+      "Mention in follow-up email to participants",
+      "3 tickets",
+    ],
+  },
+  {
+    name: "Product Sponsor",
+    price: "Min. €121 value",
+    note: "Multiple slots available",
+    description: "Product sponsors award the community through product donations for best contributions during camp.",
+    includes: [
+      "Mentioning on the website",
+      "Products given out as prizes for best talks, workshops, and discussions",
+    ],
+  },
+];
+
 export default function Sponsorship() {
   return (
     <main>
       <Hero
-        title="Sponsorship"
-        subtitle="Support the Amsterdam UX community"
-      />
+        title="Help make UX Camp happen. Get in front of the people who build digital Amsterdam."
+        subtitle="UXcamp Amsterdam is a non-profit, volunteer-run event. We rely on sponsors to make it happen — and in return, you get direct access to a genuinely engaged UX community."
+      >
+        <div className="hero__cta">
+          <a href="mailto:info@uxcampams.com" className="btn-primary">Get in touch →</a>
+        </div>
+      </Hero>
 
+      {/* Who comes */}
       <ContentSection>
-        <h2>About the Event</h2>
+        <h2>150+ UX professionals. Every kind of discipline.</h2>
         <p>
-          UXcamp Amsterdam is an <strong>open-for-all, participatory one-day BarCamp</strong> where
-          all content is generated and brought by its participants. The organising team also manages
-          the <strong>AmsterdamUX community</strong> — with 5,700+ members and 190+ organised events
-          — encouraging knowledge sharing across designers, researchers, product managers, developers,
-          and data scientists.
+          Our audience spans the full UX field — designers, researchers, product managers,
+          developers, data scientists, service designers. Most are individual contributors at
+          mid-to-senior level, split roughly equally between agency and in-house teams.
         </p>
-
-        <h3>2025 Event Stats</h3>
-        <table>
-          <tbody>
-            <tr><td><strong>Edition</strong></td><td>8th</td></tr>
-            <tr><td><strong>Expected Attendance</strong></td><td>150 participants</td></tr>
-            <tr><td><strong>Sessions</strong></td><td>25+</td></tr>
-            <tr><td><strong>Concurrent Tracks</strong></td><td>4</td></tr>
-            <tr><td><strong>Location</strong></td><td>HvA Wibauthuis, Amsterdam</td></tr>
-          </tbody>
-        </table>
-      </ContentSection>
-
-      <ContentSection alt>
-        <h2>Why Sponsor?</h2>
-        <ul>
-          <li>Build brand association with UX design</li>
-          <li>Access a highly targeted professional audience</li>
-          <li>Promote employer reputation to digital industry leaders</li>
-          <li>Identify recruitment candidates</li>
-          <li>Contribute to the local community</li>
-        </ul>
-      </ContentSection>
-
-      <ContentSection>
-        <h2>Sponsorship Tiers</h2>
-
-        <h3>Main Sponsor — €3,025 <em>(limited to 4 slots)</em></h3>
-        <ul>
-          <li>Website listing and social media promotion</li>
-          <li>Exhibition booth</li>
-          <li>2-minute opening remarks</li>
-          <li>Branded session room</li>
-          <li>5 tickets</li>
-        </ul>
-
-        <h3>Event Sponsor — €1,210 <em>(multiple available)</em></h3>
-        <ul>
-          <li>Website mention</li>
-          <li>Booth presence</li>
-          <li>Follow-up communication</li>
-          <li>3 tickets</li>
-        </ul>
-
-        <h3>Product Sponsor — minimum €121 value</h3>
-        <ul>
-          <li>Website listing</li>
-          <li>Product donations awarded as prizes</li>
-        </ul>
-      </ContentSection>
-
-      <ContentSection alt>
-        <h2>Get in Touch</h2>
         <p>
-          Interested in sponsoring? We'd love to hear from you.
+          The organising team also runs the <strong>AmsterdamUX community</strong> — 5,700+ members,
+          190+ events organised.
         </p>
-        <a href="mailto:info@uxcampams.com" className="btn-primary">Contact Us</a>
+      </ContentSection>
+
+      {/* Why sponsor */}
+      <ContentSection alt>
+        <h2>What sponsoring gets you</h2>
+        <p className="mb-4">
+          UXcampAMS is where Amsterdam's UX community actually shows up. Here's what sponsoring gets you.
+        </p>
+        <ul className="mt-2 space-y-2">
+          {[
+            "Your brand in the room with Amsterdam's UX community",
+            "Direct access to designers, researchers, PMs, and developers",
+            "Employer brand visibility with mid-to-senior practitioners",
+            "Connections with UX talent for hiring or partnerships",
+            "A chance to genuinely support the community — not just market to it",
+          ].map((item) => (
+            <li key={item} className="flex gap-3 text-sm text-gray-600">
+              <span className="text-[#B20101] font-bold shrink-0">—</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </ContentSection>
+
+      {/* Tiers */}
+      <section className="section">
+        <div className="container">
+          <h2 className="section__heading">Sponsorship tiers</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {tiers.map((tier) => (
+              <div key={tier.name} className="border border-[#ccc] p-6 flex flex-col">
+                <p className="text-xs font-bold uppercase tracking-widest text-[#B20101] mb-1">{tier.note}</p>
+                <h3 className="text-base font-bold uppercase tracking-wider mb-1">{tier.name}</h3>
+                <p className="text-xl font-bold text-[#B20101] mb-4">{tier.price}</p>
+                <p className="text-sm text-gray-500 mb-4">{tier.description}</p>
+                <ul className="space-y-1.5 mt-auto">
+                  {tier.includes.map((item) => (
+                    <li key={item} className="flex gap-2 text-sm text-gray-600">
+                      <span className="text-[#B20101] shrink-0">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Get in touch */}
+      <ContentSection alt>
+        <h2>Interested? Let's talk.</h2>
+        <p>Reach out and we'll send you the full sponsorship deck.</p>
+        <div className="mt-6">
+          <a href="mailto:info@uxcampams.com" className="btn-primary">Contact Us</a>
+        </div>
       </ContentSection>
     </main>
   );

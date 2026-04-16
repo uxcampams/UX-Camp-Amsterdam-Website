@@ -1,6 +1,20 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 
+const slides = [
+  "Free Design — Open Source et al — Maria Leonova",
+  "Climbing the Mountain: Maturing UX in a corporate environment — Carina Palumbo & Murat Akyol",
+  "Design & Marktplaats: How we're transforming on the go — Jeroen Mulder",
+  "Data Driven Personas — Liset Molenaar",
+  "Accessibility in Mobile Apps 2016 — Report — Agnieszka Czyżak",
+  "Context Chat — Emma Haagen",
+];
+
+const team = [
+  "Philipp Engel", "Tatiana Sidorenkova", "Gareth Simms",
+  "Doron Hirsch", "Peter Boersma", "Carolina Gómez Naranjo",
+];
+
 export default function Year2017() {
   return (
     <main>
@@ -10,42 +24,49 @@ export default function Year2017() {
       />
 
       <ContentSection>
-        <h2>Overview</h2>
+        <h2>Done &amp; dusted for another year</h2>
         <p>
-          UXcamp AMS 2017 brought together UX professionals, students, and enthusiasts from across
-          Europe and beyond.
+          UXcampAMS17 saw UX professionals, students and enthusiasts from across Europe and beyond
+          come together for a day of learning, sharing and discussion. The day ended with a fantastic
+          after-party where the fun and conversations continued. We'd like to thank each and every
+          one of you who attended.
         </p>
-        <blockquote>
-          <p>"Done &amp; dusted for another year" — the event concluded successfully with an after-party.</p>
-        </blockquote>
       </ContentSection>
 
       <ContentSection alt>
-        <h2>Session Topics</h2>
-        <p>Slide decks were shared covering topics including:</p>
-        <ul>
-          <li>Design and open-source initiatives</li>
-          <li>UX maturity in corporate environments</li>
-          <li>Data-driven personas</li>
-          <li>Mobile app accessibility</li>
-          <li>Design transformation at marketplace platforms</li>
-        </ul>
+        <h2>Photos</h2>
+        <p className="text-sm text-gray-500 mb-3">Madness session, setup, sponsors & activities, talks, mingling.</p>
+        <a
+          href="https://goo.gl/photos/NxyPfCmuV5FTzLGXA"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-semibold text-[#B20101] underline underline-offset-2"
+        >
+          Download photos from Google Photos ↗
+        </a>
       </ContentSection>
 
       <ContentSection>
-        <h2>Photo Documentation</h2>
-        <table>
-          <thead>
-            <tr><th>Category</th><th>Photos</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Setup</td><td>10 images</td></tr>
-            <tr><td>Talks &amp; Presentations</td><td>35 images</td></tr>
-            <tr><td>Sponsor activities</td><td>18 images</td></tr>
-            <tr><td>Mingling / Networking</td><td>12 images</td></tr>
-            <tr><td>General event coverage</td><td>17 images</td></tr>
-          </tbody>
-        </table>
+        <h2>Slides</h2>
+        <p className="text-sm text-gray-400 italic mb-4">
+          Still waiting for a number of slide packs from presenters. If you presented and your slides
+          are available, please send them to{" "}
+          <a href="mailto:info@uxcampams.com" className="text-[#B20101] underline">info@uxcampams.com</a>.
+        </p>
+        <ul className="divide-y divide-[#ccc] border-t border-[#ccc]">
+          {slides.map((s) => (
+            <li key={s} className="py-3 text-sm text-gray-600">{s}</li>
+          ))}
+        </ul>
+      </ContentSection>
+
+      <ContentSection alt>
+        <h2>Organising team</h2>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {team.map((name) => (
+            <span key={name} className="border border-[#ccc] px-3 py-1.5 text-sm text-[#333]">{name}</span>
+          ))}
+        </div>
       </ContentSection>
     </main>
   );

@@ -44,10 +44,10 @@ export default function Navbar() {
                 How it works ▾
               </button>
               <ul className="nav-dropdown__menu" aria-label="How it works submenu">
-                <li><Link href="/about">About UXcamp Amsterdam</Link></li>
-                <li><Link href="/sponsorship">Sponsorship</Link></li>
+                <li><Link href="/how-it-works">About UXcamp Amsterdam</Link></li>
+                <li><Link href="/ux-camp-amsterdam-sponsorship">Sponsorship</Link></li>
                 <li><Link href="/running-a-session">Running a Session</Link></li>
-                <li><Link href="/prepare">Prepare for the Day</Link></li>
+                <li><Link href="/prepare-for-the-day">Prepare for the Day</Link></li>
               </ul>
             </li>
             <li>
@@ -65,13 +65,14 @@ export default function Navbar() {
                 Previous ▾
               </button>
               <ul className="nav-dropdown__menu" aria-label="Previous editions submenu">
-                <li><Link href="/previous/2024">UXcamp Ams '24</Link></li>
-                <li><Link href="/previous/2023">UXcamp Ams '23</Link></li>
-                <li><Link href="/previous/2019">UXcamp Ams '19</Link></li>
-                <li><Link href="/previous/2018">UXcamp Ams '18</Link></li>
-                <li><Link href="/previous/2017">UXcamp Ams '17</Link></li>
-                <li><Link href="/previous/2016">UXcamp Ams '16</Link></li>
-                <li><Link href="/previous/2015">UXcamp Ams '15</Link></li>
+                <li><Link href="/previous/2025">UXcamp Ams '25</Link></li>
+                <li><Link href="/2024-post-event">UXcamp Ams '24</Link></li>
+                <li><Link href="/uxcamp-ams-2023">UXcamp Ams '23</Link></li>
+                <li><Link href="/uxcamp-ams-2019">UXcamp Ams '19</Link></li>
+                <li><Link href="/welcome">UXcamp Ams '18</Link></li>
+                <li><Link href="/uxcampams17">UXcamp Ams '17</Link></li>
+                <li><Link href="/2016">UXcamp Ams '16</Link></li>
+                <li><Link href="/2015">UXcamp Ams '15</Link></li>
               </ul>
             </li>
           </ul>
@@ -104,18 +105,20 @@ export default function Navbar() {
         >
           Ticket
         </a>
-        <Link href="/about" onClick={closeMenu}>About UXcamp Amsterdam</Link>
-        <Link href="/sponsorship" onClick={closeMenu}>Sponsorship</Link>
+        <Link href="/how-it-works" onClick={closeMenu}>About UXcamp Amsterdam</Link>
+        <Link href="/ux-camp-amsterdam-sponsorship" onClick={closeMenu}>Sponsorship</Link>
         <Link href="/running-a-session" onClick={closeMenu}>Running a Session</Link>
-        <Link href="/prepare" onClick={closeMenu}>Prepare for the Day</Link>
+        <Link href="/prepare-for-the-day" onClick={closeMenu}>Prepare for the Day</Link>
         <a href="https://www.instagram.com/uxcampamsterdam/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Updates ↗</a>
-        <Link href="/previous/2024" onClick={closeMenu}>UXcamp Ams '24</Link>
-        <Link href="/previous/2023" onClick={closeMenu}>UXcamp Ams '23</Link>
-        <Link href="/previous/2019" onClick={closeMenu}>UXcamp Ams '19</Link>
-        <Link href="/previous/2018" onClick={closeMenu}>UXcamp Ams '18</Link>
-        <Link href="/previous/2017" onClick={closeMenu}>UXcamp Ams '17</Link>
-        <Link href="/previous/2016" onClick={closeMenu}>UXcamp Ams '16</Link>
-        <Link href="/previous/2015" onClick={closeMenu}>UXcamp Ams '15</Link>
+        <Link href="/previous/2025" onClick={closeMenu}>UXcamp Ams '25</Link>
+        <Link href="/2024-post-event" onClick={closeMenu}>UXcamp Ams '24</Link>
+        <Link href="/uxcamp-ams-2023" onClick={closeMenu}>UXcamp Ams '23</Link>
+        <Link href="/uxcamp-ams-2019" onClick={closeMenu}>UXcamp Ams '19</Link>
+        <Link href="/welcome" onClick={closeMenu}>UXcamp Ams '18</Link>
+        <Link href="/uxcampams17" onClick={closeMenu}>UXcamp Ams '17</Link>
+        <Link href="/2016" onClick={closeMenu}>UXcamp Ams '16</Link>
+        <Link href="/2015" onClick={closeMenu}>UXcamp Ams '15</Link>
+        <Link href="/alumni" onClick={closeMenu}>Alumni</Link>
       </nav>
     </nav>
   );
