@@ -7,6 +7,9 @@ import scheduleImg from "../../../assets/images/2015/schedule.jpg";
 import madness2Img from "../../../assets/images/2015/madness2.jpg";
 import presentationImg from "../../../assets/images/2015/presentation.jpg";
 import foodImg from "../../../assets/images/2015/food.jpg";
+import sponsorA4 from "../../../assets/images/2015/sponsor-a4.png";
+import sponsorAdyen from "../../../assets/images/2015/sponsor-adyen.png";
+import sponsorNedap from "../../../assets/images/2015/sponsor-nedap.png";
 
 const carouselSlides = [
   { src: receptionImg, caption: "Reception" },
@@ -62,7 +65,31 @@ export default function Year2015() {
 
       <ContentSection>
         <h2>Sponsors</h2>
-        <p className="mt-2 text-sm text-gray-600">A4 (Internationaal) · Adyen · Nedap</p>
+        <div
+          style={{
+            marginTop: 24,
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            gap: "32px 48px",
+          }}
+        >
+          <img
+            src={sponsorA4}
+            alt="Amsterdam University of Applied Sciences"
+            style={{ height: 64, width: "auto", objectFit: "contain" }}
+          />
+          <img
+            src={sponsorAdyen}
+            alt="Adyen"
+            style={{ height: 48, width: "auto", objectFit: "contain" }}
+          />
+          <img
+            src={sponsorNedap}
+            alt="Nedap"
+            style={{ height: 40, width: "auto", objectFit: "contain" }}
+          />
+        </div>
       </ContentSection>
 
       <ContentSection alt>
