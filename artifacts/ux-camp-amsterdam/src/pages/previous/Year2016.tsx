@@ -10,11 +10,11 @@ import event4 from "../../../assets/images/2016/event-4.jpg";
 import event5 from "../../../assets/images/2016/event-5.jpg";
 import event6 from "../../../assets/images/2016/event-6.jpg";
 
-import sponsorAdyen from "../../../assets/images/2016/sponsor-adyen.png";
-import sponsorIcemobile from "../../../assets/images/2016/sponsor-icemobile.png";
-import sponsorMarktplaats from "../../../assets/images/2016/sponsor-marktplaats.png";
-import sponsorMirabeau from "../../../assets/images/2016/sponsor-mirabeau.png";
-import sponsorNomensa from "../../../assets/images/2016/sponsor-nomensa.png";
+import sponsorAdyen from "../../../assets/images/companies-logos/sponsor-adyen.png";
+import sponsorIcemobile from "../../../assets/images/companies-logos/sponsor-icemobile.png";
+import sponsorMarktplaats from "../../../assets/images/companies-logos/sponsor-marktplaats.png";
+import sponsorMirabeau from "../../../assets/images/companies-logos/sponsor-mirabeau.png";
+import sponsorNomensa from "../../../assets/images/companies-logos/sponsor-nomensa.png";
 
 import orgPhilipp from "../../../assets/images/2016/organizer-philipp.png";
 import orgTatiana from "../../../assets/images/2016/organizer-tatiana.png";
