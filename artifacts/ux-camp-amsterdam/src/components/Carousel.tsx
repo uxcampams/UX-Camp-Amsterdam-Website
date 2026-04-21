@@ -18,56 +18,64 @@ export default function Carousel({ slides }: { slides: Slide[] }) {
   }, [total]);
 
   return (
-    <div className="relative w-full overflow-hidden border border-[#ccc] bg-black">
-      <div
-        className="flex transition-transform duration-500 ease-out"
-        style={{ transform: `translateX(-${index * 100}%)` }}
-      >
+    <div id="default-carousel" className="relative w-full" data-carousel="slide">
+      {/* Carousel wrapper */}
+      <div className="relative h-56 overflow-hidden rounded-base md:h-96">
         {slides.map((s, i) => (
-          <div key={i} className="relative w-full shrink-0">
+          <div
+            key={i}
+            className={`${i === index ? "block" : "hidden"} duration-700 ease-in-out`}
+            data-carousel-item
+          >
             <img
               src={s.src}
+              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt={s.caption}
-              className="block h-[280px] w-full object-cover sm:h-[420px] md:h-[520px]"
-              loading={i === 0 ? "eager" : "lazy"}
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-3 text-sm font-semibold uppercase tracking-wide text-white">
-              {s.caption}
-            </div>
           </div>
         ))}
       </div>
-
-      <button
-        type="button"
-        onClick={prev}
-        aria-label="Previous slide"
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 px-3 py-2 text-white hover:bg-[#B20101]"
-      >
-        ‹
-      </button>
-      <button
-        type="button"
-        onClick={next}
-        aria-label="Next slide"
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 px-3 py-2 text-white hover:bg-[#B20101]"
-      >
-        ›
-      </button>
-
-      <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
+      {/* Slider indicators */}
+      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
         {slides.map((_, i) => (
           <button
             key={i}
             type="button"
+            className={`w-3 h-3 rounded-base ${i === index ? "bg-white" : "bg-white/50"}`}
+            aria-current={i === index}
+            aria-label={`Slide ${i + 1}`}
+            data-carousel-slide-to={i}
             onClick={() => goTo(i)}
-            aria-label={`Go to slide ${i + 1}`}
-            className={`h-2 w-2 rounded-full transition-colors ${
-              i === index ? "bg-white" : "bg-white/40 hover:bg-white/70"
-            }`}
           />
         ))}
       </div>
+      {/* Slider controls */}
+      <button
+        type="button"
+        className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+        onClick={prev}
+      >
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-base bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg className="w-5 h-5 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m15 19-7-7 7-7" />
+          </svg>
+          <span className="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+        onClick={next}
+      >
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-base bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg className="w-5 h-5 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7" />
+          </svg>
+          <span className="sr-only">Next</span>
+        </span>
+      </button>
     </div>
   );
 }
