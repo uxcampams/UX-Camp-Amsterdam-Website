@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
+import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 
 const slides = [
   "Beyond visual — Dean Birkett",
@@ -11,9 +12,27 @@ const slides = [
   "Ninjas & Knights: a systems perspective on design practice — Scott Neilson",
 ];
 
-const team = [
-  "Philipp Engel", "Tatiana Sidorenkova", "Gareth Simms",
-  "Doron Hirsch", "Xiaoyu Shen", "Dave de Bakker",
+const team: Organizer[] = [
+
+
+  { name: "Philipp Engel", role: "", linkedin: "#" },
+
+
+  { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
+
+
+  { name: "Gareth Simms", role: "", linkedin: "#" },
+
+
+  { name: "Doron Hirsch", role: "", linkedin: "#" },
+
+
+  { name: "Xiaoyu Shen", role: "", linkedin: "#" },
+
+
+  { name: "Dave de Bakker", role: "", linkedin: "#" },
+
+
 ];
 
 export default function Year2019() {
@@ -70,11 +89,7 @@ export default function Year2019() {
 
       <ContentSection>
         <h2>Organising team</h2>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {team.map((name) => (
-            <span key={name} className="border border-[#ccc] px-3 py-1.5 text-sm text-[#333]">{name}</span>
-          ))}
-        </div>
+        <OrganisingTeam organizers={team} />
       </ContentSection>
     </main>
   );

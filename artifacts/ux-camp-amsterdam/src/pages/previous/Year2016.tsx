@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
+import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 
 const slides = [
   "Google Analytics fundamentals — Martijn van Vreeden",
@@ -12,10 +13,42 @@ const slides = [
   "AI meets UX — Nick van der Linde",
 ];
 
-const team = [
-  "Philipp Engel", "Tatiana Sidorenkova", "Gareth Simms", "Doron Hirsch",
-  "Peter Boersma", "Dave de Bakker", "Carolina Gómez Naranjo", "Marcel Hadderingh",
-  "Daniel Kuipers", "Ning Xu", "Liang Hiah",
+const team: Organizer[] = [
+
+
+  { name: "Philipp Engel", role: "", linkedin: "#" },
+
+
+  { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
+
+
+  { name: "Gareth Simms", role: "", linkedin: "#" },
+
+
+  { name: "Doron Hirsch", role: "", linkedin: "#" },
+
+
+  { name: "Peter Boersma", role: "", linkedin: "#" },
+
+
+  { name: "Dave de Bakker", role: "", linkedin: "#" },
+
+
+  { name: "Carolina Gómez Naranjo", role: "", linkedin: "#" },
+
+
+  { name: "Marcel Hadderingh", role: "", linkedin: "#" },
+
+
+  { name: "Daniel Kuipers", role: "", linkedin: "#" },
+
+
+  { name: "Ning Xu", role: "", linkedin: "#" },
+
+
+  { name: "Liang Hiah", role: "", linkedin: "#" },
+
+
 ];
 
 export default function Year2016() {
@@ -60,11 +93,7 @@ export default function Year2016() {
 
       <ContentSection>
         <h2>Organising team</h2>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {team.map((name) => (
-            <span key={name} className="border border-[#ccc] px-3 py-1.5 text-sm text-[#333]">{name}</span>
-          ))}
-        </div>
+        <OrganisingTeam organizers={team} />
       </ContentSection>
     </main>
   );

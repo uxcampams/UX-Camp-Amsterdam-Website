@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
+import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 
 const sessions = [
   "Content Modelling for Everyone — Larry Swanson",
@@ -41,9 +42,27 @@ const sessions = [
   "Synthetive: interactive board game on AI in political campaigns — Muskan Jain",
 ];
 
-const team = [
-  "Nien-Hua Gu", "María de los Ángeles Adrián", "Vincent Vijn",
-  "Indre Lauciute", "Rita Costa Pereira", "Tatiana Sidorenkova",
+const team: Organizer[] = [
+
+
+  { name: "Nien-Hua Gu", role: "", linkedin: "#" },
+
+
+  { name: "María de los Ángeles Adrián", role: "", linkedin: "#" },
+
+
+  { name: "Vincent Vijn", role: "", linkedin: "#" },
+
+
+  { name: "Indre Lauciute", role: "", linkedin: "#" },
+
+
+  { name: "Rita Costa Pereira", role: "", linkedin: "#" },
+
+
+  { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
+
+
 ];
 
 export default function Year2024() {
@@ -113,11 +132,7 @@ export default function Year2024() {
 
       <ContentSection>
         <h2>Organising team</h2>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {team.map((name) => (
-            <span key={name} className="border border-[#ccc] px-3 py-1.5 text-sm text-[#333]">{name}</span>
-          ))}
-        </div>
+        <OrganisingTeam organizers={team} />
         <div className="mt-8 pt-6 border-t border-[#ccc]">
           <h3 className="text-sm font-bold uppercase tracking-wider mb-3">Will you join UX Camp Amsterdam 2026?</h3>
           <a

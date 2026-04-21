@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
+import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 
 const timeSlots = [
   {
@@ -57,7 +58,25 @@ const timeSlots = [
   },
 ];
 
-const team = ["Philipp Engel", "Tatiana Sidorenkova", "Gareth Simms", "Doron Hirsch", "Peter Boersma"];
+const team: Organizer[] = [
+
+
+  { name: "Philipp Engel", role: "", linkedin: "#" },
+
+
+  { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
+
+
+  { name: "Gareth Simms", role: "", linkedin: "#" },
+
+
+  { name: "Doron Hirsch", role: "", linkedin: "#" },
+
+
+  { name: "Peter Boersma", role: "", linkedin: "#" },
+
+
+];
 
 export default function Year2018() {
   return (
@@ -124,11 +143,7 @@ export default function Year2018() {
 
       <ContentSection>
         <h2>Organising team</h2>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {team.map((name) => (
-            <span key={name} className="border border-[#ccc] px-3 py-1.5 text-sm text-[#333]">{name}</span>
-          ))}
-        </div>
+        <OrganisingTeam organizers={team} />
       </ContentSection>
     </main>
   );
