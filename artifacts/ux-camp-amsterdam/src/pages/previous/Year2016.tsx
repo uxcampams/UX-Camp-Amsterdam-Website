@@ -1,6 +1,27 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
+import Carousel from "@/components/Carousel";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
+
+import event1 from "../../../assets/images/2016/event-1.jpg";
+import event2 from "../../../assets/images/2016/event-2.jpg";
+import event3 from "../../../assets/images/2016/event-3.jpg";
+import event4 from "../../../assets/images/2016/event-4.jpg";
+import event5 from "../../../assets/images/2016/event-5.jpg";
+import event6 from "../../../assets/images/2016/event-6.jpg";
+
+import sponsorAdyen from "../../../assets/images/2016/sponsor-adyen.png";
+import sponsorIcemobile from "../../../assets/images/2016/sponsor-icemobile.png";
+import sponsorMarktplaats from "../../../assets/images/2016/sponsor-marktplaats.png";
+import sponsorMirabeau from "../../../assets/images/2016/sponsor-mirabeau.png";
+import sponsorNomensa from "../../../assets/images/2016/sponsor-nomensa.png";
+
+import orgDoron from "../../../assets/images/2016/organizer-doron.png";
+import orgTatiana from "../../../assets/images/2016/organizer-tatiana.png";
+import orgDave from "../../../assets/images/2016/organizer-dave.jpg";
+import orgDaniel from "../../../assets/images/2016/organizer-daniel.jpg";
+import orgNing from "../../../assets/images/2016/organizer-ning.jpeg";
+import orgLiang from "../../../assets/images/2016/organizer-liang.jpg";
 
 const slides = [
   "Google Analytics fundamentals — Martijn van Vreeden",
@@ -13,42 +34,35 @@ const slides = [
   "AI meets UX — Nick van der Linde",
 ];
 
+const carouselSlides = [
+  { src: event1, caption: "Sponsors on stage" },
+  { src: event2, caption: "UXcamp team" },
+  { src: event3, caption: "Madness Session" },
+  { src: event4, caption: "Carolina Gómez presenting" },
+  { src: event5, caption: "Q&A with the audience" },
+  { src: event6, caption: "Twitter wrap-up" },
+];
+
+const sponsors = [
+  { src: sponsorAdyen, alt: "Adyen" },
+  { src: sponsorIcemobile, alt: "IceMobile" },
+  { src: sponsorMarktplaats, alt: "Marktplaats" },
+  { src: sponsorMirabeau, alt: "Mirabeau" },
+  { src: sponsorNomensa, alt: "Nomensa" },
+];
+
 const team: Organizer[] = [
-
-
-  { name: "Philipp Engel", role: "", linkedin: "#" },
-
-
-  { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
-
-
-  { name: "Gareth Simms", role: "", linkedin: "#" },
-
-
-  { name: "Doron Hirsch", role: "", linkedin: "#" },
-
-
-  { name: "Peter Boersma", role: "", linkedin: "#" },
-
-
-  { name: "Dave de Bakker", role: "", linkedin: "#" },
-
-
-  { name: "Carolina Gómez Naranjo", role: "", linkedin: "#" },
-
-
-  { name: "Marcel Hadderingh", role: "", linkedin: "#" },
-
-
-  { name: "Daniel Kuipers", role: "", linkedin: "#" },
-
-
-  { name: "Ning Xu", role: "", linkedin: "#" },
-
-
-  { name: "Liang Hiah", role: "", linkedin: "#" },
-
-
+  { name: "Philipp Engel",          role: "UX Director",                    linkedin: "https://linkedin.com/in/philippengel" },
+  { name: "Tatiana Sidorenkova",    role: "UX Researcher",                  photo: orgTatiana, linkedin: "https://linkedin.com/in/tatiana-sidorenkova-36087b9" },
+  { name: "Gareth Simms",           role: "Product Owner",                  linkedin: "https://linkedin.com/in/garethsimms" },
+  { name: "Doron Hirsch",           role: "UX & Game Designer",             photo: orgDoron,   linkedin: "https://linkedin.com/in/doron-hirsch-97992617" },
+  { name: "Peter Boersma",          role: "Director of Product Design",     linkedin: "https://linkedin.com/in/pboersma" },
+  { name: "Dave de Bakker",         role: "",                               photo: orgDave,    linkedin: "https://linkedin.com/in/davedebakker" },
+  { name: "Carolina Gómez Naranjo", role: "UX Designer",                    linkedin: "https://linkedin.com/in/carolina-gómez-naranjo" },
+  { name: "Marcel Hadderingh",      role: "Product Designer",               linkedin: "https://linkedin.com/in/marcelhadderingh" },
+  { name: "Daniel Kuipers",         role: "Founder & Business Dev Manager", photo: orgDaniel,  linkedin: "https://linkedin.com/in/danielkuipers" },
+  { name: "Ning Xu",                role: "Product Manager & Analyst",      photo: orgNing,    linkedin: "https://linkedin.com/in/ningxxu" },
+  { name: "Liang Hiah",             role: "UX Designer",                    photo: orgLiang,   linkedin: "https://linkedin.com/in/lianghiah" },
 ];
 
 export default function Year2016() {
@@ -81,14 +95,35 @@ export default function Year2016() {
 
       <ContentSection>
         <h2>Photos</h2>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-500" style={{ marginBottom: 16 }}>
           Special thanks to Den Tserkovnyi &amp; Filip Mishevski for the photos.
         </p>
+        <div style={{ marginTop: 16 }}>
+          <Carousel slides={carouselSlides} />
+        </div>
       </ContentSection>
 
       <ContentSection alt>
         <h2>Sponsors</h2>
-        <p className="mt-2 text-sm text-gray-600">Adyen · IceMobile · Marktplaats · Mirabeau · Nomensa</p>
+        <div
+          style={{
+            marginTop: 24,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 32,
+            alignItems: "center",
+            justifyContent: "flex-start",
+          }}
+        >
+          {sponsors.map((s) => (
+            <img
+              key={s.alt}
+              src={s.src}
+              alt={s.alt}
+              style={{ height: 48, width: "auto", objectFit: "contain" }}
+            />
+          ))}
+        </div>
       </ContentSection>
 
       <ContentSection>
