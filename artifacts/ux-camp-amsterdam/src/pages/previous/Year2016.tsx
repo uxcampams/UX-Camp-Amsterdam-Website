@@ -16,9 +16,14 @@ import sponsorMarktplaats from "../../../assets/images/2016/sponsor-marktplaats.
 import sponsorMirabeau from "../../../assets/images/2016/sponsor-mirabeau.png";
 import sponsorNomensa from "../../../assets/images/2016/sponsor-nomensa.png";
 
-import orgDoron from "../../../assets/images/2016/organizer-doron.png";
+import orgPhilipp from "../../../assets/images/2016/organizer-philipp.png";
 import orgTatiana from "../../../assets/images/2016/organizer-tatiana.png";
+import orgGareth from "../../../assets/images/2016/organizer-gareth.png";
+import orgDoron from "../../../assets/images/2016/organizer-doron.png";
+import orgPeter from "../../../assets/images/2016/organizer-peter.png";
 import orgDave from "../../../assets/images/2016/organizer-dave.jpg";
+import orgCarolina from "../../../assets/images/2016/organizer-carolina.jpg";
+import orgMarcel from "../../../assets/images/2016/organizer-marcel.jpg";
 import orgDaniel from "../../../assets/images/2016/organizer-daniel.jpg";
 import orgNing from "../../../assets/images/2016/organizer-ning.jpeg";
 import orgLiang from "../../../assets/images/2016/organizer-liang.jpg";
@@ -52,17 +57,17 @@ const sponsors = [
 ];
 
 const team: Organizer[] = [
-  { name: "Philipp Engel",          role: "UX Director",                    linkedin: "https://linkedin.com/in/philippengel" },
-  { name: "Tatiana Sidorenkova",    role: "UX Researcher",                  photo: orgTatiana, linkedin: "https://linkedin.com/in/tatiana-sidorenkova-36087b9" },
-  { name: "Gareth Simms",           role: "Product Owner",                  linkedin: "https://linkedin.com/in/garethsimms" },
-  { name: "Doron Hirsch",           role: "UX & Game Designer",             photo: orgDoron,   linkedin: "https://linkedin.com/in/doron-hirsch-97992617" },
-  { name: "Peter Boersma",          role: "Director of Product Design",     linkedin: "https://linkedin.com/in/pboersma" },
-  { name: "Dave de Bakker",         role: "",                               photo: orgDave,    linkedin: "https://linkedin.com/in/davedebakker" },
-  { name: "Carolina Gómez Naranjo", role: "UX Designer",                    linkedin: "https://linkedin.com/in/carolina-gómez-naranjo" },
-  { name: "Marcel Hadderingh",      role: "Product Designer",               linkedin: "https://linkedin.com/in/marcelhadderingh" },
-  { name: "Daniel Kuipers",         role: "Founder & Business Dev Manager", photo: orgDaniel,  linkedin: "https://linkedin.com/in/danielkuipers" },
-  { name: "Ning Xu",                role: "Product Manager & Analyst",      photo: orgNing,    linkedin: "https://linkedin.com/in/ningxxu" },
-  { name: "Liang Hiah",             role: "UX Designer",                    photo: orgLiang,   linkedin: "https://linkedin.com/in/lianghiah" },
+  { name: "Philipp Engel",          role: "UX Director",                    photo: orgPhilipp,  linkedin: "https://linkedin.com/in/philippengel" },
+  { name: "Tatiana Sidorenkova",    role: "UX Researcher",                  photo: orgTatiana,  linkedin: "https://linkedin.com/in/tatiana-sidorenkova-36087b9" },
+  { name: "Gareth Simms",           role: "Product Owner",                  photo: orgGareth,   linkedin: "https://linkedin.com/in/garethsimms" },
+  { name: "Doron Hirsch",           role: "UX & Game Designer",             photo: orgDoron,    linkedin: "https://linkedin.com/in/doron-hirsch-97992617" },
+  { name: "Peter Boersma",          role: "Director of Product Design",     photo: orgPeter,    linkedin: "https://linkedin.com/in/pboersma" },
+  { name: "Dave de Bakker",         role: "",                               photo: orgDave,     linkedin: "https://linkedin.com/in/davedebakker" },
+  { name: "Carolina Gómez Naranjo", role: "UX Designer",                    photo: orgCarolina, linkedin: "https://linkedin.com/in/carolina-gómez-naranjo" },
+  { name: "Marcel Hadderingh",      role: "Product Designer",               photo: orgMarcel,   linkedin: "https://linkedin.com/in/marcelhadderingh" },
+  { name: "Daniel Kuipers",         role: "Founder & Business Dev Manager", photo: orgDaniel,   linkedin: "https://linkedin.com/in/danielkuipers" },
+  { name: "Ning Xu",                role: "Product Manager & Analyst",      photo: orgNing,     linkedin: "https://linkedin.com/in/ningxxu" },
+  { name: "Liang Hiah",             role: "UX Designer",                    photo: orgLiang,    linkedin: "https://linkedin.com/in/lianghiah" },
 ];
 
 export default function Year2016() {
