@@ -1,5 +1,21 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
+import Carousel from "@/components/Carousel";
+import receptionImg from "../../../assets/images/2015/reception.jpg";
+import madness1Img from "../../../assets/images/2015/madness1.jpg";
+import scheduleImg from "../../../assets/images/2015/schedule.jpg";
+import madness2Img from "../../../assets/images/2015/madness2.jpg";
+import presentationImg from "../../../assets/images/2015/presentation.jpg";
+import foodImg from "../../../assets/images/2015/food.jpg";
+
+const carouselSlides = [
+  { src: receptionImg, caption: "Reception" },
+  { src: madness1Img, caption: "Madness Session 1" },
+  { src: scheduleImg, caption: "Schedule" },
+  { src: madness2Img, caption: "Madness Session 2" },
+  { src: presentationImg, caption: "Presentation" },
+  { src: foodImg, caption: "Food" },
+];
 
 const slides = [
   "Content Editors Are Users Too — Bas Evers",
@@ -27,14 +43,9 @@ export default function Year2015() {
           #UXcampAMS15 was a great day. UXcamp Amsterdam is a community event run by volunteers —
           and this was where it all began.
         </p>
-        <a
-          href="https://goo.gl/photos/82ZEwczoHbZfyT6R9"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 inline-block text-sm font-semibold text-[#B20101] underline underline-offset-2"
-        >
-          See photos from 2015 ↗
-        </a>
+        <div className="mt-6">
+          <Carousel slides={carouselSlides} />
+        </div>
       </ContentSection>
 
       <ContentSection alt>
