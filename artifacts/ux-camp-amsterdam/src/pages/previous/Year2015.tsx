@@ -25,12 +25,12 @@ type Organizer = {
 };
 
 const organizers: Organizer[] = [
-  { name: "Tatiana Sidorenkova", role: "Organiser", photo: orgTatiana, linkedin: "#" },
-  { name: "Doron Hirsch",        role: "Organiser", photo: orgDoron,   linkedin: "#" },
-  { name: "Dave de Bakker",      role: "Organiser", photo: orgDave,    linkedin: "#" },
-  { name: "Daniel Kuipers",      role: "Organiser", photo: orgDaniel,  linkedin: "#" },
-  { name: "Ning Xu",             role: "Organiser", photo: orgNing,    linkedin: "#" },
-  { name: "Liang Hiah",          role: "Organiser", photo: orgLiang,   linkedin: "#" },
+  { name: "Doron Hirsch",        role: "UX & Game Designer",              photo: orgDoron,   linkedin: "https://linkedin.com/in/doron-hirsch-97992617" },
+  { name: "Dave de Bakker",      role: "",                                photo: orgDave,    linkedin: "https://linkedin.com/in/davedebakker" },
+  { name: "Daniel Kuipers",      role: "Founder & Business Dev Manager",  photo: orgDaniel,  linkedin: "https://linkedin.com/in/danielkuipers" },
+  { name: "Ning Xu",             role: "Product Manager & Analyst",       photo: orgNing,    linkedin: "https://linkedin.com/in/ningxxu" },
+  { name: "Liang Hiah",          role: "UX Designer",                     photo: orgLiang,   linkedin: "https://linkedin.com/in/lianghiah" },
+  { name: "Tatiana Sidorenkova", role: "UX Researcher",                   photo: orgTatiana, linkedin: "https://linkedin.com/in/tatiana-sidorenkova-36087b9" },
 ];
 
 const carouselSlides = [
@@ -144,8 +144,8 @@ export default function Year2015() {
               <div style={{ marginTop: 12, fontWeight: 700, color: "#333" }}>
                 {p.name}
               </div>
-              <div style={{ fontSize: 13, color: "#666", marginTop: 2 }}>
-                {p.role}
+              <div style={{ fontSize: 13, color: "#666", marginTop: 2, minHeight: 18 }}>
+                {p.role || "\u00A0"}
               </div>
               <a
                 href={p.linkedin}
