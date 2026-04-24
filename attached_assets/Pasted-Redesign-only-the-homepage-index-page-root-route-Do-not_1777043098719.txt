@@ -1,0 +1,95 @@
+Redesign only the homepage (index page / root route). Do not touch any other pages, backend files, routing, or data. Only change the HTML structure and CSS styling of the homepage. Follow the official UX Camp Amsterdam brand guidelines strictly:
+
+BRAND RULES — MUST FOLLOW EXACTLY
+
+Font: Open Sans from Google Fonts (import it). Use Regular (400) for body, Semi Bold (600) for subheadings, Extra Bold (800) for the logo text, Light (300) for captions.
+Colors — only these five:
+
+#B20101 — primary red accent (use for CTAs, stat numbers, highlights, hover states)
+#333333 — dark (use for headings, dark backgrounds, nav)
+#F5F5F5 — light grey (use for section backgrounds, alternating sections)
+#CCCCCC — mid grey (use for borders, dividers, muted text)
+#FFFFFF — white (use for cards, text on dark backgrounds)
+
+
+No other colors. No gradients. No shadows. Flat design only.
+Logo: text reads "UXCAMP" (Extra Bold) on line 1, "AMSTERDAM" (Regular) on line 2. Logo is always black on light backgrounds, white on dark backgrounds.
+
+
+HOMEPAGE SECTIONS — BUILD IN THIS ORDER:
+1. Sticky Navigation Bar
+
+Dark background #333333, full width
+Left: UXCAMP AMSTERDAM logo in white (text-based, Open Sans)
+Right: nav links (About, Sessions, Tracks, Venue, Register) in white, Open Sans Regular
+Far right: a "Register Now" button with #B20101 background, white text, no border-radius (sharp corners to feel bold and editorial)
+Stays fixed at top on scroll
+
+2. Hero Section
+
+Full viewport height (100vh)
+Background: #333333 (dark charcoal)
+Large centered heading: "UX Camp Amsterdam 2026" in white, Open Sans Extra Bold, very large (clamp between 48px–80px)
+Below it: tagline "All eXperiences start with yoU!" in #B20101, Open Sans Light, ~22px
+Below that: event details line — date and location in #CCCCCC, ~16px
+Two buttons side by side: "Register Now" (#B20101 bg, white text) and "Learn More" (white border, white text, transparent bg)
+Both buttons: sharp corners (border-radius: 0), uppercase, letter-spacing 1px, Open Sans Semi Bold
+No images, no hero image. Pure typographic hero.
+
+3. Stats Bar — HORIZONTAL ROW, NON-NEGOTIABLE
+
+Background: #B20101 (red), full width
+A single display: flex; flex-direction: row; container with 4 equal-width stat items
+The 4 stats are: 9th Edition / 150+ Participants / 25+ Sessions / 4 Tracks
+Each stat: large number/value in white, Open Sans Extra Bold (~48px); label below in white, Open Sans Light (~14px), uppercase, letter-spacing 1px
+Dividers between each stat: a 1px #FFFFFF at 30% opacity vertical line
+On mobile (below 600px): wrap to 2×2 grid. On desktop: always one horizontal row.
+DO NOT stack these vertically on desktop under any circumstance.
+
+4. About Section
+
+Background: #F5F5F5
+Two-column layout (50/50): left column has heading "What is UX Camp?" in #333333, body text in #333333 Open Sans Regular; right column has a styled pull-quote or highlight box with a left border in #B20101 and the tagline "All eXperiences start with yoU!" in large Open Sans Light
+Keep all existing about/description text from the current page
+
+5. Tracks Section
+
+Background: #FFFFFF
+Section heading: "4 Tracks" centered, Open Sans Extra Bold, #333333
+Display the 4 tracks as a horizontal row of 4 cards using flexbox or CSS grid
+Each card: white background, 1px solid #CCCCCC border, border-radius: 0 (sharp), padding 32px, top accent bar 4px solid #B20101
+Card contents: track name in #333333 Semi Bold, short description in #333333 Regular
+On mobile: stack to 2×2 then 1 column
+
+6. Sessions Section
+
+Background: #F5F5F5
+Display sessions as a clean card grid (3 columns desktop, 1 column mobile)
+Each session card: white bg, 1px solid #CCCCCC border, sharp corners, 24px padding
+Session title in #333333 Semi Bold, speaker/time in #CCCCCC Regular small text
+Keep all existing session data
+
+7. Register / CTA Section
+
+Full-width background: #B20101
+Centered: large white heading "Join Us in Amsterdam", white subtext with date/location
+One large white button with #B20101 text: "Register Now" — sharp corners, Open Sans Extra Bold uppercase
+
+8. Footer
+
+Background: #333333
+Three columns: logo + tagline left | nav links center | social/contact right
+All text white or #CCCCCC
+Bottom bar: "© 2026 UX Camp Amsterdam" in #CCCCCC small text
+
+
+GLOBAL CSS RULES:
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+font-family: 'Open Sans', sans-serif; on body
+All sections: padding: 80px 5%; minimum
+max-width: 1200px; margin: 0 auto; on inner content containers
+Smooth scroll: html { scroll-behavior: smooth; }
+No drop shadows, no gradients, no rounded corners anywhere — flat editorial design throughout
+Links: no underline, color inherited or white on dark backgrounds
+Buttons: cursor: pointer; padding: 14px 32px; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; border: 2px solid;
