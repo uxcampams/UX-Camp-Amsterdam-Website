@@ -1,0 +1,123 @@
+Update the Running a Session page only. Do not touch the homepage, About page, Sponsorship page, any other pages, backend files, or routing. Match the existing page styling exactly — Open Sans font, colors only #B20101 / #333333 / #F5F5F5 / #CCCCCC / #FFFFFF, no rounded corners anywhere (border-radius: 0), no gradients, no shadows, same card style, same section padding. Use the exact headings and copy written below. Do not rename, reword, or summarise any text.
+
+STICKY NAV
+Same sticky navigation as all other pages — #333333 bg, UXCAMP AMSTERDAM logo left, nav links right, Grab your ticket → button in #B20101 far right.
+
+SECTION 1 — HERO
+Background: #333333
+Padding: 100px 5% 80px — do NOT use 100vh, let content set the height
+
+Small label above heading: Running a session — #B20101, Open Sans Light, 13px, uppercase, letter-spacing 2px
+Heading: You don't need to be an expert. You just need to care. — white, Open Sans Extra Bold, clamp(32px, 4.5vw, 56px), max-width 780px
+Subheading: Every year, half our session leaders are running one for the first time. They're practitioners just like you with something real to share. — #CCCCCC, Open Sans Light, 18px, max-width 640px
+One CTA button: Here's how it works → — #B20101 bg, white text, Open Sans Semi Bold uppercase, border-radius: 0, padding 14px 36px, scrolls down to Section 3
+
+
+SECTION 2 — WHY RUN A SESSION?
+Background: #F5F5F5
+Two-column layout (50/50 desktop, stacked mobile):
+
+Left column:
+
+Heading: Still thinking about it? — #333333, Extra Bold, 28px
+Subheading below: Here are the reasons people actually do it: — #333333, Regular, 16px
+Five items as a vertical list, each row with a #B20101 filled square bullet (12px) on the left, text on the right, #333333 Regular 16px, line-height 1.8, border-bottom: 1px solid #CCCCCC, padding 14px 0:
+
+To give back to a community you've learned a lot from
+To connect with people who care about the same topics you do
+To think more clearly — talking about something out loud does that
+To practise speaking and facilitating, which matter for our work
+Because the gong is kind of fun
+
+
+
+
+Right column:
+
+A styled pull-quote box: left border 4px solid #B20101, white bg, padding 28px, text: "The best sessions aren't the most polished ones. They're the most honest ones." — Open Sans Light, 22px, #333333. Below it in #CCCCCC 14px: Heard at UXcampAMS, every year.
+
+
+
+
+SECTION 3 — HOW TO RUN A SESSION
+Background: #FFFFFF
+
+Small label above heading: Step by step — #B20101, 13px, uppercase, letter-spacing 2px
+Heading: How to run a session — #333333, Extra Bold, 32px
+
+Five steps displayed as a vertical numbered flow. Each step is a full-width row with a large step number on the left (#B20101, Extra Bold, 48px, min-width 80px) and the content on the right. A 1px solid #CCCCCC horizontal line separates each step. On mobile the number sits above the content.
+Step 1 — Pick a topic
+
+Title: Pick a topic — #333333, Semi Bold, 20px
+Body: Pick something you're genuinely curious or passionate about. You don't need all the answers. Ask yourself: what question do I keep coming back to? What did I learn the hard way? What would I love to debate with a room full of smart UX people?
+
+Step 2 — Decide your goal
+
+Title: Decide your goal — #333333, Semi Bold, 20px
+Body: What do you want people to walk away with? Nail this before you prepare — it shapes everything. When you're done, check it against this goal.
+
+Step 3 — Choose a format
+
+Title: Choose a format — #333333, Semi Bold, 20px
+Body: Talk, case study, workshop, or structured discussion. If you're not sure, go for a discussion — less pressure on you, more interesting for the room. Details on each format are on the About page.
+Below the body, four small inline pills in a wrapping flex row, #F5F5F5 bg, 1px solid #CCCCCC, border-radius: 0, padding 6px 14px, 13px #333333 text: Talk · Case Study · Workshop · Structured Discussion
+Below the pills, a small link: See format details → in #B20101 14px linking to the About page
+
+Step 4 — Pitch in the Madness Session
+
+Title: Pitch in the Madness Session — #333333, Semi Bold, 20px
+Body: At 10am, grab a pitch card, join the queue, and give your 30-second pitch. Tell us: what it's about, what people will take away, and whether it's for beginners or more experienced attendees. If you pitch, you get a slot. That's the deal.
+Below the body, a placeholder box: #F5F5F5 bg, 1px solid #CCCCCC, border-radius: 0, padding 20px, centered text in #CCCCCC italic 14px: 2026 pitch card template — add image here before publishing
+
+Step 5 — Run it
+
+Title: Run it — #333333, Semi Bold, 20px
+Body: Arrive at your room a few minutes before your slot. Rooms have HDMI and USB-C, bring your own adapter if needed — we can't guarantee spares. Download anything you need beforehand; Wi-Fi can be slow. Keep an eye on time. Shorter sessions almost always land better. Break a leg.
+Below the body, three small info pills same style as Step 3: HDMI available · USB-C available · Bring your own adapter
+
+
+SECTION 4 — TIPS FROM PAST SPEAKERS
+Background: #F5F5F5
+
+Heading: From people who've done it — #333333, Extra Bold, 32px, centered
+
+Three quote cards in a horizontal row (desktop), stacked (mobile). Each card: white bg, 1px solid #CCCCCC, border-radius: 0, 4px solid #B20101 top border, padding 32px.
+
+Top of each card: a #B20101 open quotation mark " in Extra Bold, 48px, line-height 1
+Quote text: Open Sans Light, 17px, #333333, line-height 1.7
+Attribution below: Open Sans Semi Bold, 14px, #333333 for name · Open Sans Regular, 13px, #CCCCCC for role
+
+Use these three placeholder quotes (to be replaced with real ones before publishing):
+Quote 1: "I kept waiting until I had the perfect topic. Turns out the thing I was most unsure about was exactly what people wanted to talk about." — [Speaker name] · [Role], UXcampAMS 2024
+Quote 2: "30 seconds to pitch sounds terrifying. Then you do it and realise the hardest part is already over." — [Speaker name] · [Role], UXcampAMS 2024
+Quote 3: "The room was more generous than I expected. People genuinely want you to do well." — [Speaker name] · [Role], UXcampAMS 2023
+Below all three cards, a centered note in #CCCCCC italic 14px: Quotes to be refreshed with 2024/2025 speakers before publishing.
+
+SECTION 5 — SPEAKER PREP WEBINAR
+Background: #FFFFFF
+A full-width info banner: left border 4px solid #B20101, #F5F5F5 bg, padding 28px 36px, no outer border.
+
+Label above: For first-time session leaders — #B20101, 12px, uppercase, letter-spacing 2px
+Heading: We're running a short online speaker prep session before the event. — #333333, Semi Bold, 20px
+Body: A chance to talk through your idea, get some feedback, and feel more confident before the day. Details will be shared in your ticket confirmation email.  — #333333, Regular, 16px
+Placeholder note below in #CCCCCC italic 14px: Add speaker webinar date and link here once confirmed.
+
+
+SECTION 6 — CTA BANNER
+Background: #B20101, full width, padding 60px 5%
+
+Centered white heading: Ready to pitch your idea? — Extra Bold, 36px
+White subtext: Saturday, July 4, 2026 · Amsterdam — Light, 18px
+One button: Grab your ticket → — white bg, #B20101 text, border-radius: 0, Extra Bold uppercase, padding 14px 36px
+
+
+FOOTER
+Exact same footer as all other pages — #333333 bg, three columns: UXCAMP AMSTERDAM logo + tagline All eXperiences start with yoU! left · nav links center · Instagram @uxcampamsterdam + #UXcampAMS26 right. Bottom bar: © 2026 UX Camp Amsterdam in #CCCCCC 13px.
+
+GLOBAL — DO NOT CHANGE:
+
+No other pages touched
+No rounded corners anywhere on this page
+No gradients or shadows
+Only Open Sans, only the five brand colors
+Keep all existing nav links and routing intact
