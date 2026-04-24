@@ -1,0 +1,119 @@
+Update the homepage only. Do not touch any other pages, routes, backend files, or content. The goal is two things: (1) reduce the hero section height, and (2) add all the missing sections from the content brief below, using the exact headings and copy I've written. Do not rename or reword any section headings or body copy — use the text exactly as written here.
+
+FIX 1 — HERO SECTION: REDUCE SIZE
+The hero is currently too tall. Change it from 100vh to auto with padding: 100px 5% 80px. The content should determine the height, not the viewport. Keep all other hero styling (dark bg, fonts, colors) the same.
+The hero content must be exactly:
+
+Small label above the heading: Amsterdam · Saturday, July 4, 2026 — in #B20101, Open Sans Light, 14px, uppercase, letter-spacing 2px
+Main heading: One day. No agenda. Come with a story, leave with ten more. — white, Open Sans Extra Bold, clamp(36px, 5vw, 60px)
+Subheading: UX Camp Amsterdam is back for its 9th edition. A free-flowing unconference where you set the agenda, run the sessions, and shape the day. Everyone contributes. No one just watches. — #CCCCCC, Open Sans Light, 18px, max-width 680px
+Two buttons: Primary = Grab your ticket → (#B20101 bg, white text) · Secondary = How does it work? (white border, white text, transparent bg, scrolls to Section 3)
+
+
+FIX 2 — STATS BAR (Section 2): CONFIRM HORIZONTAL
+Label this section internally as EVENT AT A GLANCE. Four tiles in one horizontal flex row, never stacked on desktop:
+9th edition · 150+ participants · 25+ sessions · 4 tracks
+Background #B20101, white text, large number/value in Extra Bold, label in Light uppercase below.
+
+ADD Section 3 — WHAT IS THIS?
+Background: #F5F5F5
+
+Small label: What is this thing? — #B20101, uppercase, 13px
+Heading: It's an unconference. You're the speaker. — #333333, Extra Bold
+Body: Show up with an idea, a case study, a rant, a question you can't stop thinking about, pitch it in 30 seconds, and if people want to hear it, you're on. No gatekeepers. No keynotes. No boring panels.
+Link after body: Learn how it all works → (links to About page)
+
+Below the body, three cards in a horizontal row (flex, equal width, white bg, 1px solid #CCCCCC, border-radius: 0, top border 4px solid #B20101, padding 28px):
+Card 1: Icon 🎤 · Title: Pitch something · Body: 30 seconds in the morning. That's all it takes to get a session slot. Talk, workshop, or discussion — your choice.
+Card 2: Icon 🙋 · Title: Vote with your hands · Body: The audience raises their hands for sessions they want. That's how the day's programme gets built live, in the room, by everyone.
+Card 3: Icon 🎉 · Title: Leave with more than you came with · Body: By the end of the day you'll have had conversations you didn't plan, heard ideas that shift something, and yes, there's an after party. You've earned it.
+
+ADD Section 4 — WHAT'S NEW IN 2026
+Background: #FFFFFF
+
+Small tag: New in 2026 — pill style, #B20101 bg, white text, 12px
+Heading: More ways to connect this year
+Body: We've added new formats alongside the usual sessions to make the day more hands-on and more fun.
+Six pill/badge items in a wrapping flex row, #333333 border, #F5F5F5 bg, 10px 20px padding, border-radius: 0: Portfolio Review Corner · Speed Networking · Fishbowl Discussions · UX Therapy Booth · Insight Wall · Micro-Exhibition Space
+Link: See what's happening → (links to About page)
+
+
+ADD Section 5 — COME AS YOU ARE
+Background: #F5F5F5
+
+Heading: Come as you are — centered, #333333, Extra Bold
+Three cards in a horizontal row (same card style as Section 3):
+
+Card 1: Icon 💡 · Title: I have something to share · Body: A project you learned from. A question you keep coming back to. A half-formed idea you want to think through with other people. You don't need to be an expert. · Link: How to run a session →
+Card 2: Icon 🙌 · Title: I'm here to learn and meet people · Body: Attend sessions, join discussions, write something on the Insight Wall, get feedback on your work, or just have a really good conversation over lunch. · Link: What to expect →
+Card 3: Icon 🧡 · Title: My company wants to support · Body: 150+ UX professionals in one room. Help make it happen and get your brand in front of Amsterdam's design community. · Link: Sponsorship info →
+
+ADD Section 5B — FIRST TIME?
+Background: #FFFFFF
+
+Heading: First time? Here's all you need.
+Three items in a horizontal row, each as a simple card with icon + text:
+
+🎫 Your ticket — Eventbrite, on your phone is fine
+☕ Your own cup — the venue doesn't allow disposable cups
+💡 An idea, a question, or just curiosity — that's honestly enough
+
+
+Link below: Full details on what to expect → (links to Prepare for the Event page)
+
+
+ADD Section 6 — PHOTOS
+Background: #F5F5F5
+
+Heading: Impressions from #UXcampAMS24
+If there are existing photos on the site from past events, display them here in a 3-column grid. If no photos are available, show a placeholder grid of 6 grey boxes with the caption Photo coming soon
+Link: See more photos →
+
+
+ADD Section 7 — THE TEAM
+Background: #FFFFFF
+
+Heading: The people behind UXcampAMS26
+Display 11 team member cards in a responsive grid (4 columns desktop, 2 mobile). Each card: circular avatar placeholder (initials in #B20101 circle), name in Semi Bold, role below in Regular #333333, "@ company" in #CCCCCC, LinkedIn icon link
+Team members:
+
+Indre Lauciute · UX Designer
+Talita Collare · Product Designer
+Nien-Hua Gu · Product Designer
+Pedro · [Role TBC]
+Vincent Vijn · Design Lead
+May · UX Researcher
+Greg Weinstein · [Role TBC]
+Mannan · [Role TBC]
+Sharon · [Role TBC]
+Meghana · [Role TBC]
+Niveditha · Product Designer
+
+
+
+
+ADD Section 8 — SOCIAL STRIP
+Background: #333333
+
+Centered white text: Follow along for updates
+Two items side by side: Instagram handle @uxcampamsterdam · Hashtag #UXcampAMS26
+Both as pill badges with #B20101 background, white text
+
+
+ADD/UPDATE FOOTER
+Background: #333333. Three columns:
+
+Left: UXCAMP AMSTERDAM (white, Open Sans Extra Bold) + tagline All eXperiences start with yoU! in #CCCCCC Light
+Center: nav links in white — About · Sessions · Tracks · Sponsorship · Running a Session · Prepare for the Event · Previous Events · Alumni
+Right: Instagram @uxcampamsterdam · Hashtag #UXcampAMS26
+Bottom bar: © 2026 UX Camp Amsterdam in #CCCCCC, 13px
+
+
+GLOBAL RULES — DO NOT CHANGE:
+
+Font: Open Sans from Google Fonts only
+Colors: only #B20101, #333333, #F5F5F5, #CCCCCC, #FFFFFF
+No gradients, no drop shadows, no rounded corners anywhere
+All section inner content: max-width: 1200px; margin: 0 auto;
+All sections: minimum padding: 80px 5%
+Do not change any other pages

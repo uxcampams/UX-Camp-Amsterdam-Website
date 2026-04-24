@@ -1,4 +1,12 @@
+import { useEffect } from "react";
 import { Link } from "wouter";
+
+import photo1 from "../../assets/images/1000014612.jpg";
+import photo2 from "../../assets/images/1000014617.jpg";
+import photo3 from "../../assets/images/1000014623.jpg";
+import photo4 from "../../assets/images/1000014637.jpg";
+import photo5 from "../../assets/images/20240629_120357.jpg";
+import photo6 from "../../assets/images/20240629_153725.jpg";
 
 const RED = "#B20101";
 const DARK = "#333333";
@@ -15,32 +23,88 @@ const stats = [
   { value: "4", label: "Tracks" },
 ];
 
-const tracks = [
+const howCards = [
   {
-    name: "UX Research",
-    body: "Methods, insights, and stories from people uncovering what users really need.",
+    icon: "🎤",
+    title: "Pitch something",
+    body: "30 seconds in the morning. That's all it takes to get a session slot. Talk, workshop, or discussion — your choice.",
   },
   {
-    name: "UX & Product Design",
-    body: "Craft, process, and patterns from designers shipping work in the real world.",
+    icon: "🙋",
+    title: "Vote with your hands",
+    body: "The audience raises their hands for sessions they want. That's how the day's programme gets built live, in the room, by everyone.",
   },
   {
-    name: "Strategy & Leadership",
-    body: "Building teams, influencing roadmaps, and growing design as a discipline.",
-  },
-  {
-    name: "Career & Community",
-    body: "Portfolios, mentorship, and the messy, human side of working in UX.",
+    icon: "🎉",
+    title: "Leave with more than you came with",
+    body: "By the end of the day you'll have had conversations you didn't plan, heard ideas that shift something, and yes, there's an after party. You've earned it.",
   },
 ];
 
-const sessions = [
-  { title: "Portfolio Review Corner", meta: "All day · Open table" },
-  { title: "Speed Networking", meta: "Morning · 30 min" },
-  { title: "Fishbowl Discussions", meta: "Afternoon · 45 min" },
-  { title: "UX Therapy Booth", meta: "Drop-in · All day" },
-  { title: "Insight Wall", meta: "All day · Contribute anytime" },
-  { title: "Micro-Exhibition Space", meta: "All day · Show your work" },
+const newFormats = [
+  "Portfolio Review Corner",
+  "Speed Networking",
+  "Fishbowl Discussions",
+  "UX Therapy Booth",
+  "Insight Wall",
+  "Micro-Exhibition Space",
+];
+
+const audienceCards = [
+  {
+    icon: "💡",
+    title: "I have something to share",
+    body: "A project you learned from. A question you keep coming back to. A half-formed idea you want to think through with other people. You don't need to be an expert.",
+    link: "/running-a-session",
+    linkLabel: "How to run a session →",
+  },
+  {
+    icon: "🙌",
+    title: "I'm here to learn and meet people",
+    body: "Attend sessions, join discussions, write something on the Insight Wall, get feedback on your work, or just have a really good conversation over lunch.",
+    link: "/how-it-works",
+    linkLabel: "What to expect →",
+  },
+  {
+    icon: "🧡",
+    title: "My company wants to support",
+    body: "150+ UX professionals in one room. Help make it happen and get your brand in front of Amsterdam's design community.",
+    link: "/ux-camp-amsterdam-sponsorship",
+    linkLabel: "Sponsorship info →",
+  },
+];
+
+const firstTimeItems = [
+  { icon: "🎫", text: "Your ticket — Eventbrite, on your phone is fine" },
+  { icon: "☕", text: "Your own cup — the venue doesn't allow disposable cups" },
+  { icon: "💡", text: "An idea, a question, or just curiosity — that's honestly enough" },
+];
+
+const photos = [photo1, photo2, photo3, photo4, photo5, photo6];
+
+const team = [
+  { name: "Indre Lauciute", role: "UX Designer" },
+  { name: "Talita Collare", role: "Product Designer" },
+  { name: "Nien-Hua Gu", role: "Product Designer" },
+  { name: "Pedro", role: "[Role TBC]" },
+  { name: "Vincent Vijn", role: "Design Lead" },
+  { name: "May", role: "UX Researcher" },
+  { name: "Greg Weinstein", role: "[Role TBC]" },
+  { name: "Mannan", role: "[Role TBC]" },
+  { name: "Sharon", role: "[Role TBC]" },
+  { name: "Meghana", role: "[Role TBC]" },
+  { name: "Niveditha", role: "Product Designer" },
+];
+
+const footerNav = [
+  { label: "About", href: "/how-it-works" },
+  { label: "Sessions", href: "/running-a-session" },
+  { label: "Tracks", href: "/how-it-works" },
+  { label: "Sponsorship", href: "/ux-camp-amsterdam-sponsorship" },
+  { label: "Running a Session", href: "/running-a-session" },
+  { label: "Prepare for the Event", href: "/prepare-for-the-day" },
+  { label: "Previous Events", href: "/previous/2025" },
+  { label: "Alumni", href: "/alumni" },
 ];
 
 const sectionPad: React.CSSProperties = {
@@ -51,11 +115,26 @@ const innerWrap: React.CSSProperties = {
   margin: "0 auto",
 };
 
+function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
 export default function Home() {
+  useEffect(() => {
+    const globalFooter = document.querySelector("footer.footer") as HTMLElement | null;
+    if (globalFooter) globalFooter.style.display = "none";
+    return () => {
+      if (globalFooter) globalFooter.style.display = "";
+    };
+  }, []);
+
   return (
     <main style={{ fontFamily: FONT, color: DARK }}>
       <style>{`
         .uxc-home a { text-decoration: none; }
+
         .uxc-btn-primary {
           display: inline-block;
           background: ${RED};
@@ -71,6 +150,7 @@ export default function Home() {
           transition: background 0.15s ease, color 0.15s ease;
         }
         .uxc-btn-primary:hover { background: ${DARK}; border-color: ${DARK}; }
+
         .uxc-btn-outline {
           display: inline-block;
           background: transparent;
@@ -86,21 +166,17 @@ export default function Home() {
           transition: background 0.15s ease, color 0.15s ease;
         }
         .uxc-btn-outline:hover { background: ${WHITE}; color: ${DARK}; }
-        .uxc-btn-on-red {
+
+        .uxc-link {
           display: inline-block;
-          background: ${WHITE};
-          color: ${RED};
-          padding: 16px 40px;
-          font-size: 14px;
+          font-family: ${FONT};
+          font-weight: 600;
+          font-size: 13px;
           letter-spacing: 1px;
           text-transform: uppercase;
-          font-weight: 800;
-          border: 2px solid ${WHITE};
-          border-radius: 0;
-          cursor: pointer;
-          transition: background 0.15s ease, color 0.15s ease;
+          color: ${RED};
         }
-        .uxc-btn-on-red:hover { background: ${DARK}; color: ${WHITE}; border-color: ${DARK}; }
+        .uxc-link:hover { color: ${DARK}; }
 
         .uxc-stats { display: flex; flex-direction: row; }
         .uxc-stat {
@@ -111,27 +187,95 @@ export default function Home() {
         }
         .uxc-stat:last-child { border-right: none; }
 
-        .uxc-grid-2 {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 64px;
-          align-items: start;
+        .uxc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+        .uxc-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .uxc-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .uxc-grid-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+        .uxc-card {
+          background: ${WHITE};
+          border: 1px solid ${MID_GREY};
+          border-top: 4px solid ${RED};
+          padding: 28px;
+          display: flex;
+          flex-direction: column;
         }
-        .uxc-grid-4 {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 24px;
+        .uxc-card-flat {
+          background: ${WHITE};
+          border: 1px solid ${MID_GREY};
+          padding: 24px;
+          display: flex;
+          gap: 16px;
+          align-items: flex-start;
         }
-        .uxc-grid-3 {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
+
+        .uxc-pill {
+          display: inline-block;
+          background: ${LIGHT_GREY};
+          color: ${DARK};
+          border: 1px solid ${DARK};
+          padding: 10px 20px;
+          font-family: ${FONT};
+          font-weight: 600;
+          font-size: 13px;
+          letter-spacing: 0.5px;
         }
+        .uxc-tag {
+          display: inline-block;
+          background: ${RED};
+          color: ${WHITE};
+          padding: 6px 14px;
+          font-family: ${FONT};
+          font-weight: 600;
+          font-size: 12px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+
+        .uxc-team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .uxc-team-card {
+          background: ${WHITE};
+          border: 1px solid ${MID_GREY};
+          padding: 24px;
+          text-align: center;
+        }
+        .uxc-avatar {
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          background: ${LIGHT_GREY};
+          color: ${RED};
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: ${FONT};
+          font-weight: 800;
+          font-size: 22px;
+          margin: 0 auto 16px;
+          border: 2px solid ${RED};
+        }
+
+        .uxc-social-pill {
+          display: inline-block;
+          background: ${RED};
+          color: ${WHITE};
+          padding: 12px 24px;
+          font-family: ${FONT};
+          font-weight: 600;
+          font-size: 14px;
+          letter-spacing: 0.5px;
+        }
+        .uxc-social-pill:hover { background: ${WHITE}; color: ${RED}; }
+
+        .uxc-footer-nav a { color: ${WHITE}; font-size: 14px; }
+        .uxc-footer-nav a:hover { color: ${RED}; }
 
         @media (max-width: 900px) {
           .uxc-grid-2 { grid-template-columns: 1fr; gap: 32px; }
-          .uxc-grid-4 { grid-template-columns: repeat(2, 1fr); }
           .uxc-grid-3 { grid-template-columns: 1fr; }
+          .uxc-grid-4 { grid-template-columns: repeat(2, 1fr); }
+          .uxc-grid-photos { grid-template-columns: repeat(2, 1fr); }
+          .uxc-team-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 600px) {
           .uxc-stats { flex-wrap: wrap; }
@@ -143,79 +287,81 @@ export default function Home() {
           .uxc-stat:nth-child(2n) { border-right: none; }
           .uxc-stat:nth-child(n+3) { border-bottom: none; }
           .uxc-grid-4 { grid-template-columns: 1fr; }
+          .uxc-grid-photos { grid-template-columns: 1fr; }
         }
       `}</style>
 
       <div className="uxc-home">
-        {/* HERO */}
+        {/* SECTION 1 — HERO (reduced height) */}
         <section
           style={{
             background: DARK,
             color: WHITE,
-            minHeight: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "80px 5%",
-            textAlign: "center",
+            padding: "100px 5% 80px",
           }}
         >
-          <div style={{ maxWidth: 980, margin: "0 auto" }}>
+          <div style={{ ...innerWrap, textAlign: "left" }}>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 300,
+                fontSize: 14,
+                color: RED,
+                textTransform: "uppercase",
+                letterSpacing: 2,
+                margin: 0,
+                marginBottom: 24,
+              }}
+            >
+              Amsterdam · Saturday, July 4, 2026
+            </p>
+
             <h1
               style={{
                 fontFamily: FONT,
                 fontWeight: 800,
-                fontSize: "clamp(48px, 8vw, 80px)",
-                lineHeight: 1.05,
-                letterSpacing: "-0.5px",
+                fontSize: "clamp(36px, 5vw, 60px)",
+                lineHeight: 1.1,
                 color: WHITE,
                 margin: 0,
+                maxWidth: 1000,
               }}
             >
-              UX Camp Amsterdam 2026
+              One day. No agenda. Come with a story, leave with ten more.
             </h1>
 
             <p
               style={{
                 fontFamily: FONT,
                 fontWeight: 300,
-                fontSize: 22,
-                color: RED,
-                marginTop: 24,
-                marginBottom: 0,
-              }}
-            >
-              All eXperiences start with yoU!
-            </p>
-
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 400,
-                fontSize: 16,
+                fontSize: 18,
+                lineHeight: 1.6,
                 color: MID_GREY,
-                marginTop: 16,
+                marginTop: 24,
                 marginBottom: 40,
+                maxWidth: 680,
               }}
             >
-              Saturday, July 4, 2026 · Hogeschool van Amsterdam
+              UX Camp Amsterdam is back for its 9th edition. A free-flowing unconference where you set the agenda, run the sessions, and shape the day. Everyone contributes. No one just watches.
             </p>
 
-            <div style={{ display: "inline-flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <a
                 href="https://www.eventbrite.com/e/ux-camp-amsterdam-2026"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="uxc-btn-primary"
               >
-                Register Now
+                Grab your ticket →
               </a>
-              <a href="#about" className="uxc-btn-outline">Learn More</a>
+              <a href="#how-it-works" className="uxc-btn-outline">
+                How does it work?
+              </a>
             </div>
           </div>
         </section>
 
-        {/* STATS */}
+        {/* SECTION 2 — STATS / EVENT AT A GLANCE */}
         <section style={{ background: RED, color: WHITE }}>
           <div className="uxc-stats">
             {stats.map((s) => (
@@ -249,94 +395,193 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ABOUT */}
-        <section id="about" style={{ background: LIGHT_GREY, ...sectionPad }}>
+        {/* SECTION 3 — WHAT IS THIS? */}
+        <section id="how-it-works" style={{ background: LIGHT_GREY, ...sectionPad }}>
           <div style={innerWrap}>
-            <div className="uxc-grid-2">
-              <div>
-                <h2
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 800,
-                    fontSize: "clamp(32px, 4vw, 44px)",
-                    color: DARK,
-                    margin: 0,
-                    marginBottom: 24,
-                  }}
-                >
-                  What is UX Camp?
-                </h2>
-                <p
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 400,
-                    fontSize: 17,
-                    lineHeight: 1.7,
-                    color: DARK,
-                    margin: 0,
-                    marginBottom: 16,
-                  }}
-                >
-                  UX Camp Amsterdam is a free-flowing unconference where you set the agenda,
-                  run the sessions, and shape the day. Show up with an idea, a case study, a
-                  rant, or a question — pitch it in 30 seconds and, if people want to hear it,
-                  you're on.
-                </p>
-                <p
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 400,
-                    fontSize: 17,
-                    lineHeight: 1.7,
-                    color: DARK,
-                    margin: 0,
-                  }}
-                >
-                  No keynotes. No panels. No gatekeepers. Just 150+ designers, researchers,
-                  and product folks building one day together — and walking out with more
-                  conversations than they came with.
-                </p>
-              </div>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 600,
+                fontSize: 13,
+                color: RED,
+                textTransform: "uppercase",
+                letterSpacing: 1,
+                margin: 0,
+                marginBottom: 16,
+              }}
+            >
+              What is this thing?
+            </p>
+            <h2
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: "clamp(32px, 4vw, 44px)",
+                color: DARK,
+                margin: 0,
+                marginBottom: 20,
+                maxWidth: 820,
+              }}
+            >
+              It's an unconference. You're the speaker.
+            </h2>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 400,
+                fontSize: 17,
+                lineHeight: 1.7,
+                color: DARK,
+                margin: 0,
+                marginBottom: 16,
+                maxWidth: 820,
+              }}
+            >
+              Show up with an idea, a case study, a rant, a question you can't stop thinking about, pitch it in 30 seconds, and if people want to hear it, you're on. No gatekeepers. No keynotes. No boring panels.
+            </p>
+            <Link href="/how-it-works" className="uxc-link">
+              Learn how it all works →
+            </Link>
 
-              <div
-                style={{
-                  background: WHITE,
-                  borderLeft: `4px solid ${RED}`,
-                  padding: "40px 32px",
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 300,
-                    fontSize: 28,
-                    lineHeight: 1.4,
-                    color: DARK,
-                    margin: 0,
-                  }}
-                >
-                  All eXperiences start with yoU!
-                </p>
-                <p
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 600,
-                    fontSize: 12,
-                    letterSpacing: 1,
-                    textTransform: "uppercase",
-                    color: MID_GREY,
-                    marginTop: 24,
-                    marginBottom: 0,
-                  }}
-                >
-                  — UX Camp Amsterdam
-                </p>
-              </div>
+            <div className="uxc-grid-3" style={{ marginTop: 48 }}>
+              {howCards.map((c) => (
+                <div key={c.title} className="uxc-card">
+                  <div style={{ fontSize: 32, marginBottom: 16 }}>{c.icon}</div>
+                  <h3
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 600,
+                      fontSize: 18,
+                      color: DARK,
+                      margin: 0,
+                      marginBottom: 12,
+                    }}
+                  >
+                    {c.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 400,
+                      fontSize: 14,
+                      lineHeight: 1.6,
+                      color: DARK,
+                      margin: 0,
+                    }}
+                  >
+                    {c.body}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* TRACKS */}
+        {/* SECTION 4 — WHAT'S NEW IN 2026 */}
+        <section style={{ background: WHITE, ...sectionPad }}>
+          <div style={innerWrap}>
+            <span className="uxc-tag" style={{ marginBottom: 20 }}>
+              New in 2026
+            </span>
+            <h2
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: "clamp(32px, 4vw, 44px)",
+                color: DARK,
+                margin: 0,
+                marginTop: 16,
+                marginBottom: 20,
+              }}
+            >
+              More ways to connect this year
+            </h2>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 400,
+                fontSize: 17,
+                lineHeight: 1.7,
+                color: DARK,
+                margin: 0,
+                marginBottom: 32,
+                maxWidth: 820,
+              }}
+            >
+              We've added new formats alongside the usual sessions to make the day more hands-on and more fun.
+            </p>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 32 }}>
+              {newFormats.map((f) => (
+                <span key={f} className="uxc-pill">
+                  {f}
+                </span>
+              ))}
+            </div>
+
+            <Link href="/how-it-works" className="uxc-link">
+              See what's happening →
+            </Link>
+          </div>
+        </section>
+
+        {/* SECTION 5 — COME AS YOU ARE */}
+        <section style={{ background: LIGHT_GREY, ...sectionPad }}>
+          <div style={innerWrap}>
+            <h2
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: "clamp(32px, 4vw, 44px)",
+                color: DARK,
+                margin: 0,
+                marginBottom: 48,
+                textAlign: "center",
+              }}
+            >
+              Come as you are
+            </h2>
+
+            <div className="uxc-grid-3">
+              {audienceCards.map((c) => (
+                <div key={c.title} className="uxc-card">
+                  <div style={{ fontSize: 32, marginBottom: 16 }}>{c.icon}</div>
+                  <h3
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 600,
+                      fontSize: 18,
+                      color: DARK,
+                      margin: 0,
+                      marginBottom: 12,
+                    }}
+                  >
+                    {c.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 400,
+                      fontSize: 14,
+                      lineHeight: 1.6,
+                      color: DARK,
+                      margin: 0,
+                      marginBottom: 16,
+                      flex: 1,
+                    }}
+                  >
+                    {c.body}
+                  </p>
+                  <Link href={c.link} className="uxc-link">
+                    {c.linkLabel}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 5B — FIRST TIME? */}
         <section style={{ background: WHITE, ...sectionPad }}>
           <div style={innerWrap}>
             <h2
@@ -350,51 +595,37 @@ export default function Home() {
                 textAlign: "center",
               }}
             >
-              4 Tracks
+              First time? Here's all you need.
             </h2>
 
-            <div className="uxc-grid-4">
-              {tracks.map((t) => (
-                <div
-                  key={t.name}
-                  style={{
-                    background: WHITE,
-                    border: `1px solid ${MID_GREY}`,
-                    borderTop: `4px solid ${RED}`,
-                    padding: 32,
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 600,
-                      fontSize: 18,
-                      color: DARK,
-                      margin: 0,
-                      marginBottom: 12,
-                    }}
-                  >
-                    {t.name}
-                  </h3>
-                  <p
+            <div className="uxc-grid-3">
+              {firstTimeItems.map((item) => (
+                <div key={item.icon} className="uxc-card-flat">
+                  <span style={{ fontSize: 28, lineHeight: 1 }}>{item.icon}</span>
+                  <span
                     style={{
                       fontFamily: FONT,
                       fontWeight: 400,
-                      fontSize: 14,
+                      fontSize: 15,
                       lineHeight: 1.6,
                       color: DARK,
-                      margin: 0,
                     }}
                   >
-                    {t.body}
-                  </p>
+                    {item.text}
+                  </span>
                 </div>
               ))}
+            </div>
+
+            <div style={{ textAlign: "center", marginTop: 40 }}>
+              <Link href="/prepare-for-the-day" className="uxc-link">
+                Full details on what to expect →
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* SESSIONS */}
+        {/* SECTION 6 — PHOTOS */}
         <section style={{ background: LIGHT_GREY, ...sectionPad }}>
           <div style={innerWrap}>
             <h2
@@ -404,48 +635,95 @@ export default function Home() {
                 fontSize: "clamp(32px, 4vw, 44px)",
                 color: DARK,
                 margin: 0,
-                marginBottom: 16,
+                marginBottom: 48,
                 textAlign: "center",
               }}
             >
-              New Session Formats
+              Impressions from #UXcampAMS24
             </h2>
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 400,
-                fontSize: 16,
-                color: DARK,
-                textAlign: "center",
-                margin: "0 auto 48px",
-                maxWidth: 640,
-              }}
-            >
-              Alongside the usual pitched sessions, we've added new ways to connect this year.
-            </p>
 
-            <div className="uxc-grid-3">
-              {sessions.map((s) => (
+            <div className="uxc-grid-photos">
+              {photos.map((src, i) => (
                 <div
-                  key={s.title}
+                  key={i}
                   style={{
-                    background: WHITE,
+                    width: "100%",
+                    aspectRatio: "4 / 3",
+                    overflow: "hidden",
                     border: `1px solid ${MID_GREY}`,
-                    padding: 24,
+                    background: MID_GREY,
                   }}
                 >
-                  <h3
+                  <img
+                    src={src}
+                    alt={`UX Camp Amsterdam 2024 — photo ${i + 1}`}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: "center", marginTop: 40 }}>
+              <Link href="/2024-post-event" className="uxc-link">
+                See more photos →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 7 — THE TEAM */}
+        <section style={{ background: WHITE, ...sectionPad }}>
+          <div style={innerWrap}>
+            <h2
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: "clamp(32px, 4vw, 44px)",
+                color: DARK,
+                margin: 0,
+                marginBottom: 48,
+                textAlign: "center",
+              }}
+            >
+              The people behind UXcampAMS26
+            </h2>
+
+            <div className="uxc-team-grid">
+              {team.map((member) => (
+                <div key={member.name} className="uxc-team-card">
+                  <div className="uxc-avatar" aria-hidden="true">
+                    {getInitials(member.name)}
+                  </div>
+                  <p
                     style={{
                       fontFamily: FONT,
                       fontWeight: 600,
                       fontSize: 16,
                       color: DARK,
                       margin: 0,
-                      marginBottom: 8,
+                      marginBottom: 4,
                     }}
                   >
-                    {s.title}
-                  </h3>
+                    {member.name}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 400,
+                      fontSize: 14,
+                      color: DARK,
+                      margin: 0,
+                      marginBottom: 4,
+                    }}
+                  >
+                    {member.role}
+                  </p>
                   <p
                     style={{
                       fontFamily: FONT,
@@ -453,69 +731,188 @@ export default function Home() {
                       fontSize: 13,
                       color: MID_GREY,
                       margin: 0,
+                      marginBottom: 12,
                     }}
                   >
-                    {s.meta}
+                    @ UX Camp Amsterdam
                   </p>
+                  <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${member.name} on LinkedIn`}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: 32,
+                      height: 32,
+                      border: `1px solid ${MID_GREY}`,
+                      color: DARK,
+                      fontFamily: FONT,
+                      fontWeight: 800,
+                      fontSize: 13,
+                    }}
+                  >
+                    in
+                  </a>
                 </div>
               ))}
             </div>
+          </div>
+        </section>
 
-            <div style={{ textAlign: "center", marginTop: 48 }}>
-              <Link
-                href="/how-it-works"
-                style={{
-                  fontFamily: FONT,
-                  fontWeight: 600,
-                  fontSize: 13,
-                  letterSpacing: 1,
-                  textTransform: "uppercase",
-                  color: RED,
-                }}
+        {/* SECTION 8 — SOCIAL STRIP */}
+        <section style={{ background: DARK, ...sectionPad }}>
+          <div style={{ ...innerWrap, textAlign: "center" }}>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 400,
+                fontSize: 18,
+                color: WHITE,
+                margin: 0,
+                marginBottom: 24,
+              }}
+            >
+              Follow along for updates
+            </p>
+            <div style={{ display: "inline-flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+              <a
+                href="https://www.instagram.com/uxcampamsterdam/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="uxc-social-pill"
               >
-                Learn how the day works →
-              </Link>
+                @uxcampamsterdam
+              </a>
+              <span className="uxc-social-pill">#UXcampAMS26</span>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section style={{ background: RED, color: WHITE, ...sectionPad }}>
-          <div style={{ ...innerWrap, textAlign: "center" }}>
-            <h2
+        {/* FOOTER */}
+        <footer style={{ background: DARK, color: WHITE, padding: "80px 5% 24px" }}>
+          <div style={innerWrap}>
+            <div
               style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 2fr 1fr",
+                gap: 48,
+                alignItems: "start",
+              }}
+              className="uxc-footer-grid"
+            >
+              {/* Left: logo + tagline */}
+              <div>
+                <div
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 800,
+                    fontSize: 22,
+                    color: WHITE,
+                    lineHeight: 1.1,
+                    letterSpacing: 1,
+                  }}
+                >
+                  UXCAMP
+                </div>
+                <div
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 400,
+                    fontSize: 18,
+                    color: WHITE,
+                    lineHeight: 1.1,
+                    letterSpacing: 1,
+                    marginBottom: 16,
+                  }}
+                >
+                  AMSTERDAM
+                </div>
+                <p
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 300,
+                    fontSize: 14,
+                    color: MID_GREY,
+                    margin: 0,
+                  }}
+                >
+                  All eXperiences start with yoU!
+                </p>
+              </div>
+
+              {/* Center: nav */}
+              <ul
+                className="uxc-footer-nav"
+                style={{
+                  listStyle: "none",
+                  margin: 0,
+                  padding: 0,
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "12px 24px",
+                }}
+              >
+                {footerNav.map((item) => (
+                  <li key={item.label}>
+                    <Link href={item.href}>{item.label}</Link>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Right: social */}
+              <div>
+                <a
+                  href="https://www.instagram.com/uxcampamsterdam/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "block",
+                    fontFamily: FONT,
+                    fontWeight: 600,
+                    fontSize: 14,
+                    color: WHITE,
+                    marginBottom: 8,
+                  }}
+                >
+                  Instagram @uxcampamsterdam
+                </a>
+                <span
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 400,
+                    fontSize: 14,
+                    color: MID_GREY,
+                  }}
+                >
+                  #UXcampAMS26
+                </span>
+              </div>
+            </div>
+
+            <div
+              style={{
+                marginTop: 48,
+                paddingTop: 24,
+                borderTop: `1px solid ${MID_GREY}`,
                 fontFamily: FONT,
-                fontWeight: 800,
-                fontSize: "clamp(36px, 5vw, 56px)",
-                color: WHITE,
-                margin: 0,
-                marginBottom: 16,
+                fontWeight: 400,
+                fontSize: 13,
+                color: MID_GREY,
               }}
             >
-              Join Us in Amsterdam
-            </h2>
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 300,
-                fontSize: 18,
-                color: WHITE,
-                margin: "0 auto 40px",
-                maxWidth: 640,
-              }}
-            >
-              Saturday, July 4, 2026 · Hogeschool van Amsterdam
-            </p>
-            <a
-              href="https://www.eventbrite.com/e/ux-camp-amsterdam-2026"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="uxc-btn-on-red"
-            >
-              Register Now
-            </a>
+              © 2026 UX Camp Amsterdam
+            </div>
           </div>
-        </section>
+
+          <style>{`
+            @media (max-width: 900px) {
+              .uxc-footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+            }
+          `}</style>
+        </footer>
       </div>
     </main>
   );
