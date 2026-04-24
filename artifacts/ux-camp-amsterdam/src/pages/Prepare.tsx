@@ -1,150 +1,836 @@
-import Hero from "@/components/Hero";
-import ContentSection from "@/components/ContentSection";
+import { useEffect } from "react";
+import { Link } from "wouter";
 
-const daySchedule = [
-  { time: "Madness Session 10:00", label: "Where the day's programme gets built. Grab a pitch card if you want to run a session." },
-  { time: "Sessions 11:00+", label: "Check the schedule board. Move between rooms freely." },
-  { time: "Portfolio Review Corner", label: "Sign up at the whiteboard for a 25-min review. Morning and afternoon slots." },
-  { time: "Speed Networking", label: "Join a table, grab a prompt card. Meet a lot of people in a short amount of time." },
-  { time: "Insight Wall", label: "Add your thoughts to the prompts on the wall. Open all day." },
-  { time: "UX Therapy Booth", label: "Write something anonymously. Hear it read back later." },
-  { time: "Micro-Exhibition", label: "Browse anytime — startups, student work, UX games, book exchange." },
-  { time: "Closing 17:00", label: "Highlights, thank yous, prizes." },
-  { time: "After Party 17:15", label: "Venue details to be confirmed." },
+const RED = "#B20101";
+const DARK = "#333333";
+const LIGHT_GREY = "#F5F5F5";
+const MID_GREY = "#CCCCCC";
+const WHITE = "#FFFFFF";
+
+const FONT = "'Open Sans', sans-serif";
+
+const sectionPad: React.CSSProperties = { padding: "80px 5%" };
+const innerWrap: React.CSSProperties = { maxWidth: 1200, margin: "0 auto" };
+
+const timeLocation = [
+  { label: "Date", value: "Saturday, July 4, 2026" },
+  { label: "Doors open", value: "9:30 — Registration closes at 12:30" },
+  { label: "Venue", value: "HvA Corry Tendeloohuis (CTH)" },
+  { label: "Address", value: "Fraijlemaborg 133, 1102 CV Amsterdam" },
+];
+
+type Transport = { icon: string; title: string; body: string; placeholder?: boolean };
+
+const transport: Transport[] = [
+  {
+    icon: "🚇",
+    title: "Metro / Train",
+    body: "Add nearest station + line number once venue is confirmed.",
+    placeholder: true,
+  },
+  {
+    icon: "🚲",
+    title: "Bike",
+    body: "Add bike parking details near the venue once confirmed.",
+    placeholder: true,
+  },
+  {
+    icon: "🚗",
+    title: "Car",
+    body: "Public transport is easier — parking in Amsterdam on a summer Saturday is an adventure you don't need.",
+  },
+];
+
+type BringItem = { icon: string; title: string; body: string; placeholder?: boolean };
+
+const bring: BringItem[] = [
+  {
+    icon: "🎫",
+    title: "Your ticket",
+    body: "Have your Eventbrite ticket ready on your phone or printed. We scan at the door.",
+  },
+  {
+    icon: "☕",
+    title: "Your own cup",
+    body: "The venue doesn't allow disposable cups. Bring a reusable water bottle and coffee tumbler. Water fountains and coffee machines are available on site.",
+  },
+  {
+    icon: "🍱",
+    title: "Lunch",
+    body: "Catering situation TBD — confirm with Vincent/Aletta before publishing.",
+    placeholder: true,
+  },
+  {
+    icon: "🔌",
+    title: "Adapter (if presenting)",
+    body: "Planning to show something? All rooms have HDMI and USB-C. Bring your own adapter just in case. And download anything you need in advance — venue Wi-Fi can be unpredictable.",
+  },
+];
+
+type DayCard = {
+  time: string;
+  title: string;
+  body: string;
+  highlight?: boolean;
+  placeholderInner?: string;
+};
+
+const dayCards: DayCard[] = [
+  {
+    time: "10:00",
+    title: "Madness Session",
+    body: "Where the day's programme gets built. Grab a pitch card if you want to run a session.",
+  },
+  {
+    time: "11:00+",
+    title: "Sessions",
+    body: "Check the schedule board. Move between rooms freely.",
+  },
+  {
+    time: "All day",
+    title: "Portfolio Review Corner",
+    body: "Sign up at the whiteboard for a 25-min review. Morning and afternoon slots.",
+  },
+  {
+    time: "All day",
+    title: "Speed Networking",
+    body: "Join a table, grab a prompt card. Meet a lot of people in a short amount of time.",
+  },
+  {
+    time: "All day",
+    title: "Insight Wall",
+    body: "Add your thoughts to the prompts on the wall. Open all day.",
+  },
+  {
+    time: "All day",
+    title: "UX Therapy Booth",
+    body: "Write something anonymously. Hear it read back later.",
+  },
+  {
+    time: "All day",
+    title: "Micro-Exhibition",
+    body: "Browse anytime — startups, student work, UX games, book exchange.",
+  },
+  {
+    time: "17:00",
+    title: "Closing",
+    body: "Highlights, thank yous, prizes.",
+  },
+  {
+    time: "17:15",
+    title: "After party 🎉",
+    body: "",
+    highlight: true,
+    placeholderInner: "After party venue details — confirm with Vincent before publishing.",
+  },
+];
+
+const accessibility = [
+  { icon: "🤫", title: "Quiet room", body: "Available all day — no sign-up needed." },
+  { icon: "🤱", title: "Nursing room", body: "Available on the day — check at the registration desk on arrival." },
+  {
+    icon: "🎤",
+    title: "Please use the mic",
+    body: "During sessions, please use the microphone — the person at the back will thank you.",
+  },
+];
+
+const footerNav = [
+  { label: "About", href: "/how-it-works" },
+  { label: "Sessions", href: "/running-a-session" },
+  { label: "Tracks", href: "/how-it-works" },
+  { label: "Sponsorship", href: "/ux-camp-amsterdam-sponsorship" },
+  { label: "Running a Session", href: "/running-a-session" },
+  { label: "Prepare for the Event", href: "/prepare-for-the-day" },
+  { label: "Previous Events", href: "/previous/2025" },
+  { label: "Alumni", href: "/alumni" },
 ];
 
 export default function Prepare() {
-  return (
-    <main>
-      <Hero
-        title="See you on July 4th! Here's everything you need."
-        subtitle="We're so excited to welcome you to #UXcampAMS26. Here's a quick guide to help your day run smoothly."
-      />
+  useEffect(() => {
+    const globalFooter = document.querySelector("footer.footer") as HTMLElement | null;
+    if (globalFooter) globalFooter.style.display = "none";
+    return () => {
+      if (globalFooter) globalFooter.style.display = "";
+    };
+  }, []);
 
-      {/* Time & location */}
-      <section className="section">
-        <div className="container">
-          <div className="grid-2">
-            <div>
-              <h2 className="section__heading">Time &amp; location</h2>
-              <div className="space-y-4 mt-4">
-                {[
-                  { label: "Date", value: "Saturday, July 4, 2026" },
-                  { label: "Doors open", value: "9:30 — Registration closes at 12:30" },
-                  { label: "Venue", value: "HvA Corry Tendeloohuis (CTH)" },
-                  { label: "Address", value: "Fraijlemaborg 133, 1102 CV Amsterdam" },
-                ].map((row) => (
-                  <div key={row.label}>
-                    <p className="where-when__label">{row.label}</p>
-                    <p className="where-when__value">{row.value}</p>
-                  </div>
-                ))}
-                <a
-                  href="https://maps.google.com/?q=Fraijlemaborg+133,+1102+CV+Amsterdam"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-semibold text-[#B20101] underline underline-offset-2 hover:text-[#8B0000] transition-colors"
+  return (
+    <main style={{ fontFamily: FONT, color: DARK }}>
+      <style>{`
+        .uxc-prep a { text-decoration: none; }
+
+        .uxc-eyebrow {
+          font-family: ${FONT};
+          font-weight: 300;
+          font-size: 13px;
+          color: ${RED};
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          margin: 0 0 12px 0;
+        }
+        .uxc-h2 {
+          font-family: ${FONT};
+          font-weight: 800;
+          font-size: 32px;
+          line-height: 1.2;
+          color: ${DARK};
+          margin: 0;
+        }
+
+        .uxc-btn-outline {
+          display: inline-block;
+          background: ${WHITE};
+          color: ${RED};
+          padding: 10px 24px;
+          font-family: ${FONT};
+          font-weight: 600;
+          font-size: 14px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          border: 2px solid ${RED};
+          border-radius: 0;
+          cursor: pointer;
+          transition: background 0.15s ease, color 0.15s ease;
+        }
+        .uxc-btn-outline:hover { background: ${RED}; color: ${WHITE}; }
+
+        .uxc-grid-60-40 { display: grid; grid-template-columns: 60fr 40fr; gap: 48px; align-items: start; }
+        .uxc-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .uxc-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+        .uxc-placeholder {
+          background: ${WHITE};
+          border: 1px solid ${MID_GREY};
+          padding: 12px;
+          font-family: ${FONT};
+          font-style: italic;
+          font-size: 14px;
+          color: ${MID_GREY};
+          margin-top: 12px;
+        }
+
+        .uxc-footer-nav a { color: ${WHITE}; font-size: 14px; }
+        .uxc-footer-nav a:hover { color: ${RED}; }
+
+        @media (max-width: 900px) {
+          .uxc-grid-60-40 { grid-template-columns: 1fr; gap: 24px; }
+          .uxc-grid-3 { grid-template-columns: 1fr; }
+          .uxc-grid-2 { grid-template-columns: 1fr; }
+          .uxc-h2 { font-size: 26px; }
+        }
+      `}</style>
+
+      <div className="uxc-prep">
+        {/* SECTION 1 — HERO */}
+        <section style={{ background: DARK, color: WHITE, padding: "100px 5% 80px" }}>
+          <div style={innerWrap}>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 300,
+                fontSize: 13,
+                color: RED,
+                textTransform: "uppercase",
+                letterSpacing: 2,
+                margin: 0,
+                marginBottom: 24,
+              }}
+            >
+              July 4, 2026
+            </p>
+            <h1
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: "clamp(32px, 4.5vw, 56px)",
+                lineHeight: 1.15,
+                color: WHITE,
+                margin: 0,
+                maxWidth: 780,
+              }}
+            >
+              See you on July 4th! Here's everything you need.
+            </h1>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 300,
+                fontSize: 18,
+                lineHeight: 1.6,
+                color: MID_GREY,
+                margin: 0,
+                marginTop: 24,
+                maxWidth: 640,
+              }}
+            >
+              We're so excited to welcome you to #UXcampAMS26. Here's a quick guide to help your day run smoothly.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION 2 — TIME & LOCATION */}
+        <section style={{ background: LIGHT_GREY, ...sectionPad }}>
+          <div style={innerWrap}>
+            <p className="uxc-eyebrow">Where and when</p>
+            <h2 className="uxc-h2" style={{ marginBottom: 32 }}>Time &amp; location</h2>
+
+            <div className="uxc-grid-60-40">
+              <div>
+                <dl style={{ margin: 0 }}>
+                  {timeLocation.map((item) => (
+                    <div
+                      key={item.label}
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "140px 1fr",
+                        gap: 16,
+                        padding: "14px 0",
+                        borderBottom: `1px solid ${MID_GREY}`,
+                        alignItems: "baseline",
+                      }}
+                    >
+                      <dt
+                        style={{
+                          fontFamily: FONT,
+                          fontWeight: 600,
+                          fontSize: 13,
+                          color: MID_GREY,
+                          textTransform: "uppercase",
+                          letterSpacing: 1,
+                          margin: 0,
+                        }}
+                      >
+                        {item.label}
+                      </dt>
+                      <dd
+                        style={{
+                          fontFamily: FONT,
+                          fontWeight: 400,
+                          fontSize: 16,
+                          color: DARK,
+                          margin: 0,
+                        }}
+                      >
+                        {item.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+
+                <div style={{ marginTop: 24 }}>
+                  <a
+                    href="https://maps.google.com/?q=Fraijlemaborg+133+Amsterdam"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="uxc-btn-outline"
+                  >
+                    Get directions →
+                  </a>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  background: MID_GREY,
+                  minHeight: 280,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: 24,
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  aria-hidden="true"
+                  style={{
+                    fontSize: 32,
+                    color: RED,
+                    lineHeight: 1,
+                    marginBottom: 12,
+                  }}
                 >
-                  Get directions →
-                </a>
+                  ▼
+                </div>
+                <p
+                  style={{
+                    fontFamily: FONT,
+                    fontStyle: "italic",
+                    fontSize: 14,
+                    color: WHITE,
+                    margin: 0,
+                  }}
+                >
+                  Map embed — add Google Maps iframe before publishing
+                </p>
               </div>
             </div>
-            <div>
-              <iframe
-                className="map-embed"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2437.5!2d4.9478!3d52.3089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5ec3b2d5b4e4b%3A0x1!2sFraijlemaborg+133%2C+1102+CV+Amsterdam!5e0!3m2!1sen!2snl!4v1620000000000!5m2!1sen!2snl"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Venue map"
-              />
+
+            <div
+              style={{
+                marginTop: 24,
+                background: LIGHT_GREY,
+                border: `1px solid ${MID_GREY}`,
+                padding: 20,
+                textAlign: "center",
+                fontFamily: FONT,
+                fontStyle: "italic",
+                fontSize: 14,
+                color: MID_GREY,
+              }}
+            >
+              Floor plan — add simple venue diagram showing session rooms, registration desk, Portfolio Review Corner, Insight Wall, Micro-Exhibition Space, quiet room, and nursing room.
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Getting there */}
-      <ContentSection alt>
-        <h2>Getting there</h2>
-        <div className="mt-4 space-y-4">
-          {[
-            { icon: "🚇", label: "Metro / Train", value: "Nearest station and line details to be confirmed closer to the date." },
-            { icon: "🚲", label: "Bike", value: "Bike parking available at or near the venue." },
-            { icon: "🚗", label: "Car", value: "Public transport is easier — parking in Amsterdam on a summer Saturday is an adventure you don't need." },
-          ].map((row) => (
-            <div key={row.label} className="flex gap-4">
-              <span className="text-xl shrink-0">{row.icon}</span>
+        {/* SECTION 3 — GETTING THERE */}
+        <section style={{ background: WHITE, ...sectionPad }}>
+          <div style={innerWrap}>
+            <h2 className="uxc-h2" style={{ marginBottom: 32 }}>Getting there</h2>
+
+            <div className="uxc-grid-3">
+              {transport.map((t) => (
+                <div
+                  key={t.title}
+                  style={{
+                    background: LIGHT_GREY,
+                    border: `1px solid ${MID_GREY}`,
+                    borderTop: `4px solid ${RED}`,
+                    padding: 28,
+                  }}
+                >
+                  <div style={{ fontSize: 32, lineHeight: 1, marginBottom: 16 }}>{t.icon}</div>
+                  <h3
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 600,
+                      fontSize: 18,
+                      color: DARK,
+                      margin: 0,
+                      marginBottom: 12,
+                    }}
+                  >
+                    {t.title}
+                  </h3>
+                  {t.placeholder ? (
+                    <div className="uxc-placeholder" style={{ marginTop: 0 }}>
+                      {t.body}
+                    </div>
+                  ) : (
+                    <p
+                      style={{
+                        fontFamily: FONT,
+                        fontWeight: 400,
+                        fontSize: 16,
+                        lineHeight: 1.6,
+                        color: DARK,
+                        margin: 0,
+                      }}
+                    >
+                      {t.body}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 4 — WHAT TO BRING */}
+        <section style={{ background: LIGHT_GREY, ...sectionPad }}>
+          <div style={innerWrap}>
+            <p className="uxc-eyebrow">Don't forget</p>
+            <h2 className="uxc-h2" style={{ marginBottom: 32 }}>What to bring</h2>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {bring.map((b) => (
+                <div
+                  key={b.title}
+                  style={{
+                    background: WHITE,
+                    border: `1px solid ${MID_GREY}`,
+                    borderLeft: `4px solid ${RED}`,
+                    padding: "24px 28px",
+                    display: "flex",
+                    gap: 20,
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <div style={{ fontSize: 32, lineHeight: 1, flex: "0 0 auto" }}>{b.icon}</div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <h3
+                      style={{
+                        fontFamily: FONT,
+                        fontWeight: 600,
+                        fontSize: 17,
+                        color: DARK,
+                        margin: 0,
+                        marginBottom: 8,
+                      }}
+                    >
+                      {b.title}
+                    </h3>
+                    {b.placeholder ? (
+                      <div className="uxc-placeholder" style={{ marginTop: 0 }}>
+                        {b.body}
+                      </div>
+                    ) : (
+                      <p
+                        style={{
+                          fontFamily: FONT,
+                          fontWeight: 400,
+                          fontSize: 15,
+                          lineHeight: 1.6,
+                          color: DARK,
+                          margin: 0,
+                        }}
+                      >
+                        {b.body}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 5 — WHAT'S HAPPENING ON THE DAY */}
+        <section style={{ background: WHITE, ...sectionPad }}>
+          <div style={innerWrap}>
+            <p className="uxc-eyebrow">On the day</p>
+            <h2 className="uxc-h2" style={{ marginBottom: 32 }}>What's happening</h2>
+
+            <div className="uxc-grid-2">
+              {dayCards.map((c, i) => {
+                const isHighlight = !!c.highlight;
+                const cardBg = isHighlight ? DARK : LIGHT_GREY;
+                const titleColor = isHighlight ? WHITE : DARK;
+                const bodyColor = isHighlight ? MID_GREY : DARK;
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      background: cardBg,
+                      border: `1px solid ${MID_GREY}`,
+                      padding: "20px 24px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontFamily: FONT,
+                        fontWeight: 600,
+                        fontSize: 13,
+                        color: isHighlight ? WHITE : RED,
+                        textTransform: "uppercase",
+                        letterSpacing: 1,
+                        marginBottom: 8,
+                      }}
+                    >
+                      {c.time}
+                    </div>
+                    <h3
+                      style={{
+                        fontFamily: FONT,
+                        fontWeight: 600,
+                        fontSize: 16,
+                        color: titleColor,
+                        margin: 0,
+                        marginBottom: 8,
+                      }}
+                    >
+                      {c.title}
+                    </h3>
+                    {c.body && (
+                      <p
+                        style={{
+                          fontFamily: FONT,
+                          fontWeight: 400,
+                          fontSize: 14,
+                          lineHeight: 1.6,
+                          color: bodyColor,
+                          margin: 0,
+                        }}
+                      >
+                        {c.body}
+                      </p>
+                    )}
+                    {c.placeholderInner && (
+                      <div
+                        style={{
+                          background: "transparent",
+                          border: `1px solid rgba(255,255,255,0.3)`,
+                          padding: 12,
+                          marginTop: 8,
+                          fontFamily: FONT,
+                          fontStyle: "italic",
+                          fontSize: 14,
+                          color: WHITE,
+                        }}
+                      >
+                        {c.placeholderInner}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 6 — ACCESSIBILITY */}
+        <section style={{ background: LIGHT_GREY, ...sectionPad }}>
+          <div style={innerWrap}>
+            <h2 className="uxc-h2" style={{ marginBottom: 12 }}>
+              We want everyone to feel comfortable
+            </h2>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 400,
+                fontSize: 16,
+                lineHeight: 1.7,
+                color: DARK,
+                margin: 0,
+                marginBottom: 32,
+              }}
+            >
+              A few things worth knowing before the day:
+            </p>
+
+            <div className="uxc-grid-3">
+              {accessibility.map((a) => (
+                <div
+                  key={a.title}
+                  style={{
+                    background: WHITE,
+                    border: `1px solid ${MID_GREY}`,
+                    borderTop: `4px solid ${DARK}`,
+                    padding: 28,
+                  }}
+                >
+                  <div style={{ fontSize: 32, lineHeight: 1, marginBottom: 16 }}>{a.icon}</div>
+                  <h3
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 600,
+                      fontSize: 17,
+                      color: DARK,
+                      margin: 0,
+                      marginBottom: 12,
+                    }}
+                  >
+                    {a.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 400,
+                      fontSize: 15,
+                      lineHeight: 1.6,
+                      color: DARK,
+                      margin: 0,
+                    }}
+                  >
+                    {a.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <p
+              style={{
+                fontFamily: FONT,
+                fontStyle: "italic",
+                fontSize: 14,
+                color: MID_GREY,
+                marginTop: 24,
+                marginBottom: 0,
+                textAlign: "center",
+              }}
+            >
+              Room locations to be confirmed with Greg and Vincent before publishing.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION 7 — CLOSING MESSAGE */}
+        <section style={{ background: DARK, color: WHITE, padding: "80px 5%" }}>
+          <div style={{ ...innerWrap, textAlign: "center" }}>
+            <h2
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: 36,
+                color: WHITE,
+                margin: 0,
+                marginBottom: 24,
+              }}
+            >
+              Now it's over to you
+            </h2>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 300,
+                fontSize: 18,
+                lineHeight: 1.8,
+                color: WHITE,
+                margin: "0 auto 32px",
+                maxWidth: 600,
+              }}
+            >
+              We've been working behind the scenes for months to get to today. When those doors open, it's yours — to connect, share, and bring your best to the UX community. We can't wait.
+            </p>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 600,
+                fontSize: 17,
+                color: RED,
+                margin: 0,
+                marginBottom: 16,
+              }}
+            >
+              See you tomorrow. 🧡
+            </p>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 300,
+                fontSize: 15,
+                color: MID_GREY,
+                letterSpacing: 2,
+                margin: 0,
+              }}
+            >
+              #UXcampAMS26
+            </p>
+          </div>
+        </section>
+
+        {/* FOOTER (same as homepage) */}
+        <footer style={{ background: DARK, color: WHITE, padding: "80px 5% 24px" }}>
+          <div style={innerWrap}>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 2fr 1fr",
+                gap: 48,
+                alignItems: "start",
+              }}
+              className="uxc-footer-grid"
+            >
               <div>
-                <p className="text-sm font-bold uppercase tracking-wider mb-1">{row.label}</p>
-                <p className="text-sm text-gray-500">{row.value}</p>
+                <div
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 800,
+                    fontSize: 22,
+                    color: WHITE,
+                    lineHeight: 1.1,
+                    letterSpacing: 1,
+                  }}
+                >
+                  UXCAMP
+                </div>
+                <div
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 400,
+                    fontSize: 18,
+                    color: WHITE,
+                    lineHeight: 1.1,
+                    letterSpacing: 1,
+                    marginBottom: 16,
+                  }}
+                >
+                  AMSTERDAM
+                </div>
+                <p
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 300,
+                    fontSize: 14,
+                    color: MID_GREY,
+                    margin: 0,
+                  }}
+                >
+                  All eXperiences start with yoU!
+                </p>
+              </div>
+
+              <ul
+                className="uxc-footer-nav"
+                style={{
+                  listStyle: "none",
+                  margin: 0,
+                  padding: 0,
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "12px 24px",
+                }}
+              >
+                {footerNav.map((item) => (
+                  <li key={item.label}>
+                    <Link href={item.href}>{item.label}</Link>
+                  </li>
+                ))}
+              </ul>
+
+              <div>
+                <a
+                  href="https://www.instagram.com/uxcampamsterdam/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "block",
+                    fontFamily: FONT,
+                    fontWeight: 600,
+                    fontSize: 14,
+                    color: WHITE,
+                    marginBottom: 8,
+                  }}
+                >
+                  Instagram @uxcampamsterdam
+                </a>
+                <span
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 400,
+                    fontSize: 14,
+                    color: MID_GREY,
+                  }}
+                >
+                  #UXcampAMS26
+                </span>
               </div>
             </div>
-          ))}
-        </div>
-      </ContentSection>
 
-      {/* What to bring */}
-      <ContentSection>
-        <h2>What to bring</h2>
-        <ul className="mt-4 divide-y divide-[#ccc] border-t border-b border-[#ccc]">
-          {[
-            { icon: "🎫", label: "Ticket", value: "Have your Eventbrite ticket ready on your phone or printed. We scan at the door." },
-            { icon: "☕", label: "Your cup", value: "The venue doesn't allow disposable cups. Bring a reusable water bottle and coffee tumbler. Water fountains and coffee machines are available on site." },
-            { icon: "🍱", label: "Lunch", value: "Catering details to be confirmed — check back closer to the event." },
-            { icon: "🔌", label: "Adapter (if presenting)", value: "All rooms have HDMI and USB-C. Bring your own adapter just in case, and download anything you need in advance — venue Wi-Fi can be unpredictable." },
-          ].map((item) => (
-            <li key={item.label} className="flex gap-4 py-4">
-              <span className="text-xl shrink-0 pt-0.5">{item.icon}</span>
-              <div>
-                <p className="text-sm font-bold uppercase tracking-wider mb-1">{item.label}</p>
-                <p className="text-sm text-gray-500">{item.value}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </ContentSection>
+            <div
+              style={{
+                marginTop: 48,
+                paddingTop: 24,
+                borderTop: `1px solid ${MID_GREY}`,
+                fontFamily: FONT,
+                fontWeight: 400,
+                fontSize: 13,
+                color: MID_GREY,
+              }}
+            >
+              © 2026 UX Camp Amsterdam
+            </div>
+          </div>
 
-      {/* Day schedule */}
-      <ContentSection alt>
-        <h2>What's happening on the day</h2>
-        <ul className="mt-4 divide-y divide-[#ccc] border-t border-b border-[#ccc]">
-          {daySchedule.map((item) => (
-            <li key={item.time} className="py-4 grid grid-cols-[180px_1fr] gap-4 text-sm">
-              <span className="font-bold text-[#B20101] uppercase tracking-wider">{item.time}</span>
-              <span className="text-gray-600">{item.label}</span>
-            </li>
-          ))}
-        </ul>
-      </ContentSection>
-
-      {/* Accessibility */}
-      <ContentSection>
-        <h2>We want everyone to feel comfortable</h2>
-        <p className="mb-4">A few things worth knowing before the day:</p>
-        <ul className="space-y-2">
-          {[
-            "Quiet room available all day — no sign-up needed",
-            "Nursing room available — check at the registration desk on arrival",
-            "Please use the mic during sessions — the person at the back will thank you",
-          ].map((item) => (
-            <li key={item} className="flex gap-3 text-sm text-gray-600">
-              <span className="text-[#B20101] font-bold shrink-0">—</span>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </ContentSection>
-
-      {/* Closing */}
-      <ContentSection alt>
-        <h2>Now it's over to you</h2>
-        <p>
-          We've been working behind the scenes for months to get to today. When those doors open,
-          it's yours — to connect, share, and bring your best to the UX community. We can't wait.
-        </p>
-        <p className="mt-4 font-semibold">See you tomorrow. 🧡</p>
-        <p className="mt-2 text-sm text-gray-400 tracking-widest uppercase">#UXcampAMS26</p>
-      </ContentSection>
+          <style>{`
+            @media (max-width: 900px) {
+              .uxc-footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+            }
+          `}</style>
+        </footer>
+      </div>
     </main>
   );
 }

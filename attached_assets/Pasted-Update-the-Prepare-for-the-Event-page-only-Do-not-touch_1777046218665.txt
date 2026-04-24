@@ -1,0 +1,118 @@
+Update the Prepare for the Event page only. Do not touch the homepage, About page, Sponsorship page, Running a Session page, any other pages, backend files, or routing. Match the existing page styling exactly — Open Sans font, colors only #B20101 / #333333 / #F5F5F5 / #CCCCCC / #FFFFFF, no rounded corners anywhere (border-radius: 0), no gradients, no shadows, same card style, same section padding. This page is meant to be read on a phone on the morning of the event — every section must be scannable, practical, and use short paragraphs or lists. No walls of text. Use the exact headings and copy written below. Do not rename, reword, or summarise any text.
+
+STICKY NAV
+Same sticky navigation as all other pages — #333333 bg, UXCAMP AMSTERDAM logo left, nav links right, Grab your ticket → button in #B20101 far right.
+
+SECTION 1 — HERO
+Background: #333333
+Padding: 100px 5% 80px — do NOT use 100vh, let content set the height
+
+Small label above heading: July 4, 2026 — #B20101, Open Sans Light, 13px, uppercase, letter-spacing 2px
+Heading: See you on July 4th! Here's everything you need. — white, Open Sans Extra Bold, clamp(32px, 4.5vw, 56px), max-width 780px
+Subheading: We're so excited to welcome you to #UXcampAMS26. Here's a quick guide to help your day run smoothly. — #CCCCCC, Open Sans Light, 18px, max-width 640px
+
+
+SECTION 2 — TIME & LOCATION
+Background: #F5F5F5
+
+Small label above heading: Where and when — #B20101, 13px, uppercase, letter-spacing 2px
+Heading: Time & location — #333333, Extra Bold, 32px
+
+Two-column layout (60/40 desktop, stacked mobile):
+Left column — label-value pairs displayed as a clean definition list. Each row: label on the left in #CCCCCC Semi Bold 13px uppercase, value on the right in #333333 Regular 16px. border-bottom: 1px solid #CCCCCC, padding 14px 0 per row:
+
+Date · Saturday, July 4, 2026
+Doors open · 9:30 — Registration closes at 12:30
+Venue · HvA Corry Tendeloohuis (CTH)
+Address · Fraijlemaborg 133, 1102 CV Amsterdam
+
+Below the definition list, one link button (outline style — 2px solid #B20101, #B20101 text, white bg, border-radius: 0, padding 10px 24px, Semi Bold): Get directions → — placeholder href, to be updated with Google Maps link before publishing.
+Right column — a placeholder map box: #CCCCCC bg, min-height 280px, border-radius: 0, centered content: map pin icon (use a simple CSS triangle or ▼ character in #B20101 32px) above the text Map embed — add Google Maps iframe before publishing in #CCCCCC italic 14px.
+Below the two columns, full-width placeholder: #F5F5F5 bg, 1px solid #CCCCCC, padding 20px, centered text in #CCCCCC italic 14px: Floor plan — add simple venue diagram showing session rooms, registration desk, Portfolio Review Corner, Insight Wall, Micro-Exhibition Space, quiet room, and nursing room.
+
+SECTION 3 — GETTING THERE
+Background: #FFFFFF
+
+Heading: Getting there — #333333, Extra Bold, 32px
+
+Three transport cards in a horizontal row (desktop), stacked (mobile). Each card: #F5F5F5 bg, 1px solid #CCCCCC, border-radius: 0, 4px solid #B20101 top border, padding 28px.
+Card 1 — Metro / Train
+
+Icon: 🚇
+Title: Metro / Train — Semi Bold, 18px
+Body: placeholder box in #FFFFFF, 1px solid #CCCCCC, padding 12px, italic #CCCCCC 14px text: Add nearest station + line number once venue is confirmed.
+
+Card 2 — Bike
+
+Icon: 🚲
+Title: Bike — Semi Bold, 18px
+Body: placeholder box same style: Add bike parking details near the venue once confirmed.
+
+Card 3 — Car
+
+Icon: 🚗
+Title: Car — Semi Bold, 18px
+Body: Public transport is easier — parking in Amsterdam on a summer Saturday is an adventure you don't need. — #333333, Regular, 16px (this one is confirmed copy, not a placeholder)
+
+
+SECTION 4 — WHAT TO BRING
+Background: #F5F5F5
+
+Small label above heading: Don't forget — #B20101, 13px, uppercase, letter-spacing 2px
+Heading: What to bring — #333333, Extra Bold, 32px
+
+Four items as a vertical list. Each item is a full-width row: white bg, 1px solid #CCCCCC, border-radius: 0, padding 24px 28px, border-left: 4px solid #B20101. Inside each row: icon on the left (32px), title in Semi Bold 17px #333333 beside it, body text in Regular 15px #333333 below the title. Use display: flex; gap: 20px; align-items: flex-start for layout.
+Item 1: Icon 🎫 · Title: Your ticket · Body: Have your Eventbrite ticket ready on your phone or printed. We scan at the door.
+Item 2: Icon ☕ · Title: Your own cup · Body: The venue doesn't allow disposable cups. Bring a reusable water bottle and coffee tumbler. Water fountains and coffee machines are available on site.
+Item 3: Icon 🍱 · Title: Lunch · Body placeholder: white inner box, 1px solid #CCCCCC, padding 12px, italic #CCCCCC 14px: Catering situation TBD — confirm with Vincent/Aletta before publishing.
+Item 4: Icon 🔌 · Title: Adapter (if presenting) · Body: Planning to show something? All rooms have HDMI and USB-C. Bring your own adapter just in case. And download anything you need in advance — venue Wi-Fi can be unpredictable.
+
+SECTION 5 — WHAT'S HAPPENING ON THE DAY
+Background: #FFFFFF
+
+Small label above heading: On the day — #B20101, 13px, uppercase, letter-spacing 2px
+Heading: What's happening — #333333, Extra Bold, 32px
+
+Display as a two-column grid (desktop) of scannable event cards, 1 column (mobile). Each card: #F5F5F5 bg, 1px solid #CCCCCC, border-radius: 0, padding 20px 24px. Time in #B20101 Semi Bold 13px uppercase at top, title in #333333 Semi Bold 16px below, description in #333333 Regular 14px below that.
+Card 1: Time: 10:00 · Title: Madness Session · Body: Where the day's programme gets built. Grab a pitch card if you want to run a session.
+Card 2: Time: 11:00+ · Title: Sessions · Body: Check the schedule board. Move between rooms freely.
+Card 3: Time: All day · Title: Portfolio Review Corner · Body: Sign up at the whiteboard for a 25-min review. Morning and afternoon slots.
+Card 4: Time: All day · Title: Speed Networking · Body: Join a table, grab a prompt card. Meet a lot of people in a short amount of time.
+Card 5: Time: All day · Title: Insight Wall · Body: Add your thoughts to the prompts on the wall. Open all day.
+Card 6: Time: All day · Title: UX Therapy Booth · Body: Write something anonymously. Hear it read back later.
+Card 7: Time: All day · Title: Micro-Exhibition · Body: Browse anytime — startups, student work, UX games, book exchange.
+Card 8: Time: 17:00 · Title: Closing · Body: Highlights, thank yous, prizes.
+Card 9 — make this card stand out: #333333 bg instead of #F5F5F5, white time text, white title text, #CCCCCC body text. Time: 17:15 · Title: After party 🎉 · Body: placeholder inner box with white border 1px solid #CCCCCC opacity 30%, italic white 14px text: After party venue details — confirm with Vincent before publishing.
+
+SECTION 6 — ACCESSIBILITY
+Background: #F5F5F5
+
+Heading: We want everyone to feel comfortable — #333333, Extra Bold, 32px
+Subheading: A few things worth knowing before the day: — #333333, Regular, 16px
+
+Three items displayed as a horizontal row of cards (desktop), stacked (mobile). Each card: white bg, 1px solid #CCCCCC, border-radius: 0, 4px solid #333333 top border, padding 28px. Icon 32px at top, title Semi Bold 17px, body Regular 15px #333333.
+Card 1: Icon 🤫 · Title: Quiet room · Body: Available all day — no sign-up needed.
+Card 2: Icon 🤱 · Title: Nursing room · Body: Available on the day — check at the registration desk on arrival.
+Card 3: Icon 🎤 · Title: Please use the mic · Body: During sessions, please use the microphone — the person at the back will thank you.
+Below the three cards, a centered placeholder note in #CCCCCC italic 14px: Room locations to be confirmed with Greg and Vincent before publishing.
+
+SECTION 7 — CLOSING MESSAGE
+Background: #333333, full width, padding 80px 5%
+
+Centered white heading: Now it's over to you — Extra Bold, 36px
+White body text centered, max-width 600px, Light 18px, line-height 1.8: We've been working behind the scenes for months to get to today. When those doors open, it's yours — to connect, share, and bring your best to the UX community. We can't wait.
+Sign-off line centered, #B20101 Semi Bold 17px: See you tomorrow. 🧡
+Hashtag below in #CCCCCC Light 15px, letter-spacing 2px: #UXcampAMS26
+
+
+FOOTER
+Exact same footer as all other pages — #333333 bg, three columns: UXCAMP AMSTERDAM logo + tagline All eXperiences start with yoU! left · nav links center · Instagram @uxcampamsterdam + #UXcampAMS26 right. Bottom bar: © 2026 UX Camp Amsterdam in #CCCCCC 13px.
+
+GLOBAL — DO NOT CHANGE:
+
+No other pages touched
+No rounded corners anywhere on this page
+No gradients or shadows
+Only Open Sans, only the five brand colors
+Keep all existing nav links and routing intact
+Every section must be fully responsive — readable and scannable on a mobile phone
