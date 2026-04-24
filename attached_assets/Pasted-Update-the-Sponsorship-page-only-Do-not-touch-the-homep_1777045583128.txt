@@ -1,0 +1,121 @@
+Update the Sponsorship page only. Do not touch the homepage, About page, any other pages, backend files, or routing. Match the homepage and About page styling exactly — Open Sans font, colors only #B20101 / #333333 / #F5F5F5 / #CCCCCC / #FFFFFF, no rounded corners anywhere (border-radius: 0), no gradients, no shadows, same card style, same section padding. Use the exact headings and copy written below. Do not rename, reword, or summarise any text.
+
+STICKY NAV
+Same sticky navigation as homepage — #333333 bg, UXCAMP AMSTERDAM logo left, nav links right, Grab your ticket → button in #B20101 far right.
+
+SECTION 1 — HERO
+Background: #333333
+Padding: 100px 5% 80px — do NOT use 100vh, let content set the height
+
+Heading: Help make UX Camp happen. Get in front of the people who build digital Amsterdam. — white, Open Sans Extra Bold, clamp(32px, 4.5vw, 56px), max-width 780px
+Subheading: UXcamp Amsterdam is a non-profit, volunteer-run event. We rely on sponsors to make it happen and in return, you get direct access to a genuinely engaged UX community. — #CCCCCC, Open Sans Light, 18px, max-width 640px
+One CTA button: Get in touch → — #B20101 bg, white text, Open Sans Semi Bold uppercase, border-radius: 0, padding 14px 36px
+
+
+SECTION 2 — WHO COMES?
+Background: #F5F5F5
+
+Heading: 150+ UX professionals. Every kind of discipline. — #333333, Extra Bold, 32px
+Body: Our audience spans the full UX field, designers, researchers, product managers, developers, data scientists, service designers. Most are individual contributors at mid-to-senior level, split roughly equally between agency and in-house teams. — #333333, Regular, 16px, line-height 1.7, max-width 680px
+Below the body, one standout stat line in a left-bordered box (4px solid #B20101, white bg, padding 24px 28px): The organising team also runs the AmsterdamUX community — 5,700+ members, 190+ events. — Open Sans Semi Bold, #333333, 17px
+
+
+SECTION 3 — WHY SPONSOR?
+Background: #FFFFFF
+
+Heading: What sponsoring gets you — #333333, Extra Bold, 32px
+Intro sentence: UXcampAMS is where Amsterdam's UX community actually shows up. Here's what sponsoring gets you. — #333333, Regular, 16px
+
+Five benefit items below, displayed as a clean vertical list. Each item is a row with a #B20101 filled square bullet (12px) on the left and the text on the right, #333333 Regular 16px, border-bottom: 1px solid #CCCCCC, padding 16px 0:
+
+Your brand in the room with Amsterdam's UX community
+Direct access to designers, researchers, PMs, and developers
+Employer brand visibility with mid-to-senior practitioners
+Connections with UX talent for hiring or partnerships
+A chance to genuinely support the community — not just market to it
+
+
+SECTION 4 — SPONSORSHIP TIERS
+Background: #F5F5F5
+
+Heading: Sponsorship tiers — #333333, Extra Bold, 32px, centered
+Subtext below heading: Three ways to get involved. All help make UX Camp happen. — #CCCCCC, Light, 16px, centered
+
+Three tier cards stacked vertically (full width, not side by side — these are detailed and need room to breathe). Each card: white bg, 1px solid #CCCCCC, border-radius: 0, padding 36px 40px. Left side has tier name + price, right side has description + includes list. On desktop use a two-column layout inside each card (60/40 split). On mobile stack vertically.
+Card 1 — Main Sponsor
+
+Top label pill: Limited to 4 slots — #B20101 bg, white text, 11px uppercase, border-radius: 0, padding 4px 12px
+Tier name: Main Sponsor — #333333, Extra Bold, 24px
+Price: €3,025 — #B20101, Extra Bold, 36px
+Description: Main sponsors gain maximum visibility of their brand before, during, and after the camp to engage with attendees.
+Includes label: What's included: — #333333, Semi Bold, 14px uppercase, letter-spacing 1px
+Includes list (each item as a row with #B20101 square bullet):
+
+Mentioning on the website
+Exposure on social media (dedicated post introducing the company)
+Stand at the venue
+2 min onstage at opening
+Branded room (on schedule, banners in the rooms)
+Mention in follow-up email to participants
+5 tickets
+
+
+Top border accent: 4px solid #B20101
+
+Card 2 — Event Sponsor
+
+Top label pill: Multiple slots available — #333333 bg, white text, same pill style
+Tier name: Event Sponsor — #333333, Extra Bold, 24px
+Price: €1,210 — #B20101, Extra Bold, 36px
+Description: Event sponsors get a physical presence at the camp to engage with attendees during and after the event.
+Includes list:
+
+Mentioning on the website
+Stand at the venue
+Mentioning in follow-up email to participants
+3 tickets
+
+
+Top border accent: 4px solid #333333
+
+Card 3 — Product Sponsor
+
+Top label pill: Multiple slots available — #333333 bg, white text, same pill style
+Tier name: Product Sponsor — #333333, Extra Bold, 24px
+Price: Min. value of €121 — #B20101, Extra Bold, 28px
+Description: Product sponsors award the community through product donations for best contributions during camp.
+Includes list:
+
+Mentioning on the website
+Products given out as prizes for best talks, workshops, discussions and/or in raffle/lottery at closing session
+
+
+Top border accent: 4px solid #CCCCCC
+
+
+SECTION 5 — PREVIOUS SPONSORS
+Background: #FFFFFF
+
+Heading: We've been supported by some great companies — #333333, Extra Bold, centered
+Display a placeholder logo grid: a 4-column responsive grid of empty boxes, each 160px × 80px, 1px solid #CCCCCC, bg #F5F5F5, centered text inside reading Sponsor logo in #CCCCCC, 13px. Add a note below the grid in #CCCCCC italic 14px: Logo grid — add past sponsor logos here before publishing.
+
+
+SECTION 6 — GET IN TOUCH
+Background: #B20101, full width
+
+Centered white heading: Interested? Let's talk. — Extra Bold, 36px
+White subtext: Reach out and we'll send you the full sponsorship deck. — Light, 18px
+One button: Get in touch → — white bg, #B20101 text, border-radius: 0, Extra Bold uppercase, padding 14px 36px
+Below the button, a placeholder line in white at 60% opacity, 14px: sponsor@uxcampams.com — add final contact email before publishing
+
+
+FOOTER
+Exact same footer as homepage — #333333 bg, three columns: UXCAMP AMSTERDAM logo + tagline All eXperiences start with yoU! left · nav links center · Instagram @uxcampamsterdam + #UXcampAMS26 right. Bottom bar: © 2026 UX Camp Amsterdam in #CCCCCC 13px.
+
+GLOBAL — DO NOT CHANGE:
+
+No other pages touched
+No rounded corners anywhere on this page
+No gradients or shadows
+Only Open Sans, only the five brand colors
+Keep all existing nav links and routing intact
