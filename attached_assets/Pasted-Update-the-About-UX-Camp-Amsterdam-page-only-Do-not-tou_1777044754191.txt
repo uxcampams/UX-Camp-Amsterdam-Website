@@ -1,0 +1,100 @@
+Update the About UX Camp Amsterdam page only. Do not touch the homepage, any other pages, backend files, or routing. Match the homepage styling exactly — same fonts, same colors, same card style, same section padding. Use the exact headings and copy written below. Do not rename, reword, or summarise any text.
+
+BRAND & STYLE RULES — SAME AS HOMEPAGE
+
+Font: Open Sans from Google Fonts (Light 300, Regular 400, Semi Bold 600, Extra Bold 800)
+Colors only: #B20101 (red), #333333 (dark), #F5F5F5 (light grey), #CCCCCC (mid grey), #FFFFFF (white)
+No gradients, no shadows, no rounded corners anywhere (border-radius: 0 everywhere)
+Section inner content: max-width: 1200px; margin: 0 auto;
+All sections: minimum padding: 80px 5%
+Sticky nav same as homepage
+
+
+SECTION 1 — HERO
+Background: #333333
+
+Small tag above heading: How it works — #B20101, Open Sans Light, 13px, uppercase, letter-spacing 2px
+Heading: So, how does this all work? — white, Open Sans Extra Bold, clamp(36px, 5vw, 60px)
+Subheading: UXcampAMS is a one-day, non-profit BarCamp for UX designers, researchers, product thinkers and anyone who cares about building better experiences. Now in its 9th edition, it's made entirely by the community, for the community. — #CCCCCC, Open Sans Light, 18px, max-width 680px
+Hero padding: 100px 5% 80px — do NOT use 100vh, let content set the height
+
+
+SECTION 2 — WHAT IS A BARCAMP?
+Background: #F5F5F5
+Two-column layout (50/50 on desktop, stacked on mobile):
+
+Left column:
+
+Heading: No agenda. No speaker list. Just people with ideas. — #333333, Extra Bold, 28px
+Body paragraph 1: A BarCamp is an open, participant-driven event. There's no pre-announced programme. The agenda gets built on the day, by you, and everyone else in the room.
+Body paragraph 2: Every attendee is invited to pitch a session in the morning. Pitches are 30 seconds flat, we have a gong, and we use it. The audience votes by raising their hands, the organisers assign rooms and time slots, and the day begins.
+All body text: #333333, Open Sans Regular, 16px, line-height 1.7
+
+
+Right column:
+
+A styled blockquote box: left border 4px solid #B20101, background #FFFFFF, padding 28px, the text: "There are no spectators. Only contributors." in Open Sans Light, 22px, #333333. Below it in #CCCCCC 14px: The first rule of BarCamp.
+
+
+
+
+SECTION 3 — HOW THE DAY FLOWS
+Background: #FFFFFF
+
+Heading: How the day flows — centered, #333333, Extra Bold
+Vertical timeline layout: thin 2px solid #CCCCCC vertical line on the left, each entry is a row with the time on the left in #B20101 Semi Bold (80px min-width) and the description on the right in #333333 Regular. Add a 10px circle dot in #B20101 on the line for each entry.
+
+Timeline entries (use exactly these times and descriptions):
+TimeDescription9:30Doors open — registration, coffee, saying hi to strangers10:00Welcome & Madness Session — pitches, voting, live schedule built11:00Session rounds begin across all tracks12:30Lunch13:30Afternoon sessions15:00Break15:30Final session rounds17:00Closing — highlights, thank yous, prizes17:15After party — drinks, the best conversations of the day 🎉
+The last entry (17:15 After party) should stand out — make the description text #B20101 instead of #333333.
+
+SECTION 4 — WHAT'S NEW IN 2026
+Background: #F5F5F5
+
+Small tag: New in 2026 — pill, #B20101 bg, white text, 12px, border-radius: 0
+Heading: More ways to connect this year
+Body: We've added new formats alongside the usual sessions to make the day more hands-on and more fun.
+
+Six cards in a 3×2 grid (desktop), 1 column (mobile). Each card: white bg, 1px solid #CCCCCC, top border 4px solid #B20101, border-radius: 0, padding 28px. Icon large (32px) at top, title in Semi Bold below, body in Regular below that.
+Card 1: Icon 🗂 · Title: Portfolio Review Corner · Body: Bring your piece of work whether it's finished, messy, or in-progress. Get structured feedback from a peer or an experienced mentor in a dedicated 25-minute slot. Two slots: one in the morning, one after lunch. Sign up at the whiteboard on the day.
+Card 2: Icon ⚡ · Title: Speed Networking · Body: 5-minute rounds, prompt cards on every table, themed tables for researchers, freelancers, career switchers, and design leads. It sounds chaotic. It works incredibly well.
+Below the body, add three small pills in #F5F5F5 bg, 1px solid #CCCCCC, 10px 14px padding, 13px text:
+"What UX mistake taught you the most?" · "What skill are you building right now?" · "What's something you changed your mind about?"
+Card 3: Icon 🐟 · Title: Fishbowl Discussions · Body: Four chairs in the centre of the room. One always empty. Anyone can step in — but someone has to step out first. A rotating, open conversation with no moderator and no agenda.
+Card 4: Icon 📌 · Title: Insight Wall · Body: A shared wall with prompts you can add to all day. Take a post-it, add your thought, read what others are writing. By the end of the day it becomes something unexpectedly good.
+Below the body, three small pills same style as Card 2:
+"The future of UX is…" · "One thing I want to change Monday morning…" · "UX in Amsterdam needs…"
+Card 5: Icon 🛋 · Title: UX Therapy Booth · Body: Write something anonymously. "My PM doesn't understand research." "Stakeholders killed my best idea." A facilitator reads them out and responds, part humour, part solidarity, entirely real.
+Card 6: Icon 🔭 · Title: Micro-Exhibition Space · Body: A corner of the venue for local UX startups, student projects, a book exchange, UX games, and a career clinic. Drop in anytime during the day.
+
+SECTION 5 — SESSION FORMATS
+Background: #FFFFFF
+
+Intro line above heading: Sessions at UXcampAMS come in a few different shapes: — #CCCCCC, 14px
+Heading: What kinds of sessions can people run? — #333333, Extra Bold
+
+Four format cards in a 2×2 grid (desktop), 1 column (mobile). Same card style as above (white, 1px solid #CCCCCC, 4px solid #B20101 top, no radius, padding 28px). Each card has the format name as the title in Semi Bold and the description as body text.
+Card 1 — Talk / Presentation: Share knowledge on a topic you care about. Bring slides if you want, leave time for Q&A. Works best when you have a point of view, not just information.
+Card 2 — Case Study: Show what you did, what worked, what didn't, and what you'd do differently. The honest ones are always the best.
+Card 3 — Workshop: A hands-on session where people actually do something, apply a skill, solve a problem, make something together. Bring any specialist materials you need beyond paper and post-its.
+Card 4 — Structured Discussion: Bring a frame, some questions, and a point of view. Formats like World Café or Birds of a Feather work well. The key word is structured — open-ended discussions without a guide rarely land.
+Below the grid, a centered CTA link: Thinking about running one? → that links to the Running a Session page, in #B20101 Semi Bold.
+
+SECTION 6 — CTA BANNER
+Background: #B20101, full width
+
+Centered white heading: Ready to join? — Extra Bold, 36px
+White subtext: Saturday, July 4, 2026 · Amsterdam
+One button: Grab your ticket → — white bg, #B20101 text, border-radius: 0, Open Sans Extra Bold uppercase, padding 14px 36px
+
+
+FOOTER
+Same footer as homepage exactly — dark #333333 bg, three columns: logo + tagline left, nav links center, social right. Bottom bar: © 2026 UX Camp Amsterdam.
+
+GLOBAL — DO NOT CHANGE:
+
+No other pages touched
+No rounded corners anywhere
+No gradients or shadows
+Only Open Sans, only the five brand colors
+Keep the existing nav links and routing intact
