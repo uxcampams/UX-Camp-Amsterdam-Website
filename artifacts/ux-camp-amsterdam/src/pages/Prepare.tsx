@@ -19,24 +19,39 @@ const timeLocation = [
   { label: "Address", value: "Fraijlemaborg 133, 1102 CV Amsterdam" },
 ];
 
-type Transport = { icon: string; title: string; body: string; placeholder?: boolean };
+type Transport = { icon: string; title: string; body: React.ReactNode; placeholder?: boolean };
 
 const transport: Transport[] = [
   {
     icon: "🚇",
-    title: "Metro / Train",
-    body: "Add nearest station + line number once venue is confirmed.",
-    placeholder: true,
+    title: "By Metro / Train",
+    body: (
+      <>
+        <p style={{ margin: 0, marginBottom: 8, fontWeight: 600 }}>
+          Nearest Metro Station: Bullewijk (Metro 50 &amp; 54 — Orange Line)
+        </p>
+        <p style={{ margin: 0, marginBottom: 8 }}>From Amsterdam Central Station:</p>
+        <ul style={{ margin: 0, paddingLeft: 20 }}>
+          <li>Take Metro 54 (direction Gein) or Metro 50 (direction Gein)</li>
+          <li>Get off at Bullewijk station (approx. 15 minutes)</li>
+          <li>Walk 7–8 minutes</li>
+        </ul>
+      </>
+    ),
   },
   {
-    icon: "🚲",
-    title: "Bike",
-    body: "Add bike parking details near the venue once confirmed.",
-    placeholder: true,
+    icon: "🚴",
+    title: "By Bike",
+    body: (
+      <>
+        <p style={{ margin: 0, marginBottom: 4 }}>From Amsterdam Central Station</p>
+        <p style={{ margin: 0 }}>Time: 35–45 minutes</p>
+      </>
+    ),
   },
   {
     icon: "🚗",
-    title: "Car",
+    title: "By Car",
     body: "Public transport is easier — parking in Amsterdam on a summer Saturday is an adventure you don't need.",
   },
 ];
@@ -397,18 +412,17 @@ export default function Prepare() {
                       {t.body}
                     </div>
                   ) : (
-                    <p
+                    <div
                       style={{
                         fontFamily: FONT,
                         fontWeight: 400,
-                        fontSize: 16,
+                        fontSize: 15,
                         lineHeight: 1.6,
                         color: DARK,
-                        margin: 0,
                       }}
                     >
                       {t.body}
-                    </p>
+                    </div>
                   )}
                 </div>
               ))}
