@@ -209,6 +209,9 @@ export default function About() {
           <div style={{ ...innerWrap, textAlign: "left" }}>
             <p
               style={{
+                display: "inline-block",
+                background: WHITE,
+                padding: "6px 12px",
                 fontFamily: FONT,
                 fontWeight: 300,
                 fontSize: 13,

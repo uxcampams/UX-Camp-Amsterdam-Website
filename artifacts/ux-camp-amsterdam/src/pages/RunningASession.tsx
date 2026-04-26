@@ -198,6 +198,9 @@ export default function RunningASession() {
           <div style={innerWrap}>
             <p
               style={{
+                display: "inline-block",
+                background: WHITE,
+                padding: "6px 12px",
                 fontFamily: FONT,
                 fontWeight: 300,
                 fontSize: 13,
@@ -358,6 +361,9 @@ export default function RunningASession() {
           <div style={innerWrap}>
             <p
               style={{
+                display: "inline-block",
+                background: WHITE,
+                padding: "6px 12px",
                 fontFamily: FONT,
                 fontWeight: 300,
                 fontSize: 13,
@@ -574,6 +580,9 @@ export default function RunningASession() {
             >
               <p
                 style={{
+                  display: "inline-block",
+                  background: WHITE,
+                  padding: "6px 12px",
                   fontFamily: FONT,
                   fontWeight: 400,
                   fontSize: 12,

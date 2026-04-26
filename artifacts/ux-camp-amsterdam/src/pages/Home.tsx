@@ -307,6 +307,9 @@ export default function Home() {
           <div style={{ ...innerWrap, textAlign: "left" }}>
             <p
               style={{
+                display: "inline-block",
+                background: WHITE,
+                padding: "6px 12px",
                 fontFamily: FONT,
                 fontWeight: 300,
                 fontSize: 14,
@@ -404,6 +407,9 @@ export default function Home() {
           <div style={innerWrap}>
             <p
               style={{
+                display: "inline-block",
+                background: WHITE,
+                padding: "6px 12px",
                 fontFamily: FONT,
                 fontWeight: 600,
                 fontSize: 13,
