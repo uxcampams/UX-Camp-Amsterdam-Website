@@ -296,7 +296,7 @@ export default function Home() {
         {/* SECTION 1 — HERO (reduced height) */}
         <section
           style={{
-            backgroundImage: `linear-gradient(rgba(51,51,51,0.78), rgba(51,51,51,0.85)), url(${heroBg})`,
+            backgroundImage: `url(${heroBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
