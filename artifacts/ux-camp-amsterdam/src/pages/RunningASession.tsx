@@ -187,7 +187,7 @@ export default function RunningASession() {
         {/* SECTION 1 — HERO */}
         <section
           style={{
-            backgroundImage: `url(${heroBg})`,
+            backgroundImage: `linear-gradient(rgba(51,51,51,0.3), rgba(51,51,51,0.3)), url(${heroBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
