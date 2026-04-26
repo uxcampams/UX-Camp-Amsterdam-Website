@@ -1,0 +1,173 @@
+Prompt for UXcamp Amsterdam 2025 Website Update
+Context: Update the existing UXcamp Amsterdam 2025 website. The site uses plain HTML/CSS/vanilla JavaScript with a red/charcoal/white brand palette derived from the UXcamp logo.
+Page URL to Update: https://3f8a3655-82e1-4ee7-a535-8d804792c08d-00-11rmv0nopa75d.spock.replit.dev/previous/2025
+
+Required Updates:
+1. Hero Section
+
+Update year to "UX CAMP AMSTERDAM 2025"
+Update event date: July 4, 2025
+Update location: Hogeschool van Amsterdam
+
+2. Event Photos Section
+Replace existing photos with the following 2025 event photos:
+
+Photo 1: /uploads/UX_Camp_Amsterdam_2025.jpg (Audience with hands raised)
+Photo 2: /uploads/Polina_Popravka_UX_Camp_Amsterdam.jpeg (Organizers presenting schedule)
+
+Add captions or alt text describing the vibrant community and event atmosphere.
+3. "It Was Truly Special" Section
+Update testimonial text to reflect the 2025 event experience. Use authentic quotes from attendees if available, or create placeholder testimonials that capture:
+
+The energy and community spirit
+Value of the unconference format
+Quality of sessions and networking
+The AI-focused theme prominence
+
+4. Sessions Section
+Complete session list for UXcamp Amsterdam 2025:
+11:00 - 11:25
+
+Designing with AI - Creative AI by Andreas Kruszakim-Liborka
+How do I make that change? by Sneha Das
+My Path into Hearables: A journey in research & Design by Shih-Ching Chang
+The Future of UX Research in the Age of AI by Ataur Rahman
+
+11:30 - 11:55
+
+Evaluating AI (Med AI) + (Trust) + AI responses in Healthcare by Ujayan Dhar
+Speed Dating - A Fast Fun Way to Connect with Fellow UX Campers by Arunima Ved
+Rapid testing when you have no time by Karina Yugay
+Accessible by Research: A step-by-step UX and Human Factors Journey in Vision Assistive Tech by Yen Liu
+
+12:00 - 12:25
+
+How to keep your head cool while designing Complex interfaces by Vincent Vijn
+Mirror Anxiety by Lynn Huang
+From Chaos to Clarity: The Hidden Power of Design Systems by Anu (Anu Mod Ajith)
+The Role & Identity, Shift of A Designer by Luke Chen
+
+12:30 - 13:30: LUNCH
+13:30 - 13:55
+
+Intelligence Interfaces: The history of AI through UI by Aleksandar Papez
+Networking: From Awkward to Awesome by Evgenia Golubeva
+UX meets Learning Experience Design by Pedro Vaz
+Let's talk UX metrics by Denys Tserkomy
+
+14:00 - 14:25
+
+Designing AI Agents: What to Consider by Heather Bell
+Concept Diagrams by Peter Boersma
+3D Printing for UX Decision-Making by Natalia Romancheva
+UX for Social Impact by Iris & Claudia BG
+
+14:30 - 14:55
+
+Data Driven Design Beyond Inst: A Case Study on Responsible Value Based Design by Lade Tawak
+Journey into the World of Strategy: Moving from Execution to Strategy by Varsha Prasad
+Love, Prompt, Robot! - A human-AI interaction by Liu, Shao-Ying (Kenny)
+How to Make Complex Products and Projects Less Complicated by Gabriela Casagranda
+
+15:00 - 15:30: BREAK
+15:30 - 15:55
+
+From Designer to Founder, and Vice Versa by Chase Almuir
+Embody Brave Space: How to build courage within group dynamics? by Yihua/Amy
+How to handle stakeholder feedback during design reviews by Nicole Weber
+UXR + AI by Tatiana Sidorenkova
+
+16:00 - 16:25
+
+Closing Session
+
+Format sessions as a clean, scannable list maintaining readability on mobile and desktop.
+5. Sections to REMOVE Completely
+
+Presentation thumbnail gallery (Slides section)
+Location Sponsor section
+Giveaway Sponsor section
+
+6. Sections to KEEP
+
+Organizing Team section (update with 2025 team members if changed)
+"Will You Join Us" CTA section (update year to 2025)
+Newsletter signup section
+Footer with social links and credits
+
+
+Design Requirements:
+Color Palette (Consistent with Current Replit Site)
+
+Primary Red: Use the red from the UXcamp logo
+Charcoal/Dark Gray: For text and backgrounds
+White: For clean spacing and contrast
+Do NOT reference or copy the 2024 site design
+
+Design Consistency
+
+Follow the EXISTING Replit site's design system:
+
+Typography hierarchy (headings, body text, sizes)
+Spacing and padding patterns
+Button styles and hover states
+Section layouts and grid structure
+Navigation design
+Card/container styles (if used for sessions)
+
+
+Maintain the current site's visual language and components
+Keep the same responsive breakpoints already in use
+
+Responsive Design
+
+Ensure mobile-first approach
+Test on common breakpoints (320px, 768px, 1024px, 1440px)
+Optimize images for different screen sizes
+Ensure touch-friendly interactive elements (minimum 44x44px tap targets)
+
+Accessibility
+
+Use semantic HTML5 elements (<header>, <nav>, <main>, <section>, <article>, <footer>)
+Ensure sufficient color contrast (WCAG AA minimum)
+Add proper alt text to all images
+Ensure keyboard navigation works for all interactive elements
+Use ARIA labels where appropriate
+
+
+Technical Requirements:
+Code Structure
+
+HTML5: Clean, semantic markup
+CSS: Use CSS custom properties (variables) for colors and spacing
+JavaScript: Vanilla JS only, no frameworks
+Keep code modular and commented
+Minify assets for production
+
+Performance
+
+Optimize images (use WebP with fallbacks if possible)
+Lazy load images below the fold
+Minimize HTTP requests
+Inline critical CSS for above-the-fold content
+
+File Organization
+/previous/2025/
+  ├── index.html
+  ├── css/
+  │   └── styles.css
+  ├── js/
+  │   └── main.js
+  └── images/
+      ├── UX_Camp_Amsterdam_2025.jpg
+      └── Polina_Popravka_UX_Camp_Amsterdam.jpeg
+
+Key Points to Remember:
+
+✅ Follow the EXISTING Replit site design - not the 2024 reference
+✅ Use the 2 provided 2025 photos
+✅ Include ALL 20+ sessions from the list above
+✅ Remove sponsor sections entirely
+✅ Maintain red/charcoal/white palette
+✅ Ensure mobile responsiveness
+✅ Keep vanilla JavaScript (no frameworks)
