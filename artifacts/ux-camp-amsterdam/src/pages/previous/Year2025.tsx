@@ -55,24 +55,6 @@ const team = [
   "Rita Costa Pereira",
 ];
 
-const testimonials = [
-  {
-    quote:
-      "The energy in the room was incredible. Hands shooting up for every pitch, conversations spilling into the corridors, people swapping LinkedIn URLs over coffee. This is what a real community feels like.",
-    attribution: "UXcampAMS 2025 attendee",
-  },
-  {
-    quote:
-      "AI was everywhere this year — not as a buzzword, but as something practitioners are actually wrestling with. Honest sessions about what works, what doesn't, and what we still don't know.",
-    attribution: "UXcampAMS 2025 attendee",
-  },
-  {
-    quote:
-      "The unconference format still surprises me. You walk in not knowing the schedule, and by 11am you've co-built a day full of sessions you genuinely want to be in.",
-    attribution: "UXcampAMS 2025 attendee",
-  },
-];
-
 const footerNav = [
   { label: "About", href: "/how-it-works" },
   { label: "Sessions", href: "/running-a-session" },
@@ -189,20 +171,6 @@ export default function Year2025() {
         {/* SECTION 1 — HERO */}
         <section style={{ background: DARK, color: WHITE, padding: "100px 5% 80px" }}>
           <div style={innerWrap}>
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 300,
-                fontSize: 13,
-                color: RED,
-                textTransform: "uppercase",
-                letterSpacing: 2,
-                margin: 0,
-                marginBottom: 24,
-              }}
-            >
-              Previous edition · 8th edition
-            </p>
             <h1
               style={{
                 fontFamily: FONT,
@@ -282,83 +250,6 @@ export default function Year2025() {
                   The crowd-built schedule going up on the boards after the Madness Session.
                 </figcaption>
               </figure>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 3 — IT WAS TRULY SPECIAL */}
-        <section style={{ background: WHITE, ...sectionPad }}>
-          <div style={innerWrap}>
-            <p className="uxc-eyebrow">Looking back</p>
-            <h2 className="uxc-h2" style={{ marginBottom: 12 }}>
-              It was truly special
-            </h2>
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 400,
-                fontSize: 16,
-                lineHeight: 1.7,
-                color: DARK,
-                margin: 0,
-                marginBottom: 32,
-                maxWidth: 820,
-              }}
-            >
-              UXcampAMS 2025 brought together 150+ designers, researchers, product thinkers and curious humans for a full day of pitches, sessions, and unfiltered conversations. The unconference format delivered, the AI conversations went deep, and the energy in the room reminded us why we keep doing this.
-            </p>
-
-            <div className="uxc-grid-3">
-              {testimonials.map((t, i) => (
-                <div
-                  key={i}
-                  style={{
-                    background: WHITE,
-                    border: `1px solid ${MID_GREY}`,
-                    borderTop: `4px solid ${RED}`,
-                    padding: 32,
-                  }}
-                >
-                  <div
-                    aria-hidden="true"
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 800,
-                      fontSize: 48,
-                      lineHeight: 1,
-                      color: RED,
-                      marginBottom: 16,
-                    }}
-                  >
-                    "
-                  </div>
-                  <p
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 300,
-                      fontSize: 17,
-                      lineHeight: 1.7,
-                      color: DARK,
-                      margin: 0,
-                      marginBottom: 16,
-                    }}
-                  >
-                    {t.quote}
-                  </p>
-                  <div
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 600,
-                      fontSize: 13,
-                      color: MID_GREY,
-                      textTransform: "uppercase",
-                      letterSpacing: 1,
-                    }}
-                  >
-                    — {t.attribution}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
