@@ -320,7 +320,7 @@ export default function Prepare() {
 
                 <div style={{ marginTop: 24 }}>
                   <a
-                    href="https://maps.google.com/?q=Fraijlemaborg+133+Amsterdam"
+                    href="https://share.google/yLOQSabwIkGrJnmXW"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="uxc-btn-outline"
@@ -330,40 +330,18 @@ export default function Prepare() {
                 </div>
               </div>
 
-              <div
-                style={{
-                  background: MID_GREY,
-                  minHeight: 280,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: 24,
-                  textAlign: "center",
-                }}
-              >
-                <div
-                  aria-hidden="true"
-                  style={{
-                    fontSize: 32,
-                    color: RED,
-                    lineHeight: 1,
-                    marginBottom: 12,
-                  }}
-                >
-                  ▼
-                </div>
-                <p
-                  style={{
-                    fontFamily: FONT,
-                    fontStyle: "italic",
-                    fontSize: 14,
-                    color: WHITE,
-                    margin: 0,
-                  }}
-                >
-                  Map embed — add Google Maps iframe before publishing
-                </p>
+              <div style={{ width: "100%", minHeight: 280 }}>
+                <iframe
+                  title="UX Camp Amsterdam venue map — Fraijlemaborg 133, 1102 CV Amsterdam"
+                  width="100%"
+                  height={600}
+                  frameBorder={0}
+                  scrolling="no"
+                  marginHeight={0}
+                  marginWidth={0}
+                  src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=%20Fraijlemaborg%20133,%201102%20CV%20Amsterdam+(undefined)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                  style={{ display: "block", border: 0 }}
+                />
               </div>
             </div>
 
