@@ -191,7 +191,7 @@ export default function Year2025() {
                 fontWeight: 300,
                 fontSize: 18,
                 lineHeight: 1.6,
-                color: MID_GREY,
+                color: WHITE,
                 margin: 0,
                 marginTop: 24,
                 maxWidth: 680,

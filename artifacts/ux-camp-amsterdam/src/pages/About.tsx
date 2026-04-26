@@ -245,7 +245,7 @@ export default function About() {
                 fontWeight: 300,
                 fontSize: 18,
                 lineHeight: 1.6,
-                color: MID_GREY,
+                color: WHITE,
                 marginTop: 24,
                 marginBottom: 0,
                 maxWidth: 680,

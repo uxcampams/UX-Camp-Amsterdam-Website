@@ -343,7 +343,7 @@ export default function Home() {
                 fontWeight: 300,
                 fontSize: 18,
                 lineHeight: 1.6,
-                color: MID_GREY,
+                color: WHITE,
                 marginTop: 24,
                 marginBottom: 40,
                 maxWidth: 680,
