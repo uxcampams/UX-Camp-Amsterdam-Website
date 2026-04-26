@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
+import heroBg from "../../assets/images/Sponsorship_hero.jpg";
 
 const RED = "#B20101";
 const DARK = "#333333";
@@ -179,7 +180,16 @@ export default function Sponsorship() {
 
       <div className="uxc-sponsor">
         {/* SECTION 1 — HERO */}
-        <section style={{ background: DARK, color: WHITE, padding: "100px 5% 80px" }}>
+        <section
+          style={{
+            backgroundImage: `linear-gradient(rgba(51,51,51,0.78), rgba(51,51,51,0.85)), url(${heroBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            color: WHITE,
+            padding: "100px 5% 80px",
+          }}
+        >
           <div style={innerWrap}>
             <h1
               style={{

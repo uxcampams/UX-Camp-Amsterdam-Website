@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 
+import heroBg from "../../assets/images/Home_hero.jpg";
 import photo1 from "../../assets/images/1000014612.jpg";
 import photo2 from "../../assets/images/1000014617.jpg";
 import photo3 from "../../assets/images/1000014623.jpg";
@@ -295,7 +296,10 @@ export default function Home() {
         {/* SECTION 1 — HERO (reduced height) */}
         <section
           style={{
-            background: DARK,
+            backgroundImage: `linear-gradient(rgba(51,51,51,0.78), rgba(51,51,51,0.85)), url(${heroBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
             color: WHITE,
             padding: "100px 5% 80px",
           }}
