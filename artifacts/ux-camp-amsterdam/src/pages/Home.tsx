@@ -21,7 +21,6 @@ const stats = [
   { value: "9th", label: "Edition" },
   { value: "150+", label: "Participants" },
   { value: "25+", label: "Sessions" },
-  { value: "4", label: "Tracks" },
 ];
 
 const howCards = [
