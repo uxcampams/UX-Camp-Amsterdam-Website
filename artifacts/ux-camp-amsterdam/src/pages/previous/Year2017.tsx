@@ -41,18 +41,6 @@ export default function Year2017() {
       </ContentSection>
 
       <ContentSection alt>
-        <h2>Photos</h2>
-        <p>Madness session, setup, sponsors &amp; activities, talks, mingling.</p>
-        <a
-          href="https://goo.gl/photos/NxyPfCmuV5FTzLGXA"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Download photos from Google Photos ↗
-        </a>
-      </ContentSection>
-
-      <ContentSection>
         <h2>Slides</h2>
         <p>
           Still waiting for a number of slide packs from presenters. If you presented and your slides
@@ -62,7 +50,7 @@ export default function Year2017() {
         <SessionCardList sessions={slides} />
       </ContentSection>
 
-      <ContentSection alt>
+      <ContentSection>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>

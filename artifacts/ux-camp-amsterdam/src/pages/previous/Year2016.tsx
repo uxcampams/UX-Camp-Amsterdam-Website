@@ -89,20 +89,20 @@ export default function Year2016() {
       </ContentSection>
 
       <ContentSection alt>
-        <h2>Presentations</h2>
-        <p>A selection of slide decks from the day:</p>
-        <SessionCardList sessions={slides} />
-      </ContentSection>
-
-      <ContentSection>
         <PhotoGrid images={photos} yearShort="16" seeAllHref="#" />
         <p style={{ marginTop: 16 }}>
           Special thanks to Den Tserkovnyi &amp; Filip Mishevski for the photos.
         </p>
       </ContentSection>
 
+      <ContentSection>
+        <h2>Slides</h2>
+        <p>A selection of slide decks from the day:</p>
+        <SessionCardList sessions={slides} />
+      </ContentSection>
+
       <ContentSection alt>
-        <h2>Sponsors</h2>
+        <h2>Supported by</h2>
         <div
           style={{
             marginTop: 16,

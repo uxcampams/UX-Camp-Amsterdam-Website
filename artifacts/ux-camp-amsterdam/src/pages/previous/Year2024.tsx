@@ -77,24 +77,12 @@ export default function Year2024() {
       </ContentSection>
 
       <ContentSection alt>
-        <h2>Impressions from #UXcampAMS24</h2>
-        <p>Photo gallery coming soon.</p>
-        <a
-          href="https://www.instagram.com/uxcampamsterdam/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Follow @uxcampamsterdam for regular visual updates ↗
-        </a>
-      </ContentSection>
-
-      <ContentSection>
-        <h2>36 sessions</h2>
+        <h2>Sessions</h2>
         <SessionCardList sessions={sessions} />
       </ContentSection>
 
-      <ContentSection alt>
-        <h2>Sponsors</h2>
+      <ContentSection>
+        <h2>Supported by</h2>
         <div
           style={{
             marginTop: 16,
@@ -108,7 +96,7 @@ export default function Year2024() {
               key={s}
               style={{
                 display: "inline-block",
-                background: "#FFFFFF",
+                background: "#F5F5F5",
                 border: "1px solid #CCCCCC",
                 padding: "8px 16px",
                 fontFamily: '"Open Sans", system-ui, sans-serif',
@@ -123,7 +111,7 @@ export default function Year2024() {
         </div>
       </ContentSection>
 
-      <ContentSection>
+      <ContentSection alt>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>

@@ -1,0 +1,27 @@
+Make the following specific fixes only. Do not change anything else.
+
+FIX 1 — PREVIOUS YEAR 2025 PAGE: Remove duplicate CTA
+There are currently two red CTA banners on the 2025 page — "Will you join us in 2026?" and "Ready to join?". Remove the top one ("Will you join us in 2026?" with the subtext about the 9th edition). Keep only the bottom "Ready to join?" banner with Saturday, July 4, 2026 · Amsterdam and the Grab your ticket → button. Also remove the "Get updates about UXcampAMS 2026" email signup section between the two CTAs entirely.
+
+FIX 2 — ALL PREVIOUS YEAR PAGES: Enforce consistent section order
+On every previous year page (2015, 2016, 2017, 2018, 2019, 2023, 2024, 2025) restructure the page so sections always appear in this exact order. Skip any section cleanly if the content doesn't exist for that year — do not show a placeholder or empty box for it:
+
+Hero — year, date, venue, intro heading and paragraph if available. If no intro paragraph exists for that year, skip it and go straight to the next section.
+Impressions — photo grid (6 photos, 3×2, aspect-ratio: 4/3, object-fit: cover) with heading Impressions from #UXcampAMS[YY] and a See all photos → link below. If no photos exist for that year, skip this section entirely.
+Sessions / Slides — session list as cards or slides as a list, whichever exists for that year. Heading: Sessions if it's a full list, Slides if only slide links are available. If neither exists, skip.
+Sponsors — sponsor logos if image assets exist, otherwise sponsor names as text pills (#F5F5F5 bg, 1px solid #CCCCCC, border-radius: 0, padding 8px 16px). Section heading: Supported by. If no sponsor info exists, skip.
+Organising team — team member cards in the same format as the 2026 team on the homepage: circular #B20101 initials avatar, name in Semi Bold, role in Regular below. If no team info exists, skip.
+Ready to join? CTA banner — #B20101 bg, Ready to join? heading, Saturday, July 4, 2026 · Amsterdam subtext, Grab your ticket → button. This appears on every previous year page without exception.
+
+Do not add, invent, or move any content between year pages — only reorder what already exists on each page into this structure.
+
+FIX 3 — HOMEPAGE: Remove "@uxcampamsterdam" from team section
+In the "The people behind UXcampAMS26" section, remove the @uxcampamsterdam or @ UX Camp Amsterdam text that appears on the team member cards. Keep the name, role, and any LinkedIn links. Do not change anything else in that section.
+
+GLOBAL — DO NOT CHANGE:
+
+No other content, copy, images, links, or pages touched
+No rounded corners, no gradients, no shadows introduced
+Only Open Sans, only the five brand colors: #B20101 / #333333 / #F5F5F5 / #CCCCCC / #FFFFFF
+All existing routing and navigation intact
+

@@ -104,22 +104,7 @@ export default function Year2018() {
       </ContentSection>
 
       <ContentSection alt>
-        <h2>Photos</h2>
-        <p>
-          Big thanks to our audiovisual camp volunteers: Ans de Nijs, Kira Laktionov, Larissa Herbst,
-          Mark Kemper, Matthijs Rijken, Pimm de Hogeling, Scott Neilson and Thomas Beelen!
-        </p>
-        <a
-          href="https://www.instagram.com/uxcampamsterdam/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Follow @uxcampamsterdam ↗
-        </a>
-      </ContentSection>
-
-      <ContentSection>
-        <h2>28 sessions</h2>
+        <h2>Sessions</h2>
         {timeSlots.map((slot) => (
           <div key={slot.time} style={{ marginBottom: 32 }}>
             <p
@@ -140,8 +125,8 @@ export default function Year2018() {
         ))}
       </ContentSection>
 
-      <ContentSection alt>
-        <h2>Sponsors</h2>
+      <ContentSection>
+        <h2>Supported by</h2>
         <div
           style={{
             marginTop: 16,
@@ -155,7 +140,7 @@ export default function Year2018() {
               key={s}
               style={{
                 display: "inline-block",
-                background: "#FFFFFF",
+                background: "#F5F5F5",
                 border: "1px solid #CCCCCC",
                 padding: "8px 16px",
                 fontFamily: '"Open Sans", system-ui, sans-serif',
@@ -170,7 +155,7 @@ export default function Year2018() {
         </div>
       </ContentSection>
 
-      <ContentSection>
+      <ContentSection alt>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>

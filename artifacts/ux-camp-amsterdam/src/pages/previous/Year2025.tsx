@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "wouter";
 import CtaBanner from "@/components/CtaBanner";
 import photoAudience from "../../../assets/images/UX_Camp_Amsterdam_2025.jpg";
@@ -68,9 +68,6 @@ const footerNav = [
 ];
 
 export default function Year2025() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
   useEffect(() => {
     const globalFooter = document.querySelector("footer.footer") as HTMLElement | null;
     if (globalFooter) globalFooter.style.display = "none";
@@ -78,11 +75,6 @@ export default function Year2025() {
       if (globalFooter) globalFooter.style.display = "";
     };
   }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) setSubmitted(true);
-  };
 
   return (
     <main style={{ fontFamily: FONT, color: DARK }}>
@@ -371,124 +363,6 @@ export default function Year2025() {
                 );
               })}
             </div>
-          </div>
-        </section>
-
-        {/* SECTION 6 — WILL YOU JOIN US (CTA) */}
-        <section style={{ background: RED, color: WHITE, padding: "80px 5%" }}>
-          <div style={{ ...innerWrap, textAlign: "center" }}>
-            <h2
-              style={{
-                fontFamily: FONT,
-                fontWeight: 800,
-                fontSize: 36,
-                color: WHITE,
-                margin: 0,
-                marginBottom: 16,
-              }}
-            >
-              Will you join us in 2026?
-            </h2>
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 300,
-                fontSize: 18,
-                color: WHITE,
-                margin: "0 auto 32px",
-                maxWidth: 640,
-                lineHeight: 1.6,
-              }}
-            >
-              The 9th edition is happening Saturday, July 4, 2026. Come pitch a session, vote with your hands, or just show up and meet the community.
-            </p>
-            <Link
-              href="/"
-              style={{
-                display: "inline-block",
-                background: WHITE,
-                color: RED,
-                padding: "14px 36px",
-                fontFamily: FONT,
-                fontWeight: 800,
-                fontSize: 14,
-                letterSpacing: 1,
-                textTransform: "uppercase",
-                border: `2px solid ${WHITE}`,
-              }}
-            >
-              Grab your ticket →
-            </Link>
-          </div>
-        </section>
-
-        {/* SECTION 7 — NEWSLETTER */}
-        <section style={{ background: LIGHT_GREY, ...sectionPad }}>
-          <div style={{ ...innerWrap, maxWidth: 720, textAlign: "center" }}>
-            <p className="uxc-eyebrow" style={{ textAlign: "center" }}>
-              Stay in the loop
-            </p>
-            <h2 className="uxc-h2" style={{ marginBottom: 12 }}>
-              Get updates about UXcampAMS 2026
-            </h2>
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 400,
-                fontSize: 16,
-                lineHeight: 1.7,
-                color: DARK,
-                margin: 0,
-                marginBottom: 24,
-              }}
-            >
-              We send a few emails a year — when tickets open, when the venue is confirmed, and when the day gets close. No spam, ever.
-            </p>
-
-            {submitted ? (
-              <div
-                style={{
-                  background: WHITE,
-                  border: `1px solid ${MID_GREY}`,
-                  borderLeft: `4px solid ${RED}`,
-                  padding: 20,
-                  fontFamily: FONT,
-                  fontWeight: 600,
-                  fontSize: 15,
-                  color: DARK,
-                  textAlign: "left",
-                }}
-                role="status"
-              >
-                Thanks! We'll be in touch when there's news to share.
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                style={{
-                  display: "flex",
-                  gap: 8,
-                  flexWrap: "wrap",
-                  alignItems: "stretch",
-                }}
-              >
-                <label htmlFor="newsletter-email" style={{ position: "absolute", left: -9999 }}>
-                  Email address
-                </label>
-                <input
-                  id="newsletter-email"
-                  type="email"
-                  required
-                  placeholder="you@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="uxc-newsletter-input"
-                />
-                <button type="submit" className="uxc-btn-primary">
-                  Sign up →
-                </button>
-              </form>
-            )}
           </div>
         </section>
 

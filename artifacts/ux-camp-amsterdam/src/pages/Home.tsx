@@ -801,22 +801,10 @@ export default function Home() {
                       fontSize: 14,
                       color: DARK,
                       margin: 0,
-                      marginBottom: 4,
-                    }}
-                  >
-                    {member.role}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 400,
-                      fontSize: 13,
-                      color: MID_GREY,
-                      margin: 0,
                       marginBottom: 12,
                     }}
                   >
-                    @ UX Camp Amsterdam
+                    {member.role}
                   </p>
                   <a
                     href="https://www.linkedin.com/"

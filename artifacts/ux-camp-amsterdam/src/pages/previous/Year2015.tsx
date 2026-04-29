@@ -66,13 +66,13 @@ export default function Year2015() {
       </ContentSection>
 
       <ContentSection>
-        <h2>Presentations</h2>
+        <h2>Slides</h2>
         <p>A selection of slide decks from the day:</p>
         <SessionCardList sessions={slides} />
       </ContentSection>
 
       <ContentSection alt>
-        <h2>Sponsors</h2>
+        <h2>Supported by</h2>
         <div
           style={{
             marginTop: 16,

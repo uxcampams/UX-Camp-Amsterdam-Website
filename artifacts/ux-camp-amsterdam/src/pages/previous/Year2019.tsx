@@ -54,24 +54,12 @@ export default function Year2019() {
       </ContentSection>
 
       <ContentSection alt>
-        <h2>Session slides</h2>
+        <h2>Slides</h2>
         <SessionCardList sessions={slides} />
       </ContentSection>
 
       <ContentSection>
-        <h2>Photos</h2>
-        <p>Over 100 photographs from the event were shared on Instagram.</p>
-        <a
-          href="https://www.instagram.com/uxcampamsterdam/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Follow @uxcampamsterdam ↗
-        </a>
-      </ContentSection>
-
-      <ContentSection alt>
-        <h2>Sponsors</h2>
+        <h2>Supported by</h2>
         <div
           style={{
             marginTop: 16,
@@ -85,7 +73,7 @@ export default function Year2019() {
               key={s}
               style={{
                 display: "inline-block",
-                background: "#FFFFFF",
+                background: "#F5F5F5",
                 border: "1px solid #CCCCCC",
                 padding: "8px 16px",
                 fontFamily: '"Open Sans", system-ui, sans-serif',
@@ -100,7 +88,7 @@ export default function Year2019() {
         </div>
       </ContentSection>
 
-      <ContentSection>
+      <ContentSection alt>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>
