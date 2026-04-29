@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import logoSrc from "../../assets/UX_Camp_Amsterdam_Logo.png";
+import { TICKET_URL } from "../constants";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -31,7 +32,7 @@ export default function Navbar() {
           <ul className="navbar__links" aria-label="Desktop navigation">
             <li>
               <a
-                href="https://www.eventbrite.com/e/ux-camp-amsterdam-2026"
+                href={TICKET_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ticket"
@@ -104,7 +105,7 @@ export default function Navbar() {
         aria-label="Mobile navigation"
       >
         <a
-          href="https://www.eventbrite.com/e/ux-camp-amsterdam-2026"
+          href={TICKET_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-ticket"

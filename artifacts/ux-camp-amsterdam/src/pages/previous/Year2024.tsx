@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { TICKET_URL } from "../../constants";
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
@@ -87,7 +88,7 @@ export default function Year2024() {
         </p>
         <div className="mt-6">
           <a
-            href="https://www.eventbrite.com/e/ux-camp-amsterdam-2026"
+            href={TICKET_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
@@ -136,7 +137,7 @@ export default function Year2024() {
         <div className="mt-8 pt-6 border-t border-[#ccc]">
           <h3 className="text-sm font-bold uppercase tracking-wider mb-3">Will you join UX Camp Amsterdam 2026?</h3>
           <a
-            href="https://www.eventbrite.com/e/ux-camp-amsterdam-2026"
+            href={TICKET_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

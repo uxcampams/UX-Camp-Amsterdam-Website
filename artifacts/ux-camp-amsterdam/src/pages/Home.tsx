@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
-
+import { TICKET_URL } from "../constants";
 import heroBg from "../../assets/images/Home_hero.jpg";
 import photo1 from "../../assets/images/1000014612.jpg";
 import photo2 from "../../assets/images/1000014617.jpg";
@@ -338,7 +338,7 @@ export default function Home() {
 
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <a
-                href="https://www.eventbrite.com/e/ux-camp-amsterdam-2026"
+                href={TICKET_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="uxc-btn-primary"

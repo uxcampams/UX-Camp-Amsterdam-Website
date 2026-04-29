@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
+import { TICKET_URL } from "../constants";
 import heroBg from "../../assets/images/Running_a_session_hero.jpg";
 
 const RED = "#B20101";
@@ -664,7 +665,7 @@ export default function RunningASession() {
               Saturday, July 4, 2026 · Amsterdam
             </p>
             <a
-              href="https://www.eventbrite.com/e/ux-camp-amsterdam-2026"
+              href={TICKET_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="uxc-btn-on-red"
