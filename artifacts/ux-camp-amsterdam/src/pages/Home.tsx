@@ -461,8 +461,8 @@ export default function Home() {
               Here's how it works:
             </p>
 
-            <div className="uxc-grid-2" style={{ gap: 24 }}>
-              <div className="uxc-card">
+            <div className="uxc-grid-2" style={{ gap: 24, alignItems: "stretch" }}>
+              <div className="uxc-card" style={{ justifyContent: "flex-start", padding: 28 }}>
                 <h3
                   style={{
                     fontFamily: FONT,
@@ -470,7 +470,6 @@ export default function Home() {
                     fontSize: 17,
                     color: RED,
                     margin: 0,
-                    marginBottom: 12,
                     textTransform: "uppercase",
                     letterSpacing: 1,
                   }}
@@ -485,13 +484,14 @@ export default function Home() {
                     lineHeight: 1.7,
                     color: DARK,
                     margin: 0,
+                    marginTop: 16,
                   }}
                 >
                   You can volunteer for one task on the day — taking photos, taking notes, or helping reset the venue. Choose your task when buying your ticket.
                 </p>
               </div>
 
-              <div className="uxc-card">
+              <div className="uxc-card" style={{ justifyContent: "flex-start", padding: 28 }}>
                 <h3
                   style={{
                     fontFamily: FONT,
@@ -499,7 +499,6 @@ export default function Home() {
                     fontSize: 17,
                     color: RED,
                     margin: 0,
-                    marginBottom: 12,
                     textTransform: "uppercase",
                     letterSpacing: 1,
                   }}
@@ -514,6 +513,7 @@ export default function Home() {
                     lineHeight: 1.7,
                     color: DARK,
                     margin: 0,
+                    marginTop: 16,
                     marginBottom: 16,
                   }}
                 >

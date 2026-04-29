@@ -53,31 +53,12 @@ const steps: Step[] = [
     number: "4",
     title: "Pitch in the Madness Session",
     body: "At 10am, grab a pitch card, join the queue, and give your 30-second pitch. Tell us: what it's about, what people will take away, and whether it's for beginners or more experienced attendees. If you pitch, you get a slot. That's the deal.",
-    placeholder: "2026 pitch card template — add image here before publishing",
   },
   {
     number: "5",
     title: "Run it",
     body: "Arrive at your room a few minutes before your slot. Rooms have HDMI and USB-C, bring your own adapter if needed — we can't guarantee spares. Download anything you need beforehand; Wi-Fi can be slow. Keep an eye on time. Shorter sessions almost always land better. Break a leg.",
     pills: ["HDMI available", "USB-C available", "Bring your own adapter"],
-  },
-];
-
-const quotes = [
-  {
-    text: "I kept waiting until I had the perfect topic. Turns out the thing I was most unsure about was exactly what people wanted to talk about.",
-    name: "[Speaker name]",
-    role: "[Role], UXcampAMS 2024",
-  },
-  {
-    text: "30 seconds to pitch sounds terrifying. Then you do it and realise the hardest part is already over.",
-    name: "[Speaker name]",
-    role: "[Role], UXcampAMS 2024",
-  },
-  {
-    text: "The room was more generous than I expected. People genuinely want you to do well.",
-    name: "[Speaker name]",
-    role: "[Role], UXcampAMS 2023",
   },
 ];
 
@@ -470,102 +451,6 @@ export default function RunningASession() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* SECTION 4 — TIPS FROM PAST SPEAKERS */}
-        <section style={{ background: LIGHT_GREY, ...sectionPad }}>
-          <div style={innerWrap}>
-            <h2
-              style={{
-                fontFamily: FONT,
-                fontWeight: 800,
-                fontSize: 32,
-                color: DARK,
-                margin: 0,
-                marginBottom: 48,
-                textAlign: "center",
-              }}
-            >
-              From people who've done it
-            </h2>
-
-            <div className="uxc-grid-3">
-              {quotes.map((q, i) => (
-                <div
-                  key={i}
-                  style={{
-                    background: WHITE,
-                    border: `1px solid ${MID_GREY}`,
-                    borderTop: `4px solid ${RED}`,
-                    padding: 32,
-                  }}
-                >
-                  <div
-                    aria-hidden="true"
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 800,
-                      fontSize: 48,
-                      lineHeight: 1,
-                      color: RED,
-                      marginBottom: 16,
-                    }}
-                  >
-                    "
-                  </div>
-                  <p
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 300,
-                      fontSize: 17,
-                      lineHeight: 1.7,
-                      color: DARK,
-                      margin: 0,
-                      marginBottom: 24,
-                    }}
-                  >
-                    {q.text}
-                  </p>
-                  <div
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 600,
-                      fontSize: 14,
-                      color: DARK,
-                      marginBottom: 4,
-                    }}
-                  >
-                    {q.name}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 400,
-                      fontSize: 13,
-                      color: MID_GREY,
-                    }}
-                  >
-                    {q.role}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 400,
-                fontStyle: "italic",
-                fontSize: 14,
-                color: MID_GREY,
-                marginTop: 32,
-                marginBottom: 0,
-                textAlign: "center",
-              }}
-            >
-              Quotes to be refreshed with 2024/2025 speakers before publishing.
-            </p>
           </div>
         </section>
 
