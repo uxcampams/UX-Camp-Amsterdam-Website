@@ -417,7 +417,7 @@ export default function Home() {
                 maxWidth: 820,
               }}
             >
-              It's an unconference. There is no observer, only participants.
+              It's an unconference. There are no spectators. Only contributors.
             </h2>
             <p
               style={{
