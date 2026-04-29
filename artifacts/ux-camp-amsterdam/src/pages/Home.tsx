@@ -19,7 +19,7 @@ const FONT = "'Open Sans', sans-serif";
 
 const stats = [
   { value: "9th", label: "Edition" },
-  { value: "150+", label: "Participants" },
+  { value: "120+", label: "Participants" },
   { value: "25+", label: "Sessions" },
 ];
 
