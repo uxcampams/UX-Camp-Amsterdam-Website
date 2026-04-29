@@ -50,15 +50,22 @@ export default function Navbar() {
                 <li><Link href="/prepare-for-the-day">Prepare for the Day</Link></li>
               </ul>
             </li>
-            <li>
-              <a
-                href="https://www.instagram.com/uxcampamsterdam/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-link"
-              >
-                Updates ↗
-              </a>
+            <li className="nav-dropdown">
+              <button className="nav-link nav-link--dropdown" aria-haspopup="true">
+                Follow us ▾
+              </button>
+              <ul className="nav-dropdown__menu" aria-label="Follow us submenu">
+                <li>
+                  <a href="https://www.instagram.com/uxcampamsterdam/" target="_blank" rel="noopener noreferrer">
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/amsterdamux/" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                  </a>
+                </li>
+              </ul>
             </li>
             <li className="nav-dropdown">
               <button className="nav-link nav-link--dropdown" aria-haspopup="true">
@@ -109,7 +116,8 @@ export default function Navbar() {
         <Link href="/ux-camp-amsterdam-sponsorship" onClick={closeMenu}>Sponsorship</Link>
         <Link href="/running-a-session" onClick={closeMenu}>Running a Session</Link>
         <Link href="/prepare-for-the-day" onClick={closeMenu}>Prepare for the Day</Link>
-        <a href="https://www.instagram.com/uxcampamsterdam/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Updates ↗</a>
+        <a href="https://www.instagram.com/uxcampamsterdam/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Instagram</a>
+        <a href="https://www.linkedin.com/company/amsterdamux/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>LinkedIn</a>
         <Link href="/previous/2025" onClick={closeMenu}>UXcamp Ams '25</Link>
         <Link href="/2024-post-event" onClick={closeMenu}>UXcamp Ams '24</Link>
         <Link href="/uxcamp-ams-2023" onClick={closeMenu}>UXcamp Ams '23</Link>

@@ -638,41 +638,22 @@ export default function About() {
               </ul>
 
               <div>
-                <details style={{ marginBottom: 8 }}>
-                  <summary
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 600,
-                      fontSize: 14,
-                      color: WHITE,
-                      cursor: "pointer",
-                      listStyle: "none",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                    }}
-                  >
-                    Follow us ↓
-                  </summary>
-                  <div style={{ paddingTop: 10, display: "flex", flexDirection: "column", gap: 8 }}>
-                    <a
-                      href="https://www.instagram.com/uxcampamsterdam/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ fontFamily: FONT, fontWeight: 400, fontSize: 14, color: MID_GREY }}
-                    >
-                      Instagram @uxcampamsterdam
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/company/amsterdamux/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ fontFamily: FONT, fontWeight: 400, fontSize: 14, color: MID_GREY }}
-                    >
-                      LinkedIn Amsterdam UX
-                    </a>
-                  </div>
-                </details>
+                <a
+                  href="https://www.instagram.com/uxcampamsterdam/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "block", fontFamily: FONT, fontWeight: 600, fontSize: 14, color: WHITE, marginBottom: 8 }}
+                >
+                  Instagram @uxcampamsterdam
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/amsterdamux/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: "block", fontFamily: FONT, fontWeight: 600, fontSize: 14, color: WHITE, marginBottom: 8 }}
+                >
+                  LinkedIn Amsterdam UX
+                </a>
                 <span
                   style={{
                     fontFamily: FONT,
