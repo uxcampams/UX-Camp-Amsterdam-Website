@@ -25,12 +25,14 @@ const stats = [
 
 
 const newFormats = [
-  "Portfolio Review Corner",
-  "Speed Networking",
-  "Fishbowl Discussions",
-  "UX Therapy Booth",
-  "Insight Wall",
-  "Micro-Exhibition Space",
+  {
+    title: "Speed Networking",
+    body: "Back on popular demand! Fast, structured, actually useful.",
+  },
+  {
+    title: "Portfolio Review Corner",
+    body: "New to UX? Someone will have you back.",
+  },
 ];
 
 const audienceCards = [
@@ -528,7 +530,7 @@ export default function Home() {
                 marginBottom: 20,
               }}
             >
-              More ways to connect this year
+              What's New in 2026
             </h2>
             <p
               style={{
@@ -538,24 +540,43 @@ export default function Home() {
                 lineHeight: 1.7,
                 color: DARK,
                 margin: 0,
-                marginBottom: 32,
+                marginBottom: 40,
                 maxWidth: 820,
               }}
             >
-              We've added new formats alongside the usual sessions to make the day more hands-on and more fun.
+              Alongside the regular sessions, we've added new formats to make the day more hands-on:
             </p>
 
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 32 }}>
+            <div className="uxc-grid-2" style={{ gap: 24, marginBottom: 32 }}>
               {newFormats.map((f) => (
-                <span key={f} className="uxc-pill">
-                  {f}
-                </span>
+                <div key={f.title} className="uxc-card">
+                  <h3
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 700,
+                      fontSize: 17,
+                      color: DARK,
+                      margin: 0,
+                      marginBottom: 10,
+                    }}
+                  >
+                    {f.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 400,
+                      fontSize: 15,
+                      lineHeight: 1.6,
+                      color: DARK,
+                      margin: 0,
+                    }}
+                  >
+                    {f.body}
+                  </p>
+                </div>
               ))}
             </div>
-
-            <Link href="/how-it-works" className="uxc-link">
-              See what's happening →
-            </Link>
           </div>
         </section>
 
