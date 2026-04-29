@@ -434,6 +434,10 @@ export default function Home() {
               UX Camp Amsterdam is back for its 9th edition — a community-run unconference where you set the agenda, run the sessions, and shape the day. No keynotes. No panels. No passive sitting. Everyone contributes.
             </p>
 
+            <Link href="/how-it-works" className="uxc-link" style={{ display: "inline-block", marginBottom: 40 }}>
+              About UX Camp Amsterdam →
+            </Link>
+
             <p
               style={{
                 fontFamily: FONT,
