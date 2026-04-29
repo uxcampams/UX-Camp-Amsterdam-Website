@@ -1,0 +1,5 @@
+{
+  "buildCommand": "pnpm --filter @workspace/ux-camp-amsterdam run build",
+  "outputDirectory": "artifacts/ux-camp-amsterdam/",
+  "installCommand": "pnpm install"
+}
