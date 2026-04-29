@@ -182,7 +182,7 @@ export default function Sponsorship() {
         {/* SECTION 1 — HERO */}
         <section
           style={{
-            backgroundImage: `linear-gradient(rgba(51,51,51,0.3), rgba(51,51,51,0.3)), url(${heroBg})`,
+            backgroundImage: `linear-gradient(rgba(51,51,51,0.55), rgba(51,51,51,0.55)), url(${heroBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
