@@ -1,5 +1,5 @@
 {
-  "installCommand": "pnpm install --filter @workspace/ux-camp-amsterdam...",
+  "installCommand": "pnpm install --filter @workspace/ux-camp-amsterdam... --no-frozen-lockfile",
   "buildCommand": "pnpm --filter @workspace/ux-camp-amsterdam build",
   "outputDirectory": "artifacts/ux-camp-amsterdam/dist/public",
   "framework": null,
