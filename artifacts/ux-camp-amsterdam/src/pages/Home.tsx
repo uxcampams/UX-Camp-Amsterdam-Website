@@ -432,7 +432,7 @@ export default function Home() {
                 maxWidth: 820,
               }}
             >
-              It's an unconference. You're the speaker.
+              It's an unconference. You're the speaker and the audience.
             </h2>
             <p
               style={{
