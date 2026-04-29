@@ -548,6 +548,21 @@ export default function Year2025() {
                 >
                   Instagram @uxcampamsterdam
                 </a>
+                <a
+                  href="https://www.linkedin.com/company/amsterdamux/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "block",
+                    fontFamily: FONT,
+                    fontWeight: 600,
+                    fontSize: 14,
+                    color: WHITE,
+                    marginBottom: 8,
+                  }}
+                >
+                  LinkedIn Amsterdam UX
+                </a>
                 <span
                   style={{
                     fontFamily: FONT,
