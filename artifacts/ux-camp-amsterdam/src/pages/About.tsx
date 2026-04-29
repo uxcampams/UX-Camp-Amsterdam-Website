@@ -198,7 +198,7 @@ export default function About() {
         {/* SECTION 1 — HERO */}
         <section
           style={{
-            backgroundImage: `linear-gradient(rgba(51,51,51,0.7), rgba(51,51,51,0.7)), url(${heroBg})`,
+            backgroundImage: `linear-gradient(rgba(51,51,51,0.6), rgba(51,51,51,0.6)), url(${heroBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
