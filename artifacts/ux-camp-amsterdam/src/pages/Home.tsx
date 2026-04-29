@@ -841,11 +841,18 @@ export default function Home() {
                 href="https://www.instagram.com/uxcampamsterdam/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="uxc-social-pill"
+                className="uxc-btn-outline"
               >
-                @uxcampamsterdam
+                Instagram
               </a>
-              <span className="uxc-social-pill">#UXcampAMS26</span>
+              <a
+                href="https://www.linkedin.com/company/amsterdamux/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="uxc-btn-outline"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
         </section>
