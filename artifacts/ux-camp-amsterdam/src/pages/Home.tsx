@@ -26,7 +26,7 @@ const stats = [
 const howCards = [
   {
     icon: "🎤",
-    title: "Pitch something",
+    title: "Pitch something ",
     body: "30 seconds in the morning. That's all it takes to get a session slot. Talk, workshop, or discussion — your choice.",
   },
   {
