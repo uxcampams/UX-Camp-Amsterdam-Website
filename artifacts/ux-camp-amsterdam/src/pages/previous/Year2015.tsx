@@ -62,7 +62,7 @@ export default function Year2015() {
       </ContentSection>
 
       <ContentSection alt>
-        <PhotoGrid images={photos} yearShort="15" seeAllHref="#" />
+        <PhotoGrid images={photos} yearShort="15" seeAllHref="https://goo.gl/photos/82ZEwczoHbZfyT6R9" />
       </ContentSection>
 
       <ContentSection>

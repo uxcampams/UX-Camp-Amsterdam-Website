@@ -3,7 +3,6 @@ import { Link } from "wouter";
 import heroBg from "../../assets/images/Sponsorship_hero.jpg";
 import sponsorA4 from "../../assets/images/companies-logos/sponsor-a4.png";
 import sponsorAdyen from "../../assets/images/companies-logos/sponsor-adyen.png";
-import sponsorAdyen2015 from "../../assets/images/companies-logos/sponsor-adyen-2015.png";
 import sponsorIcemobile from "../../assets/images/companies-logos/sponsor-icemobile.png";
 import sponsorMarktplaats from "../../assets/images/companies-logos/sponsor-marktplaats.png";
 import sponsorMirabeau from "../../assets/images/companies-logos/sponsor-mirabeau.png";
@@ -13,7 +12,6 @@ import sponsorNomensa from "../../assets/images/companies-logos/sponsor-nomensa.
 const PAST_SPONSORS = [
   { src: sponsorA4, alt: "Amsterdam University of Applied Sciences" },
   { src: sponsorAdyen, alt: "Adyen" },
-  { src: sponsorAdyen2015, alt: "Adyen (2015)" },
   { src: sponsorIcemobile, alt: "IceMobile" },
   { src: sponsorMarktplaats, alt: "Marktplaats" },
   { src: sponsorMirabeau, alt: "Mirabeau" },
@@ -182,12 +180,10 @@ export default function Sponsorship() {
           width: auto;
           max-width: 160px;
           object-fit: contain;
-          filter: grayscale(100%);
           opacity: 0.7;
-          transition: filter 0.2s ease, opacity 0.2s ease;
+          transition: opacity 0.2s ease;
         }
         .uxc-logo-wall img:hover {
-          filter: grayscale(0%);
           opacity: 1;
         }
 

@@ -42,11 +42,32 @@ export default function Year2023() {
       </ContentSection>
 
       <ContentSection alt>
+        <h2>Impressions from #UXcampAMS23</h2>
+        <p style={{ marginTop: 24 }}>
+          <a
+            href="https://uxcampams.com/photos-23"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: '"Open Sans", system-ui, sans-serif',
+              fontWeight: 600,
+              fontSize: 14,
+              color: "#B20101",
+              textDecoration: "none",
+              letterSpacing: 0.5,
+            }}
+          >
+            See all photos from #UXcampAMS23 →
+          </a>
+        </p>
+      </ContentSection>
+
+      <ContentSection>
         <h2>Sessions</h2>
         <SessionCardList sessions={sessions} />
       </ContentSection>
 
-      <ContentSection>
+      <ContentSection alt>
         <h2>Supported by</h2>
         <div
           style={{
@@ -76,7 +97,7 @@ export default function Year2023() {
         </div>
       </ContentSection>
 
-      <ContentSection alt>
+      <ContentSection>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>

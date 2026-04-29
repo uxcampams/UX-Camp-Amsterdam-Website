@@ -41,6 +41,27 @@ export default function Year2017() {
       </ContentSection>
 
       <ContentSection alt>
+        <h2>Impressions from #UXcampAMS17</h2>
+        <p style={{ marginTop: 24 }}>
+          <a
+            href="https://goo.gl/photos/NxyPfCmuV5FTzLGXA"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: '"Open Sans", system-ui, sans-serif',
+              fontWeight: 600,
+              fontSize: 14,
+              color: "#B20101",
+              textDecoration: "none",
+              letterSpacing: 0.5,
+            }}
+          >
+            See all photos from #UXcampAMS17 →
+          </a>
+        </p>
+      </ContentSection>
+
+      <ContentSection>
         <h2>Slides</h2>
         <p>
           Still waiting for a number of slide packs from presenters. If you presented and your slides
@@ -50,7 +71,7 @@ export default function Year2017() {
         <SessionCardList sessions={slides} />
       </ContentSection>
 
-      <ContentSection>
+      <ContentSection alt>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>

@@ -104,6 +104,27 @@ export default function Year2018() {
       </ContentSection>
 
       <ContentSection alt>
+        <h2>Impressions from #UXcampAMS18</h2>
+        <p style={{ marginTop: 24 }}>
+          <a
+            href="https://uxcampams.com/uxcampams18-photos"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: '"Open Sans", system-ui, sans-serif',
+              fontWeight: 600,
+              fontSize: 14,
+              color: "#B20101",
+              textDecoration: "none",
+              letterSpacing: 0.5,
+            }}
+          >
+            See all photos from #UXcampAMS18 →
+          </a>
+        </p>
+      </ContentSection>
+
+      <ContentSection>
         <h2>Sessions</h2>
         {timeSlots.map((slot) => (
           <div key={slot.time} style={{ marginBottom: 32 }}>
@@ -125,7 +146,7 @@ export default function Year2018() {
         ))}
       </ContentSection>
 
-      <ContentSection>
+      <ContentSection alt>
         <h2>Supported by</h2>
         <div
           style={{
@@ -155,7 +176,7 @@ export default function Year2018() {
         </div>
       </ContentSection>
 
-      <ContentSection alt>
+      <ContentSection>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>
