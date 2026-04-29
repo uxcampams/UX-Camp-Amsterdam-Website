@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
+import SessionCardList from "@/components/SessionCardList";
+import CtaBanner from "@/components/CtaBanner";
 
 const timeSlots = [
   {
@@ -59,23 +61,24 @@ const timeSlots = [
 ];
 
 const team: Organizer[] = [
-
-
   { name: "Philipp Engel", role: "", linkedin: "#" },
-
-
   { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
-
-
   { name: "Gareth Simms", role: "", linkedin: "#" },
-
-
   { name: "Doron Hirsch", role: "", linkedin: "#" },
-
-
   { name: "Peter Boersma", role: "", linkedin: "#" },
+];
 
-
+const sponsors = [
+  "Ijsfontein",
+  "Adobe",
+  "UX Academy",
+  "Mirabeau",
+  "Happy Labs",
+  "Marktplaats",
+  "Nomensa",
+  "UXPressia",
+  "Rosenfeld Media",
+  "Sketch",
 ];
 
 export default function Year2018() {
@@ -102,7 +105,7 @@ export default function Year2018() {
 
       <ContentSection alt>
         <h2>Photos</h2>
-        <p className="text-sm text-gray-500 mb-3">
+        <p>
           Big thanks to our audiovisual camp volunteers: Ans de Nijs, Kira Laktionov, Larissa Herbst,
           Mark Kemper, Matthijs Rijken, Pimm de Hogeling, Scott Neilson and Thomas Beelen!
         </p>
@@ -110,7 +113,6 @@ export default function Year2018() {
           href="https://www.instagram.com/uxcampamsterdam/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm font-semibold text-[#B20101] underline underline-offset-2"
         >
           Follow @uxcampamsterdam ↗
         </a>
@@ -118,33 +120,62 @@ export default function Year2018() {
 
       <ContentSection>
         <h2>28 sessions</h2>
-        <div className="mt-4 space-y-8">
-          {timeSlots.map((slot) => (
-            <div key={slot.time}>
-              <p className="text-xs font-bold uppercase tracking-widest text-[#B20101] mb-2">{slot.time}</p>
-              <ul className="divide-y divide-[#ccc] border-t border-[#ccc]">
-                {slot.sessions.map((s) => (
-                  <li key={s} className="py-2 text-sm text-gray-600">{s}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        {timeSlots.map((slot) => (
+          <div key={slot.time} style={{ marginBottom: 32 }}>
+            <p
+              style={{
+                fontFamily: '"Open Sans", system-ui, sans-serif',
+                fontWeight: 700,
+                fontSize: 13,
+                color: "#B20101",
+                textTransform: "uppercase",
+                letterSpacing: 1,
+                margin: "0 0 8px",
+              }}
+            >
+              {slot.time}
+            </p>
+            <SessionCardList sessions={slot.sessions} />
+          </div>
+        ))}
       </ContentSection>
 
       <ContentSection alt>
         <h2>Sponsors</h2>
-        <ul className="mt-4 space-y-2 text-sm text-gray-600">
-          <li><strong>Location sponsor:</strong> Ijsfontein — hosted at Marineterrein Amsterdam</li>
-          <li><strong>Event sponsors:</strong> Adobe · UX Academy · Mirabeau · Happy Labs · Marktplaats · Nomensa</li>
-          <li><strong>Product sponsors:</strong> UXPressia · Rosenfeld Media · Sketch</li>
-        </ul>
+        <div
+          style={{
+            marginTop: 16,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 12,
+          }}
+        >
+          {sponsors.map((s) => (
+            <span
+              key={s}
+              style={{
+                display: "inline-block",
+                background: "#FFFFFF",
+                border: "1px solid #CCCCCC",
+                padding: "8px 16px",
+                fontFamily: '"Open Sans", system-ui, sans-serif',
+                fontWeight: 600,
+                fontSize: 14,
+                color: "#333333",
+              }}
+            >
+              {s}
+            </span>
+          ))}
+        </div>
       </ContentSection>
 
       <ContentSection>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>
+
+      <CtaBanner />
     </main>
   );
 }

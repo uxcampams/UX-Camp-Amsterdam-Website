@@ -1,7 +1,9 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
-import Carousel from "@/components/Carousel";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
+import SessionCardList from "@/components/SessionCardList";
+import PhotoGrid from "@/components/PhotoGrid";
+import CtaBanner from "@/components/CtaBanner";
 import receptionImg from "../../../assets/images/2015/reception.jpg";
 import madness1Img from "../../../assets/images/2015/madness1.jpg";
 import scheduleImg from "../../../assets/images/2015/schedule.jpg";
@@ -27,13 +29,13 @@ const organizers: Organizer[] = [
   { name: "Tatiana Sidorenkova", role: "UX Researcher",                   photo: orgTatiana, linkedin: "https://linkedin.com/in/tatiana-sidorenkova-36087b9" },
 ];
 
-const carouselSlides = [
-  { src: receptionImg, caption: "Reception" },
-  { src: madness1Img, caption: "Madness Session 1" },
-  { src: scheduleImg, caption: "Schedule" },
-  { src: madness2Img, caption: "Madness Session 2" },
-  { src: presentationImg, caption: "Presentation" },
-  { src: foodImg, caption: "Food" },
+const photos = [
+  { src: receptionImg, alt: "Reception" },
+  { src: madness1Img, alt: "Madness Session 1" },
+  { src: scheduleImg, alt: "Schedule" },
+  { src: madness2Img, alt: "Madness Session 2" },
+  { src: presentationImg, alt: "Presentation" },
+  { src: foodImg, alt: "Food" },
 ];
 
 const slides = [
@@ -57,28 +59,20 @@ export default function Year2015() {
           #UXcampAMS15 was a great day. UXcamp Amsterdam is a community event run by volunteers —
           and this was where it all began.
         </p>
-        <div className="mt-6">
-          <Carousel slides={carouselSlides} />
-        </div>
+        <PhotoGrid images={photos} />
       </ContentSection>
 
       <ContentSection alt>
         <h2>Presentations</h2>
-        <p className="text-sm text-gray-500 mb-4">
-          A selection of slide decks from the day:
-        </p>
-        <ul className="divide-y divide-[#ccc] border-t border-[#ccc]">
-          {slides.map((s) => (
-            <li key={s} className="py-3 text-sm text-gray-600">{s}</li>
-          ))}
-        </ul>
+        <p>A selection of slide decks from the day:</p>
+        <SessionCardList sessions={slides} />
       </ContentSection>
 
       <ContentSection>
         <h2>Sponsors</h2>
         <div
           style={{
-            marginTop: 24,
+            marginTop: 16,
             display: "flex",
             flexWrap: "wrap",
             alignItems: "center",
@@ -107,6 +101,8 @@ export default function Year2015() {
         <h2>Organising team</h2>
         <OrganisingTeam organizers={organizers} />
       </ContentSection>
+
+      <CtaBanner />
     </main>
   );
 }

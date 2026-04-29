@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
+import SessionCardList from "@/components/SessionCardList";
+import CtaBanner from "@/components/CtaBanner";
 
 const slides = [
   "Free Design — Open Source et al — Maria Leonova",
@@ -12,26 +14,12 @@ const slides = [
 ];
 
 const team: Organizer[] = [
-
-
   { name: "Philipp Engel", role: "", linkedin: "#" },
-
-
   { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
-
-
   { name: "Gareth Simms", role: "", linkedin: "#" },
-
-
   { name: "Doron Hirsch", role: "", linkedin: "#" },
-
-
   { name: "Peter Boersma", role: "", linkedin: "#" },
-
-
   { name: "Carolina Gómez Naranjo", role: "", linkedin: "#" },
-
-
 ];
 
 export default function Year2017() {
@@ -54,12 +42,11 @@ export default function Year2017() {
 
       <ContentSection alt>
         <h2>Photos</h2>
-        <p className="text-sm text-gray-500 mb-3">Madness session, setup, sponsors & activities, talks, mingling.</p>
+        <p>Madness session, setup, sponsors &amp; activities, talks, mingling.</p>
         <a
           href="https://goo.gl/photos/NxyPfCmuV5FTzLGXA"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm font-semibold text-[#B20101] underline underline-offset-2"
         >
           Download photos from Google Photos ↗
         </a>
@@ -67,22 +54,20 @@ export default function Year2017() {
 
       <ContentSection>
         <h2>Slides</h2>
-        <p className="text-sm text-gray-400 italic mb-4">
+        <p>
           Still waiting for a number of slide packs from presenters. If you presented and your slides
           are available, please send them to{" "}
-          <a href="mailto:info@uxcampams.com" className="text-[#B20101] underline">info@uxcampams.com</a>.
+          <a href="mailto:info@uxcampams.com">info@uxcampams.com</a>.
         </p>
-        <ul className="divide-y divide-[#ccc] border-t border-[#ccc]">
-          {slides.map((s) => (
-            <li key={s} className="py-3 text-sm text-gray-600">{s}</li>
-          ))}
-        </ul>
+        <SessionCardList sessions={slides} />
       </ContentSection>
 
       <ContentSection alt>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>
+
+      <CtaBanner />
     </main>
   );
 }

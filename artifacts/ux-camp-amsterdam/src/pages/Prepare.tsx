@@ -70,12 +70,6 @@ const bring: BringItem[] = [
     body: "The venue doesn't allow disposable cups. Bring a reusable water bottle and coffee tumbler. Water fountains and coffee machines are available on site.",
   },
   {
-    icon: "🍱",
-    title: "Lunch",
-    body: "Catering situation TBD — confirm with Vincent/Aletta before publishing.",
-    placeholder: true,
-  },
-  {
     icon: "🔌",
     title: "Adapter (if presenting)",
     body: "Planning to show something? All rooms have HDMI and USB-C. Bring your own adapter just in case. And download anything you need in advance — venue Wi-Fi can be unpredictable.",
@@ -136,7 +130,6 @@ const dayCards: DayCard[] = [
     title: "After party 🎉",
     body: "",
     highlight: true,
-    placeholderInner: "After party venue details — confirm with Vincent before publishing.",
   },
 ];
 
@@ -363,21 +356,6 @@ export default function Prepare() {
               </div>
             </div>
 
-            <div
-              style={{
-                marginTop: 24,
-                background: LIGHT_GREY,
-                border: `1px solid ${MID_GREY}`,
-                padding: 20,
-                textAlign: "center",
-                fontFamily: FONT,
-                fontStyle: "italic",
-                fontSize: 14,
-                color: MID_GREY,
-              }}
-            >
-              Floor plan — add simple venue diagram showing session rooms, registration desk, Portfolio Review Corner, Insight Wall, Micro-Exhibition Space, quiet room, and nursing room.
-            </div>
           </div>
         </section>
 
@@ -635,19 +613,6 @@ export default function Prepare() {
               ))}
             </div>
 
-            <p
-              style={{
-                fontFamily: FONT,
-                fontStyle: "italic",
-                fontSize: 14,
-                color: MID_GREY,
-                marginTop: 24,
-                marginBottom: 0,
-                textAlign: "center",
-              }}
-            >
-              Room locations to be confirmed with Greg and Vincent before publishing.
-            </p>
           </div>
         </section>
 

@@ -1,7 +1,9 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
-import Carousel from "@/components/Carousel";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
+import SessionCardList from "@/components/SessionCardList";
+import PhotoGrid from "@/components/PhotoGrid";
+import CtaBanner from "@/components/CtaBanner";
 
 import event1 from "../../../assets/images/2016/event-1.jpg";
 import event2 from "../../../assets/images/2016/event-2.jpg";
@@ -39,13 +41,13 @@ const slides = [
   "AI meets UX — Nick van der Linde",
 ];
 
-const carouselSlides = [
-  { src: event1, caption: "Sponsors on stage" },
-  { src: event2, caption: "UXcamp team" },
-  { src: event3, caption: "Madness Session" },
-  { src: event4, caption: "Carolina Gómez presenting" },
-  { src: event5, caption: "Q&A with the audience" },
-  { src: event6, caption: "Twitter wrap-up" },
+const photos = [
+  { src: event1, alt: "Sponsors on stage" },
+  { src: event2, alt: "UXcamp team" },
+  { src: event3, alt: "Madness Session" },
+  { src: event4, alt: "Carolina Gómez presenting" },
+  { src: event5, alt: "Q&A with the audience" },
+  { src: event6, alt: "Twitter wrap-up" },
 ];
 
 const sponsors = [
@@ -88,31 +90,23 @@ export default function Year2016() {
 
       <ContentSection alt>
         <h2>Presentations</h2>
-        <p className="text-sm text-gray-500 mb-4">
-          A selection of slide decks from the day:
-        </p>
-        <ul className="divide-y divide-[#ccc] border-t border-[#ccc]">
-          {slides.map((s) => (
-            <li key={s} className="py-3 text-sm text-gray-600">{s}</li>
-          ))}
-        </ul>
+        <p>A selection of slide decks from the day:</p>
+        <SessionCardList sessions={slides} />
       </ContentSection>
 
       <ContentSection>
         <h2>Photos</h2>
-        <p className="text-sm text-gray-500" style={{ marginBottom: 16 }}>
+        <p>
           Special thanks to Den Tserkovnyi &amp; Filip Mishevski for the photos.
         </p>
-        <div style={{ marginTop: 16 }}>
-          <Carousel slides={carouselSlides} />
-        </div>
+        <PhotoGrid images={photos} />
       </ContentSection>
 
       <ContentSection alt>
         <h2>Sponsors</h2>
         <div
           style={{
-            marginTop: 24,
+            marginTop: 16,
             display: "flex",
             flexWrap: "wrap",
             gap: 32,
@@ -135,6 +129,8 @@ export default function Year2016() {
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>
+
+      <CtaBanner />
     </main>
   );
 }

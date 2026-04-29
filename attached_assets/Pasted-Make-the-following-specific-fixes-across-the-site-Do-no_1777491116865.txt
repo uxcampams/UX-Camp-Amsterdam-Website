@@ -1,0 +1,62 @@
+Make the following specific fixes across the site. Do not change anything else. Do not redesign any section. Only apply the exact changes listed below.
+
+FIX 1 — HOMEPAGE: "What is this thing?" section — fix uneven cards
+The three cards under this section (Pitch something, Vote with your hands, Leave with more than you came with) must be equal height. Apply align-items: stretch to the flex container and display: flex; flex-direction: column; justify-content: space-between inside each card so all cards are the same height regardless of content length. Do not change any copy or styling.
+
+FIX 2 — HOMEPAGE: "First time? Here's all you need." section — update cup item
+Change the second item from whatever it currently says to:
+
+Icon: ☕
+Title: BYOC — Bring Your Own Cup
+Body: The venue doesn't allow disposable cups. Bring a reusable water bottle and coffee tumbler.
+Do not change the other two items.
+
+
+FIX 3 — PREVIOUS EVENTS pages — apply consistent styling
+Apply the same visual design system used on the homepage and all other pages to every previous year page (2015, 2016, 2017, 2018, 2019, 2023, 2024, 2025). For each year page:
+
+Same sticky nav as all other pages
+Same footer as all other pages
+Section headings in #333333 Open Sans Extra Bold
+Body text #333333 Open Sans Regular 16px line-height 1.7
+Section backgrounds alternating #FFFFFF and #F5F5F5
+Any session lists displayed as clean cards: white bg, 1px solid #CCCCCC, border-radius: 0, 4px solid #B20101 top border, padding 20px 24px, session title Semi Bold #333333, speaker name Regular #CCCCCC 14px
+Sponsor logos section: #F5F5F5 bg, sponsor names or logo placeholders in a flex-wrap row
+Organising team names displayed as simple pills: #F5F5F5 bg, 1px solid #CCCCCC, border-radius: 0, padding 8px 16px, #333333 Regular 14px
+Photo galleries: existing images kept as-is, displayed in a responsive 3-column grid with gap: 8px
+Do not change any content, copy, links, or images on these pages — only apply the styling
+
+
+FIX 4 — PREPARE FOR THE EVENT page — remove all placeholder notes
+Remove every placeholder instruction line from the Prepare for the Event page. Specifically delete:
+
+The floor plan placeholder box and its text entirely
+Room locations to be confirmed with Greg and Vincent before publishing.
+Any other lines in italic #CCCCCC that are editorial instructions rather than real content (lines containing words like "confirm", "placeholder", "add", "TBD", "before publishing")
+Do not remove any real content — only remove internal notes and placeholder boxes.
+
+
+FIX 5 — PREPARE FOR THE EVENT page — remove Lunch item from What to Bring
+In the "What to bring" section, remove the Lunch item (🍱 Lunch card) entirely.
+The section should now have three items only: Your ticket · Your own cup · Adapter (if presenting).
+Re-space the remaining three items evenly. Do not change any other content in this section.
+
+FIX 6 — ADD "Ready to join?" CTA banner to the following pages
+Add the red CTA banner below to the bottom of the main content (just above the footer) on these pages: About UX Camp Amsterdam, Running a Session, and Previous Events pages (all years).
+Do NOT add it to: Homepage (already has its own CTA), Sponsorship (has its own Get in touch CTA), Prepare for the Event (has its own closing message).
+The CTA banner:
+
+Background: #B20101, full width, padding 60px 5%
+Centered white heading: Ready to join? — Open Sans Extra Bold, 36px
+White subtext: Saturday, July 4, 2026 · Amsterdam — Open Sans Light, 18px
+One button: Grab your ticket → — white bg, #B20101 text, border-radius: 0, Open Sans Extra Bold uppercase, padding 14px 36px
+
+
+GLOBAL — DO NOT CHANGE:
+
+No page content, copy, images, or links changed except what is explicitly listed above
+No rounded corners introduced anywhere
+No gradients or shadows
+Only Open Sans, only the five brand colors: #B20101 / #333333 / #F5F5F5 / #CCCCCC / #FFFFFF
+All existing routing and navigation intact
+

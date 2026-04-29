@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
+import SessionCardList from "@/components/SessionCardList";
+import CtaBanner from "@/components/CtaBanner";
 
 const slides = [
   "Beyond visual — Dean Birkett",
@@ -13,26 +15,24 @@ const slides = [
 ];
 
 const team: Organizer[] = [
-
-
   { name: "Philipp Engel", role: "", linkedin: "#" },
-
-
   { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
-
-
   { name: "Gareth Simms", role: "", linkedin: "#" },
-
-
   { name: "Doron Hirsch", role: "", linkedin: "#" },
-
-
   { name: "Xiaoyu Shen", role: "", linkedin: "#" },
-
-
   { name: "Dave de Bakker", role: "", linkedin: "#" },
+];
 
-
+const sponsors = [
+  "Marktplaats",
+  "Elsevier",
+  "Happy Labs",
+  "Digital Society School",
+  "InVision",
+  "Framer",
+  "Sketch",
+  "Rosenfeld Media",
+  "O'Reilly",
 ];
 
 export default function Year2019() {
@@ -55,23 +55,16 @@ export default function Year2019() {
 
       <ContentSection alt>
         <h2>Session slides</h2>
-        <ul className="mt-4 divide-y divide-[#ccc] border-t border-[#ccc]">
-          {slides.map((s) => (
-            <li key={s} className="py-3 text-sm text-gray-600">{s}</li>
-          ))}
-        </ul>
+        <SessionCardList sessions={slides} />
       </ContentSection>
 
       <ContentSection>
         <h2>Photos</h2>
-        <p className="text-sm text-gray-500">
-          Over 100 photographs from the event were shared on Instagram.
-        </p>
+        <p>Over 100 photographs from the event were shared on Instagram.</p>
         <a
           href="https://www.instagram.com/uxcampamsterdam/"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 inline-block text-sm font-semibold text-[#B20101] underline underline-offset-2"
         >
           Follow @uxcampamsterdam ↗
         </a>
@@ -79,18 +72,40 @@ export default function Year2019() {
 
       <ContentSection alt>
         <h2>Sponsors</h2>
-        <ul className="mt-4 space-y-2 text-sm text-gray-600">
-          <li><strong>Event sponsors:</strong> Marktplaats · Elsevier · Happy Labs</li>
-          <li><strong>Location sponsor:</strong> Digital Society School — hosted at Marineterrein Amsterdam</li>
-          <li><strong>Afterparty sponsor:</strong> InVision</li>
-          <li><strong>Giveaway sponsors:</strong> Framer · Sketch · Rosenfeld Media · O'Reilly</li>
-        </ul>
+        <div
+          style={{
+            marginTop: 16,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 12,
+          }}
+        >
+          {sponsors.map((s) => (
+            <span
+              key={s}
+              style={{
+                display: "inline-block",
+                background: "#FFFFFF",
+                border: "1px solid #CCCCCC",
+                padding: "8px 16px",
+                fontFamily: '"Open Sans", system-ui, sans-serif',
+                fontWeight: 600,
+                fontSize: 14,
+                color: "#333333",
+              }}
+            >
+              {s}
+            </span>
+          ))}
+        </div>
       </ContentSection>
 
       <ContentSection>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>
+
+      <CtaBanner />
     </main>
   );
 }

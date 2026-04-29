@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
+import CtaBanner from "@/components/CtaBanner";
 import photoAudience from "../../../assets/images/UX_Camp_Amsterdam_2025.jpg";
 import photoOrganizers from "../../../assets/images/Polina_Popravka_UX_Camp_Amsterdam.jpeg";
 
@@ -462,6 +463,9 @@ export default function Year2025() {
             )}
           </div>
         </section>
+
+        {/* CTA BANNER */}
+        <CtaBanner />
 
         {/* FOOTER (same as homepage) */}
         <footer style={{ background: DARK, color: WHITE, padding: "80px 5% 24px" }}>

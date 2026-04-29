@@ -1,6 +1,8 @@
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
+import SessionCardList from "@/components/SessionCardList";
+import CtaBanner from "@/components/CtaBanner";
 
 const sessions = [
   "Beyond visual — Dean Birkett",
@@ -13,24 +15,14 @@ const sessions = [
 ];
 
 const team: Organizer[] = [
-
-
   { name: "Lina Beltrán", role: "", linkedin: "#" },
-
-
   { name: "Indre Lauciute", role: "", linkedin: "#" },
-
-
   { name: "Alona Sanbira", role: "", linkedin: "#" },
-
-
   { name: "Garima Chauhan", role: "", linkedin: "#" },
-
-
   { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
-
-
 ];
+
+const sponsors = ["Elsevier", "Marktplaats", "Rosenfeld Media", "Axure"];
 
 export default function Year2023() {
   return (
@@ -51,12 +43,11 @@ export default function Year2023() {
 
       <ContentSection alt>
         <h2>Impressions from #UXcampAMS23</h2>
-        <p className="text-sm text-gray-400 italic mb-4">Photo gallery coming soon.</p>
+        <p>Photo gallery coming soon.</p>
         <a
           href="https://www.instagram.com/uxcampamsterdam/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm font-semibold text-[#B20101] underline underline-offset-2"
         >
           Follow @uxcampamsterdam for regular visual updates ↗
         </a>
@@ -64,25 +55,45 @@ export default function Year2023() {
 
       <ContentSection>
         <h2>Sessions &amp; slides</h2>
-        <ul className="mt-4 divide-y divide-[#ccc] border-t border-[#ccc]">
-          {sessions.map((s) => (
-            <li key={s} className="py-3 text-sm text-gray-600">{s}</li>
-          ))}
-        </ul>
+        <SessionCardList sessions={sessions} />
       </ContentSection>
 
       <ContentSection alt>
         <h2>Sponsors</h2>
-        <ul className="mt-4 space-y-2 text-sm text-gray-600">
-          <li><strong>Main sponsors:</strong> Elsevier · Marktplaats</li>
-          <li><strong>Giveaway sponsors:</strong> Rosenfeld Media · Axure</li>
-        </ul>
+        <div
+          style={{
+            marginTop: 16,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 12,
+          }}
+        >
+          {sponsors.map((s) => (
+            <span
+              key={s}
+              style={{
+                display: "inline-block",
+                background: "#FFFFFF",
+                border: "1px solid #CCCCCC",
+                padding: "8px 16px",
+                fontFamily: '"Open Sans", system-ui, sans-serif',
+                fontWeight: 600,
+                fontSize: 14,
+                color: "#333333",
+              }}
+            >
+              {s}
+            </span>
+          ))}
+        </div>
       </ContentSection>
 
       <ContentSection>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>
+
+      <CtaBanner />
     </main>
   );
 }

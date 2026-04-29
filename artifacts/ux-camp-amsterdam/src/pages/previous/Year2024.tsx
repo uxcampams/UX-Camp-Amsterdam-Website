@@ -1,8 +1,8 @@
-import { Link } from "wouter";
-import { TICKET_URL } from "../../constants";
 import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
+import SessionCardList from "@/components/SessionCardList";
+import CtaBanner from "@/components/CtaBanner";
 
 const sessions = [
   "Content Modelling for Everyone — Larry Swanson",
@@ -44,27 +44,15 @@ const sessions = [
 ];
 
 const team: Organizer[] = [
-
-
   { name: "Nien-Hua Gu", role: "", linkedin: "#" },
-
-
   { name: "María de los Ángeles Adrián", role: "", linkedin: "#" },
-
-
   { name: "Vincent Vijn", role: "", linkedin: "#" },
-
-
   { name: "Indre Lauciute", role: "", linkedin: "#" },
-
-
   { name: "Rita Costa Pereira", role: "", linkedin: "#" },
-
-
   { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
-
-
 ];
+
+const sponsors = ["CMD Amsterdam / Hogeschool van Amsterdam (HvA)", "Axure"];
 
 export default function Year2024() {
   return (
@@ -86,26 +74,15 @@ export default function Year2024() {
           UXcampAMS24 saw UX professionals, students and enthusiasts from across Europe. The day
           ended with a fantastic after-party where the fun and conversations continued.
         </p>
-        <div className="mt-6">
-          <a
-            href={TICKET_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            Join UX Camp Amsterdam 2026 →
-          </a>
-        </div>
       </ContentSection>
 
       <ContentSection alt>
         <h2>Impressions from #UXcampAMS24</h2>
-        <p className="text-sm text-gray-400 italic mb-4">Photo gallery coming soon.</p>
+        <p>Photo gallery coming soon.</p>
         <a
           href="https://www.instagram.com/uxcampamsterdam/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-sm font-semibold text-[#B20101] underline underline-offset-2"
         >
           Follow @uxcampamsterdam for regular visual updates ↗
         </a>
@@ -113,39 +90,45 @@ export default function Year2024() {
 
       <ContentSection>
         <h2>36 sessions</h2>
-        <ol className="mt-4 divide-y divide-[#ccc] border-t border-[#ccc]">
-          {sessions.map((s, i) => (
-            <li key={s} className="py-3 text-sm text-gray-600 grid grid-cols-[28px_1fr] gap-3">
-              <span className="text-xs font-bold text-[#B20101]">{i + 1}</span>
-              {s}
-            </li>
-          ))}
-        </ol>
+        <SessionCardList sessions={sessions} />
       </ContentSection>
 
       <ContentSection alt>
         <h2>Sponsors</h2>
-        <ul className="mt-4 space-y-2 text-sm text-gray-600">
-          <li><strong>Location sponsor:</strong> CMD Amsterdam / Hogeschool van Amsterdam (HvA)</li>
-          <li><strong>Giveaway sponsor:</strong> Axure</li>
-        </ul>
+        <div
+          style={{
+            marginTop: 16,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 12,
+          }}
+        >
+          {sponsors.map((s) => (
+            <span
+              key={s}
+              style={{
+                display: "inline-block",
+                background: "#FFFFFF",
+                border: "1px solid #CCCCCC",
+                padding: "8px 16px",
+                fontFamily: '"Open Sans", system-ui, sans-serif',
+                fontWeight: 600,
+                fontSize: 14,
+                color: "#333333",
+              }}
+            >
+              {s}
+            </span>
+          ))}
+        </div>
       </ContentSection>
 
       <ContentSection>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={team} />
-        <div className="mt-8 pt-6 border-t border-[#ccc]">
-          <h3 className="text-sm font-bold uppercase tracking-wider mb-3">Will you join UX Camp Amsterdam 2026?</h3>
-          <a
-            href={TICKET_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            Get ticket →
-          </a>
-        </div>
       </ContentSection>
+
+      <CtaBanner />
     </main>
   );
 }

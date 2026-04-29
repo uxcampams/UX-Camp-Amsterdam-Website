@@ -60,9 +60,13 @@ const audienceCards = [
 ];
 
 const firstTimeItems = [
-  { icon: "🎫", text: "Your ticket — Eventbrite, on your phone is fine" },
-  { icon: "☕", text: "Your own cup — the venue doesn't allow disposable cups" },
-  { icon: "💡", text: "An idea, a question, or just curiosity — that's honestly enough" },
+  { icon: "🎫", title: "", text: "Your ticket — Eventbrite, on your phone is fine" },
+  {
+    icon: "☕",
+    title: "BYOC — Bring Your Own Cup",
+    text: "The venue doesn't allow disposable cups. Bring a reusable water bottle and coffee tumbler.",
+  },
+  { icon: "💡", title: "", text: "An idea, a question, or just curiosity — that's honestly enough" },
 ];
 
 const photos = [photo1, photo2, photo3, photo4, photo5, photo6];
@@ -172,8 +176,8 @@ export default function Home() {
         }
         .uxc-stat:last-child { border-right: none; }
 
-        .uxc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-        .uxc-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .uxc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: stretch; }
+        .uxc-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
         .uxc-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
         .uxc-grid-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
@@ -184,6 +188,8 @@ export default function Home() {
           padding: 28px;
           display: flex;
           flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
         }
         .uxc-card-flat {
           background: ${WHITE};
@@ -661,17 +667,31 @@ export default function Home() {
               {firstTimeItems.map((item) => (
                 <div key={item.icon} className="uxc-card-flat">
                   <span style={{ fontSize: 28, lineHeight: 1 }}>{item.icon}</span>
-                  <span
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 400,
-                      fontSize: 15,
-                      lineHeight: 1.6,
-                      color: DARK,
-                    }}
-                  >
-                    {item.text}
-                  </span>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                    {item.title && (
+                      <span
+                        style={{
+                          fontFamily: FONT,
+                          fontWeight: 600,
+                          fontSize: 16,
+                          color: DARK,
+                        }}
+                      >
+                        {item.title}
+                      </span>
+                    )}
+                    <span
+                      style={{
+                        fontFamily: FONT,
+                        fontWeight: 400,
+                        fontSize: 15,
+                        lineHeight: 1.6,
+                        color: DARK,
+                      }}
+                    >
+                      {item.text}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>
