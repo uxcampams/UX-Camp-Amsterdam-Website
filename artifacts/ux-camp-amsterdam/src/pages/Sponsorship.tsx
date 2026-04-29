@@ -580,7 +580,7 @@ export default function Sponsorship() {
               Reach out and we'll send you the full sponsorship deck.
             </p>
             <div>
-              <a href="mailto:sponsor@uxcampams.com" className="uxc-btn-on-red">
+              <a href="mailto:info@uxcampams.com" className="uxc-btn-on-red">
                 Get in touch →
               </a>
             </div>
@@ -595,7 +595,7 @@ export default function Sponsorship() {
                 marginTop: 24,
               }}
             >
-              sponsor@uxcampams.com — add final contact email before publishing
+              info@uxcampams.com
             </p>
           </div>
         </section>
