@@ -95,11 +95,10 @@ export default function Year2016() {
       </ContentSection>
 
       <ContentSection>
-        <h2>Photos</h2>
-        <p>
+        <PhotoGrid images={photos} yearShort="16" seeAllHref="#" />
+        <p style={{ marginTop: 16 }}>
           Special thanks to Den Tserkovnyi &amp; Filip Mishevski for the photos.
         </p>
-        <PhotoGrid images={photos} />
       </ContentSection>
 
       <ContentSection alt>

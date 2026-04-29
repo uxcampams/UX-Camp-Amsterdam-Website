@@ -165,6 +165,10 @@ export default function Year2025() {
           .uxc-grid-3 { grid-template-columns: 1fr; }
           .uxc-grid-4 { grid-template-columns: repeat(2, 1fr); }
           .uxc-h2 { font-size: 26px; }
+          .uxc-y25-photo-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 600px) {
+          .uxc-y25-photo-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
 
@@ -206,51 +210,71 @@ export default function Year2025() {
         {/* SECTION 2 — EVENT PHOTOS */}
         <section style={{ background: LIGHT_GREY, ...sectionPad }}>
           <div style={innerWrap}>
-            <p className="uxc-eyebrow">Impressions from #UXcampAMS25</p>
-            <h2 className="uxc-h2" style={{ marginBottom: 32 }}>
-              A day of hands raised, ideas swapped, and conversations that mattered
+            <h2 className="uxc-h2" style={{ marginBottom: 24 }}>
+              Impressions from #UXcampAMS25
             </h2>
 
-            <div className="uxc-grid-2">
-              <figure style={{ margin: 0 }}>
-                <img
-                  src={photoAudience}
-                  alt="Attendees raising hands during a session at UX Camp Amsterdam 2025"
-                  loading="lazy"
-                  style={{ width: "100%", height: "auto", display: "block", borderRadius: 0 }}
-                />
-                <figcaption
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: 8,
+              }}
+              className="uxc-y25-photo-grid"
+            >
+              {[
+                {
+                  src: photoAudience,
+                  alt: "Attendees raising hands during a session at UX Camp Amsterdam 2025",
+                },
+                {
+                  src: photoOrganizers,
+                  alt: "Organizers presenting the day's schedule at UX Camp Amsterdam 2025",
+                },
+              ].map((p, i) => (
+                <div
+                  key={i}
                   style={{
-                    fontFamily: FONT,
-                    fontWeight: 400,
-                    fontSize: 13,
-                    color: MID_GREY,
-                    marginTop: 8,
+                    width: "100%",
+                    aspectRatio: "4 / 3",
+                    overflow: "hidden",
+                    border: `1px solid ${MID_GREY}`,
+                    background: MID_GREY,
+                    borderRadius: 0,
                   }}
                 >
-                  The vibrant UX community in full voting mode at UX Camp Amsterdam 2025.
-                </figcaption>
-              </figure>
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    loading="lazy"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                      borderRadius: 0,
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
 
-              <figure style={{ margin: 0 }}>
-                <img
-                  src={photoOrganizers}
-                  alt="Organizers presenting the day's schedule on screens at UX Camp Amsterdam 2025"
-                  loading="lazy"
-                  style={{ width: "100%", height: "auto", display: "block", borderRadius: 0 }}
-                />
-                <figcaption
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 400,
-                    fontSize: 13,
-                    color: MID_GREY,
-                    marginTop: 8,
-                  }}
-                >
-                  The crowd-built schedule going up on the boards after the Madness Session.
-                </figcaption>
-              </figure>
+            <div style={{ marginTop: 24 }}>
+              <a
+                href="https://www.instagram.com/uxcampamsterdam/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontFamily: FONT,
+                  fontWeight: 600,
+                  fontSize: 14,
+                  color: RED,
+                  textDecoration: "none",
+                  letterSpacing: 0.5,
+                }}
+              >
+                See all photos from #UXcampAMS25 →
+              </a>
             </div>
           </div>
         </section>
@@ -319,20 +343,24 @@ export default function Year2025() {
                   <div
                     key={name}
                     style={{
-                      background: LIGHT_GREY,
+                      background: WHITE,
                       border: `1px solid ${MID_GREY}`,
                       padding: 24,
                       textAlign: "center",
                     }}
                   >
-                    <div className="uxc-team-avatar" aria-hidden="true">
+                    <div
+                      className="uxc-team-avatar"
+                      aria-hidden="true"
+                      style={{ background: LIGHT_GREY }}
+                    >
                       {initial}
                     </div>
                     <div
                       style={{
                         fontFamily: FONT,
                         fontWeight: 600,
-                        fontSize: 15,
+                        fontSize: 16,
                         color: DARK,
                         lineHeight: 1.4,
                       }}

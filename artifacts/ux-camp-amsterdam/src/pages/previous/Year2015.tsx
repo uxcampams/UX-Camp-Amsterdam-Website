@@ -59,16 +59,19 @@ export default function Year2015() {
           #UXcampAMS15 was a great day. UXcamp Amsterdam is a community event run by volunteers —
           and this was where it all began.
         </p>
-        <PhotoGrid images={photos} />
       </ContentSection>
 
       <ContentSection alt>
+        <PhotoGrid images={photos} yearShort="15" seeAllHref="#" />
+      </ContentSection>
+
+      <ContentSection>
         <h2>Presentations</h2>
         <p>A selection of slide decks from the day:</p>
         <SessionCardList sessions={slides} />
       </ContentSection>
 
-      <ContentSection>
+      <ContentSection alt>
         <h2>Sponsors</h2>
         <div
           style={{
@@ -97,7 +100,7 @@ export default function Year2015() {
         </div>
       </ContentSection>
 
-      <ContentSection alt>
+      <ContentSection>
         <h2>Organising team</h2>
         <OrganisingTeam organizers={organizers} />
       </ContentSection>

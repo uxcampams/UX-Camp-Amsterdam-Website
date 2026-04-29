@@ -1,6 +1,25 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import heroBg from "../../assets/images/Sponsorship_hero.jpg";
+import sponsorA4 from "../../assets/images/companies-logos/sponsor-a4.png";
+import sponsorAdyen from "../../assets/images/companies-logos/sponsor-adyen.png";
+import sponsorAdyen2015 from "../../assets/images/companies-logos/sponsor-adyen-2015.png";
+import sponsorIcemobile from "../../assets/images/companies-logos/sponsor-icemobile.png";
+import sponsorMarktplaats from "../../assets/images/companies-logos/sponsor-marktplaats.png";
+import sponsorMirabeau from "../../assets/images/companies-logos/sponsor-mirabeau.png";
+import sponsorNedap from "../../assets/images/companies-logos/sponsor-nedap.png";
+import sponsorNomensa from "../../assets/images/companies-logos/sponsor-nomensa.png";
+
+const PAST_SPONSORS = [
+  { src: sponsorA4, alt: "Amsterdam University of Applied Sciences" },
+  { src: sponsorAdyen, alt: "Adyen" },
+  { src: sponsorAdyen2015, alt: "Adyen (2015)" },
+  { src: sponsorIcemobile, alt: "IceMobile" },
+  { src: sponsorMarktplaats, alt: "Marktplaats" },
+  { src: sponsorMirabeau, alt: "Mirabeau" },
+  { src: sponsorNedap, alt: "Nedap" },
+  { src: sponsorNomensa, alt: "Nomensa" },
+];
 
 const RED = "#B20101";
 const DARK = "#333333";
@@ -150,23 +169,26 @@ export default function Sponsorship() {
           align-items: start;
         }
 
-        .uxc-logo-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 16px;
-          margin-top: 32px;
-        }
-
-        .uxc-logo-box {
-          height: 80px;
-          background: ${LIGHT_GREY};
-          border: 1px solid ${MID_GREY};
+        .uxc-logo-wall {
           display: flex;
+          flex-wrap: wrap;
+          gap: 24px;
           align-items: center;
           justify-content: center;
-          font-family: ${FONT};
-          font-size: 13px;
-          color: ${MID_GREY};
+          margin-top: 32px;
+        }
+        .uxc-logo-wall img {
+          height: 60px;
+          width: auto;
+          max-width: 160px;
+          object-fit: contain;
+          filter: grayscale(100%);
+          opacity: 0.7;
+          transition: filter 0.2s ease, opacity 0.2s ease;
+        }
+        .uxc-logo-wall img:hover {
+          filter: grayscale(0%);
+          opacity: 1;
         }
 
         .uxc-footer-nav a { color: ${WHITE}; font-size: 14px; }
@@ -174,7 +196,6 @@ export default function Sponsorship() {
 
         @media (max-width: 900px) {
           .uxc-tier-grid { grid-template-columns: 1fr; gap: 24px; }
-          .uxc-logo-grid { grid-template-columns: repeat(2, 1fr); }
         }
       `}</style>
 
@@ -528,28 +549,11 @@ export default function Sponsorship() {
               We've been supported by some great companies
             </h2>
 
-            <div className="uxc-logo-grid">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="uxc-logo-box">
-                  Sponsor logo
-                </div>
+            <div className="uxc-logo-wall">
+              {PAST_SPONSORS.map((s) => (
+                <img key={s.alt} src={s.src} alt={s.alt} loading="lazy" />
               ))}
             </div>
-
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 400,
-                fontStyle: "italic",
-                fontSize: 14,
-                color: MID_GREY,
-                marginTop: 16,
-                marginBottom: 0,
-                textAlign: "center",
-              }}
-            >
-              Logo grid — add past sponsor logos here before publishing.
-            </p>
           </div>
         </section>
 

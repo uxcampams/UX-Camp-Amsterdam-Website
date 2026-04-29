@@ -1,0 +1,51 @@
+Make the following specific fixes. Do not change anything else. Do not redesign any section. Only apply the exact changes listed below.
+
+FIX 1 — PREVIOUS YEARS: Organising team format
+On all previous year pages (2015, 2016, 2017, 2018, 2019, 2023, 2024, 2025), display the organising team in the same card format as the 2025 team section on the homepage — circular avatar with initials in a #B20101 circle, name in Open Sans Semi Bold below, role in Regular #333333 below that. Cards in a responsive grid: 4 columns desktop, 2 columns tablet, 1 column mobile. Do not change any names or roles — only change the visual format.
+
+FIX 2 — PREVIOUS YEARS: Photos grid
+On every previous year page that has photos (2015, 2016, 2017, 2018, 2019, 2023, 2024, 2025):
+
+Find the existing photo assets already in the project for that year
+Display exactly 6 photos in a 3×2 responsive grid, gap: 8px, each image aspect-ratio: 4/3, object-fit: cover, width: 100%, border-radius: 0
+If a year has more than 6 photos in the project, pick the first 6
+Below the grid, add a text link in #B20101 Semi Bold: See all photos from #UXcampAMS[YY] → linking to the existing full photo page or gallery URL for that year if it exists in the project, otherwise link to #
+Section heading above the grid: Impressions from #UXcampAMS[YY] — #333333 Extra Bold, where [YY] is the two-digit year (e.g. #UXcampAMS24)
+
+
+FIX 3 — PREVIOUS YEARS 2025: Fix uneven image sizes
+On the 2025 page specifically, find the photos section and enforce consistent image sizing across all images in the grid:
+
+All images: aspect-ratio: 4/3, object-fit: cover, width: 100%, border-radius: 0
+Grid: display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px
+No image should be taller or wider than another in the same grid
+
+
+FIX 4 — SPONSORSHIP PAGE: Add previous sponsor logos
+In the "We've been supported by some great companies" section on the Sponsorship page:
+
+Find all existing sponsor logo image assets already in the project (from any previous year — 2015 through 2025)
+Display them in a responsive flex-wrap grid: display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: center
+Each logo: height: 60px, width: auto, max-width: 160px, object-fit: contain, filter: grayscale(100%), opacity 0.7 on default, full color and opacity 1 on hover
+Background of the section: #FFFFFF
+Remove the placeholder grey boxes that are currently there
+If no logo image assets exist in the project, keep the placeholder grid but add a note for Replit: log the available image assets to the console so we can see what's available
+
+
+FIX 5 — HOMEPAGE: "What is this thing?" section — fix first card vertical alignment
+In the three cards under the "What is this thing?" / "Here's how it works" section, the text in the first card (Pitch something 🎤) is sitting lower than the text in the adjacent cards. Fix this so all three cards have their content starting at the same vertical position:
+
+On the card container: display: flex; flex-direction: row; align-items: stretch
+On each individual card: display: flex; flex-direction: column; justify-content: flex-start
+The icon, title, and body text must all start at the top of each card with the same top padding as the other cards
+All three cards must be the same height, same internal padding (28px all sides), same top border (4px solid #B20101)
+Do not change any copy, icons, or styling — only fix the alignment
+
+
+GLOBAL — DO NOT CHANGE:
+
+No page content, copy, images, or links changed except what is explicitly listed above
+No rounded corners introduced anywhere
+No gradients or shadows
+Only Open Sans, only the five brand colors: #B20101 / #333333 / #F5F5F5 / #CCCCCC / #FFFFFF
+All existing routing and navigation intact

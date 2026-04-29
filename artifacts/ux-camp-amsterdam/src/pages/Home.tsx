@@ -194,10 +194,14 @@ export default function Home() {
         .uxc-card-flat {
           background: ${WHITE};
           border: 1px solid ${MID_GREY};
-          padding: 24px;
+          border-top: 4px solid ${RED};
+          padding: 28px;
           display: flex;
-          gap: 16px;
+          flex-direction: column;
+          justify-content: flex-start;
           align-items: flex-start;
+          gap: 16px;
+          height: 100%;
         }
 
         .uxc-pill {
@@ -666,32 +670,31 @@ export default function Home() {
             <div className="uxc-grid-3">
               {firstTimeItems.map((item) => (
                 <div key={item.icon} className="uxc-card-flat">
-                  <span style={{ fontSize: 28, lineHeight: 1 }}>{item.icon}</span>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-                    {item.title && (
-                      <span
-                        style={{
-                          fontFamily: FONT,
-                          fontWeight: 600,
-                          fontSize: 16,
-                          color: DARK,
-                        }}
-                      >
-                        {item.title}
-                      </span>
-                    )}
-                    <span
-                      style={{
-                        fontFamily: FONT,
-                        fontWeight: 400,
-                        fontSize: 15,
-                        lineHeight: 1.6,
-                        color: DARK,
-                      }}
-                    >
-                      {item.text}
-                    </span>
-                  </div>
+                  <span style={{ fontSize: 32, lineHeight: 1 }}>{item.icon}</span>
+                  <span
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 600,
+                      fontSize: 16,
+                      color: DARK,
+                      lineHeight: 1.3,
+                      minHeight: "1.3em",
+                      display: "block",
+                    }}
+                  >
+                    {item.title || "\u00A0"}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 400,
+                      fontSize: 15,
+                      lineHeight: 1.6,
+                      color: DARK,
+                    }}
+                  >
+                    {item.text}
+                  </span>
                 </div>
               ))}
             </div>
