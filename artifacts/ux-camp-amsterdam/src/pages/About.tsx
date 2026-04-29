@@ -45,31 +45,6 @@ const newFormats: NewFormatCard[] = [
       "What's something you changed your mind about?",
     ],
   },
-  {
-    icon: "🐟",
-    title: "Fishbowl Discussions",
-    body: "Four chairs in the centre of the room. One always empty. Anyone can step in — but someone has to step out first. A rotating, open conversation with no moderator and no agenda.",
-  },
-  {
-    icon: "📌",
-    title: "Insight Wall",
-    body: "A shared wall with prompts you can add to all day. Take a post-it, add your thought, read what others are writing. By the end of the day it becomes something unexpectedly good.",
-    pills: [
-      "The future of UX is…",
-      "One thing I want to change Monday morning…",
-      "UX in Amsterdam needs…",
-    ],
-  },
-  {
-    icon: "🛋",
-    title: "UX Therapy Booth",
-    body: 'Write something anonymously. "My PM doesn\'t understand research." "Stakeholders killed my best idea." A facilitator reads them out and responds, part humour, part solidarity, entirely real.',
-  },
-  {
-    icon: "🔭",
-    title: "Micro-Exhibition Space",
-    body: "A corner of the venue for local UX startups, student projects, a book exchange, UX games, and a career clinic. Drop in anytime during the day.",
-  },
 ];
 
 const sessionFormats = [
