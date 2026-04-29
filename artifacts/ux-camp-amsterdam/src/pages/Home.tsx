@@ -333,7 +333,7 @@ export default function Home() {
                 maxWidth: 1000,
               }}
             >
-              One day. No agenda. Come with a story, leave with ten more.
+              One day. 25 sessions. Come with a design idea, leave with ten more.
             </h1>
 
             <p
