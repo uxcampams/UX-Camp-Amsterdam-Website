@@ -1,0 +1,12 @@
+{
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm --filter @workspace/ux-camp-amsterdam build",
+  "outputDirectory": "artifacts/ux-camp-amsterdam/dist/public",
+  "framework": null,
+  "env": {
+    "BASE_PATH": "/"
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
