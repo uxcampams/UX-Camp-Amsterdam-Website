@@ -23,23 +23,6 @@ const stats = [
   { value: "25+", label: "Sessions" },
 ];
 
-const howCards = [
-  {
-    icon: "🎤",
-    title: "Pitch something ",
-    body: "30 seconds in the morning. That's all it takes to get a session slot. Talk, workshop, or discussion — your choice.",
-  },
-  {
-    icon: "🙋",
-    title: "Vote with your hands",
-    body: "The audience raises their hands for sessions they want. That's how the day's programme gets built live, in the room, by everyone.",
-  },
-  {
-    icon: "🎉",
-    title: "Leave with more than you came with",
-    body: "By the end of the day you'll have had conversations you didn't plan, heard ideas that shift something, and yes, there's an after party. You've earned it.",
-  },
-];
 
 const newFormats = [
   "Portfolio Review Corner",
@@ -442,46 +425,88 @@ export default function Home() {
                 lineHeight: 1.7,
                 color: DARK,
                 margin: 0,
-                marginBottom: 16,
+                marginBottom: 40,
                 maxWidth: 820,
               }}
             >
-              Show up with an idea, a case study, a rant, a question you can't stop thinking about, pitch it in 30 seconds, and if people want to hear it, you're on. No gatekeepers. No keynotes. No boring panels.
+              UX Camp Amsterdam is back for its 9th edition — a community-run unconference where you set the agenda, run the sessions, and shape the day. No keynotes. No panels. No passive sitting. Everyone contributes.
             </p>
-            <Link href="/how-it-works" className="uxc-link">
-              Learn how it all works →
-            </Link>
 
-            <div className="uxc-grid-3" style={{ marginTop: 48 }}>
-              {howCards.map((c) => (
-                <div key={c.title} className="uxc-card">
-                  <div style={{ fontSize: 32, marginBottom: 16 }}>{c.icon}</div>
-                  <h3
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 600,
-                      fontSize: 18,
-                      color: DARK,
-                      margin: 0,
-                      marginBottom: 12,
-                    }}
-                  >
-                    {c.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 400,
-                      fontSize: 14,
-                      lineHeight: 1.6,
-                      color: DARK,
-                      margin: 0,
-                    }}
-                  >
-                    {c.body}
-                  </p>
-                </div>
-              ))}
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: 20,
+                color: DARK,
+                margin: 0,
+                marginBottom: 24,
+              }}
+            >
+              Here's how it works:
+            </p>
+
+            <div className="uxc-grid-2" style={{ gap: 24 }}>
+              <div className="uxc-card">
+                <h3
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 700,
+                    fontSize: 17,
+                    color: RED,
+                    margin: 0,
+                    marginBottom: 12,
+                    textTransform: "uppercase",
+                    letterSpacing: 1,
+                  }}
+                >
+                  For participants
+                </h3>
+                <p
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 400,
+                    fontSize: 15,
+                    lineHeight: 1.7,
+                    color: DARK,
+                    margin: 0,
+                  }}
+                >
+                  You can volunteer for one task on the day — taking photos, taking notes, or helping reset the venue. Choose your task when buying your ticket.
+                </p>
+              </div>
+
+              <div className="uxc-card">
+                <h3
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 700,
+                    fontSize: 17,
+                    color: RED,
+                    margin: 0,
+                    marginBottom: 12,
+                    textTransform: "uppercase",
+                    letterSpacing: 1,
+                  }}
+                >
+                  For presenters
+                </h3>
+                <p
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 400,
+                    fontSize: 15,
+                    lineHeight: 1.7,
+                    color: DARK,
+                    margin: 0,
+                    marginBottom: 16,
+                  }}
+                >
+                  Show up in the morning with an idea, a case study, a rant, or a question you can't stop thinking about. Pitch it in 30 seconds. If people want to hear it, you're on. Sessions are voted in live by the audience, the programme is built in the room, and the day belongs to whoever shows up.
+                </p>
+                <Link href="/running-a-session" className="uxc-link">
+                  See details on how to prepare a session →
+                </Link>
+              </div>
             </div>
           </div>
         </section>
