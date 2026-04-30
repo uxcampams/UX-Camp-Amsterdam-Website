@@ -104,7 +104,7 @@ Available scripts:
 
 Two image folders coexist with different purposes:
 
-- `attached_assets/` (~34 MB, aliased as `@assets` in the ux-camp-amsterdam Vite config) — uploads pasted into the chat by the user. Kept small via the `optimize-images` script above. The accompanying `.optimize-manifest.json` records all PNG→JPG renames performed during optimization. **Do not commit oversized originals here**; re-run `optimize-images` after adding large images.
+- `attached_assets/` (~34 MB, aliased as `@assets` in the ux-camp-amsterdam Vite config) — uploads pasted into the chat by the user. Kept small via the `optimize-images` script above. The accompanying `.optimize-manifest.json` records all PNG→JPG renames performed during optimization. **Do not commit oversized originals here**; re-run `optimize-images` after adding large images. Note: the optimization only shrinks the working tree — git history still contains the pre-optimization blobs, so a fresh clone still pulls the full historical size. A separate history-rewrite (e.g. `git-filter-repo`) is required to reclaim that space and is intentionally out-of-scope here because it rewrites SHAs and forces every collaborator to re-clone.
 - `artifacts/ux-camp-amsterdam/assets/images/` — curated, hand-chosen photos checked into the artifact (hero shots, organizer portraits, year-by-year event galleries). These are intentionally tracked at full resolution; the optimization script does not touch them.
 
 Currently referenced via `@assets`: `Year2017.tsx`, `Year2018.tsx`, `Year2019.tsx`, `Year2025.tsx` (other pages use `assets/images/...`).
