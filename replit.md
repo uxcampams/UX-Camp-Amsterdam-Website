@@ -94,3 +94,17 @@ Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHea
 ### `scripts` (`@workspace/scripts`)
 
 Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
+
+Available scripts:
+
+- `optimize-images` — re-encodes images in `attached_assets/` in place using `sharp`. Resizes to max 2000px width, JPEG q82 (mozjpeg). PNGs without transparency are converted to JPEG and the original is deleted; transparent PNGs are losslessly re-compressed. Already-optimal files are skipped (only replaces when result is <95% of original). Writes a rename manifest to `attached_assets/.optimize-manifest.json`. Use `LIMIT=N` env var to process only N files per run (idempotent, safe to re-run to continue).
+- `rewrite-asset-imports` — reads the manifest and updates `@assets/...` imports across `artifacts/ux-camp-amsterdam/src` for every PNG→JPG (or `.jpeg`→`.jpg`) rename. Run after `optimize-images`.
+
+## Image assets
+
+Two image folders coexist with different purposes:
+
+- `attached_assets/` (~34 MB, aliased as `@assets` in the ux-camp-amsterdam Vite config) — uploads pasted into the chat by the user. Kept small via the `optimize-images` script above. The accompanying `.optimize-manifest.json` records all PNG→JPG renames performed during optimization. **Do not commit oversized originals here**; re-run `optimize-images` after adding large images.
+- `artifacts/ux-camp-amsterdam/assets/images/` — curated, hand-chosen photos checked into the artifact (hero shots, organizer portraits, year-by-year event galleries). These are intentionally tracked at full resolution; the optimization script does not touch them.
+
+Currently referenced via `@assets`: `Year2017.tsx`, `Year2018.tsx`, `Year2019.tsx`, `Year2025.tsx` (other pages use `assets/images/...`).

@@ -5,10 +5,13 @@
   "type": "module",
   "scripts": {
     "hello": "tsx ./src/hello.ts",
+    "optimize-images": "tsx ./src/optimize-images.ts",
+    "rewrite-asset-imports": "tsx ./src/rewrite-asset-imports.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
     "@types/node": "catalog:",
+    "sharp": "^0.34.5",
     "tsx": "catalog:"
   }
 }
