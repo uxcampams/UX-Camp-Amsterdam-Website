@@ -3,6 +3,12 @@ import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 import SessionCardList from "@/components/SessionCardList";
 import CtaBanner from "@/components/CtaBanner";
+import nienHuaPhoto from "../../../assets/images/2024/Nien-Hua_Gu.png";
+import mariaPhoto from "../../../assets/images/2024/Maria_Adrian.png";
+import vincentPhoto from "../../../assets/images/2024/Vincent_Vijn.png";
+import indrePhoto from "../../../assets/images/2024/Indre_Lauciute.png";
+import ritaPhoto from "../../../assets/images/2024/Rita_Costa_Pereira.png";
+import tatianaPhoto from "../../../assets/images/2024/Tatiana_Sidorenkova.png";
 
 const sessions = [
   "Content Modelling for Everyone — Larry Swanson",
@@ -44,12 +50,12 @@ const sessions = [
 ];
 
 const team: Organizer[] = [
-  { name: "Nien-Hua Gu", role: "", linkedin: "#" },
-  { name: "María de los Ángeles Adrián", role: "", linkedin: "#" },
-  { name: "Vincent Vijn", role: "", linkedin: "#" },
-  { name: "Indre Lauciute", role: "", linkedin: "#" },
-  { name: "Rita Costa Pereira", role: "", linkedin: "#" },
-  { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
+  { name: "Nien-Hua Gu", role: "", linkedin: "#", photo: nienHuaPhoto },
+  { name: "María de los Ángeles Adrián", role: "", linkedin: "#", photo: mariaPhoto },
+  { name: "Vincent Vijn", role: "", linkedin: "#", photo: vincentPhoto },
+  { name: "Indre Lauciute", role: "", linkedin: "#", photo: indrePhoto },
+  { name: "Rita Costa Pereira", role: "", linkedin: "#", photo: ritaPhoto },
+  { name: "Tatiana Sidorenkova", role: "", linkedin: "#", photo: tatianaPhoto },
 ];
 
 const sponsors = ["CMD Amsterdam / Hogeschool van Amsterdam (HvA)", "Axure"];
