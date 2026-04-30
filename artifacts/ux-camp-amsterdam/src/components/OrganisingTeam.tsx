@@ -51,26 +51,43 @@ export default function OrganisingTeam({ organizers }: { organizers: Organizer[]
           };
           const inner = (
             <>
-              <div
-                aria-hidden="true"
-                style={{
-                  width: 72,
-                  height: 72,
-                  borderRadius: "50%",
-                  background: LIGHT_GREY,
-                  color: RED,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontFamily: FONT,
-                  fontWeight: 800,
-                  fontSize: 22,
-                  marginBottom: 16,
-                  border: `2px solid ${RED}`,
-                }}
-              >
-                {getInitials(p.name)}
-              </div>
+              {p.photo ? (
+                <img
+                  src={p.photo}
+                  alt={p.name}
+                  loading="lazy"
+                  style={{
+                    width: 72,
+                    height: 72,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    marginBottom: 16,
+                    border: `2px solid ${RED}`,
+                    display: "block",
+                  }}
+                />
+              ) : (
+                <div
+                  aria-hidden="true"
+                  style={{
+                    width: 72,
+                    height: 72,
+                    borderRadius: "50%",
+                    background: LIGHT_GREY,
+                    color: RED,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontFamily: FONT,
+                    fontWeight: 800,
+                    fontSize: 22,
+                    marginBottom: 16,
+                    border: `2px solid ${RED}`,
+                  }}
+                >
+                  {getInitials(p.name)}
+                </div>
+              )}
               <div
                 style={{
                   fontFamily: FONT,
