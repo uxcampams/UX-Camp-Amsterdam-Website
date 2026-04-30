@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { TICKET_URL } from "../constants";
 import heroBg from "../../assets/images/Home_hero.jpg";
-import photo1 from "../../assets/images/1000014612.jpg";
-import photo2 from "../../assets/images/1000014617.jpg";
-import photo3 from "../../assets/images/1000014623.jpg";
-import photo4 from "../../assets/images/1000014637.jpg";
-import photo5 from "../../assets/images/20240629_120357.jpg";
-import photo6 from "../../assets/images/20240629_153725.jpg";
+import photo1 from "../../assets/images/2024/event/1000014612.jpg";
+import photo2 from "../../assets/images/2024/event/1000014617.jpg";
+import photo3 from "../../assets/images/2024/event/1000014623.jpg";
+import photo4 from "../../assets/images/2024/event/1000014637.jpg";
+import photo5 from "../../assets/images/2024/event/20240629_120357.jpg";
+import photo6 from "../../assets/images/2024/event/20240629_153725.jpg";
 
 const RED = "#B20101";
 const DARK = "#333333";

@@ -2,8 +2,32 @@ import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 import SessionCardList from "@/components/SessionCardList";
+import Impressions from "@/components/Impressions";
 import CtaBanner from "@/components/CtaBanner";
 import nienHuaPhoto from "../../../assets/images/2024/Nien-Hua_Gu.png";
+import event1 from "../../../assets/images/2024/event/20240629_120357.jpg";
+import event2 from "../../../assets/images/2024/event/20240629_153725.jpg";
+import event3 from "../../../assets/images/2024/event/20240629_165340.jpg";
+import event4 from "../../../assets/images/2024/event/20240629_173111.jpg";
+import event5 from "../../../assets/images/2024/event/1000014612.jpg";
+import event6 from "../../../assets/images/2024/event/1000014617.jpg";
+import event7 from "../../../assets/images/2024/event/1000014623.jpg";
+import event8 from "../../../assets/images/2024/event/1000014637.jpg";
+import event9 from "../../../assets/images/2024/event/1000014642.jpg";
+import event10 from "../../../assets/images/2024/event/IMG_9210.jpg";
+import event11 from "../../../assets/images/2024/event/IMG_9226.jpg";
+import event12 from "../../../assets/images/2024/event/IMG_9227.jpg";
+import event13 from "../../../assets/images/2024/event/IMG_9229.jpg";
+import event14 from "../../../assets/images/2024/event/IMG_9230.jpg";
+import event15 from "../../../assets/images/2024/event/IMG_9296.jpg";
+import event16 from "../../../assets/images/2024/event/IMG_9357.jpg";
+import event17 from "../../../assets/images/2024/event/IMG_9362.jpg";
+import event18 from "../../../assets/images/2024/event/IMG_9373.jpg";
+import event19 from "../../../assets/images/2024/event/IMG_9421.jpg";
+import event20 from "../../../assets/images/2024/event/IMG_9422.jpg";
+import event21 from "../../../assets/images/2024/event/IMG_9423.jpg";
+import event22 from "../../../assets/images/2024/event/IMG_9471.jpg";
+import event23 from "../../../assets/images/2024/event/IMG_9474.jpg";
 import mariaPhoto from "../../../assets/images/2024/Maria_Adrian.png";
 import vincentPhoto from "../../../assets/images/2024/Vincent_Vijn.png";
 import indrePhoto from "../../../assets/images/2024/Indre_Lauciute.png";
@@ -49,6 +73,32 @@ const sessions = [
   "Synthetive: interactive board game on AI in political campaigns — Muskan Jain",
 ];
 
+const eventPhotos = [
+  { src: event1, caption: "Welcome morning" },
+  { src: event2, caption: "Session in full swing" },
+  { src: event3, caption: "Hallway conversations" },
+  { src: event4, caption: "Wrap-up of the day" },
+  { src: event5, caption: "Audience listening in" },
+  { src: event6, caption: "Speaker on stage" },
+  { src: event7, caption: "Group discussion" },
+  { src: event8, caption: "Networking break" },
+  { src: event9, caption: "Sharing ideas" },
+  { src: event10, caption: "Madness session" },
+  { src: event11, caption: "Schedule wall" },
+  { src: event12, caption: "Coffee break" },
+  { src: event13, caption: "Workshop time" },
+  { src: event14, caption: "Engaged audience" },
+  { src: event15, caption: "Q&A" },
+  { src: event16, caption: "Lunch together" },
+  { src: event17, caption: "Discussion circle" },
+  { src: event18, caption: "Side conversation" },
+  { src: event19, caption: "Smiling crowd" },
+  { src: event20, caption: "Note taking" },
+  { src: event21, caption: "Camp atmosphere" },
+  { src: event22, caption: "Closing thank yous" },
+  { src: event23, caption: "After-party kicks off" },
+];
+
 const team: Organizer[] = [
   { name: "Nien-Hua Gu", role: "", linkedin: "#", photo: nienHuaPhoto },
   { name: "María de los Ángeles Adrián", role: "", linkedin: "#", photo: mariaPhoto },
@@ -83,24 +133,7 @@ export default function Year2024() {
       </ContentSection>
 
       <ContentSection alt>
-        <h2>Impressions from #UXcampAMS24</h2>
-        <p style={{ marginTop: 24 }}>
-          <a
-            href="https://uxcampams.com/photos-24"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: '"Open Sans", system-ui, sans-serif',
-              fontWeight: 600,
-              fontSize: 14,
-              color: "#B20101",
-              textDecoration: "none",
-              letterSpacing: 0.5,
-            }}
-          >
-            See all photos from #UXcampAMS24 →
-          </a>
-        </p>
+        <Impressions yearShort="24" slides={eventPhotos} seeAllHref="https://uxcampams.com/photos-24" />
       </ContentSection>
 
       <ContentSection>

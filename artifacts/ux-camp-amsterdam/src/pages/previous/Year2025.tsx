@@ -1,8 +1,27 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import CtaBanner from "@/components/CtaBanner";
+import Impressions from "@/components/Impressions";
 import photoAudience from "../../../assets/images/UX_Camp_Amsterdam_2025.jpg";
 import photoOrganizers from "../../../assets/images/Polina_Popravka_UX_Camp_Amsterdam.jpeg";
+import dsc01914 from "@assets/DSC01914_1777548359984.png";
+import dsc01928 from "@assets/DSC01928_1777548359984.png";
+import dsc01930 from "@assets/DSC01930_1777548359975.png";
+import dsc01931 from "@assets/DSC01931_1777548359977.png";
+import dsc02022 from "@assets/DSC02022_1777548359977.png";
+import dsc02035 from "@assets/DSC02035_1777548359977.png";
+import dsc02037 from "@assets/DSC02037_1777548359978.png";
+import dsc02043 from "@assets/DSC02043_1777548359978.png";
+import dsc02045 from "@assets/DSC02045_1777548359978.png";
+import dsc02053 from "@assets/DSC02053_1777548359979.png";
+import frame136 from "@assets/Frame_136_1777548359979.png";
+import frame139 from "@assets/Frame_139_1777548359979.jpg";
+import frame140 from "@assets/Frame_140_1777548359980.jpg";
+import group137 from "@assets/Group_137_1777548359980.jpg";
+import rect94 from "@assets/Rectangle_94_1777548359981.png";
+import rect95 from "@assets/Rectangle_95_1777548359982.png";
+import rect96 from "@assets/Rectangle_96_1777548359983.png";
+import rect97 from "@assets/Rectangle_97_1777548359983.png";
 import nienHuaPhoto from "../../../assets/images/2024/Nien-Hua_Gu.png";
 import mariaPhoto from "../../../assets/images/2024/Maria_Adrian.png";
 import vincentPhoto from "../../../assets/images/2024/Vincent_Vijn.png";
@@ -49,6 +68,29 @@ const sessions: string[] = [
   "Embody Brave Space: How to build courage within group dynamics? by Yihua/Amy",
   "How to handle stakeholder feedback during design reviews by Nicole Weber",
   "UXR + AI by Tatiana Sidorenkova",
+];
+
+const eventPhotos = [
+  { src: photoAudience, caption: "Attendees raising hands during a session" },
+  { src: photoOrganizers, caption: "Organizers presenting the day's schedule" },
+  { src: dsc01914, caption: "Camp morning energy" },
+  { src: dsc01928, caption: "Welcome to UXcampAMS25" },
+  { src: dsc01930, caption: "Schedule wall fills up" },
+  { src: dsc01931, caption: "Setting up the day" },
+  { src: dsc02022, caption: "Session in progress" },
+  { src: dsc02035, caption: "Listening in" },
+  { src: dsc02037, caption: "Audience engaged" },
+  { src: dsc02043, caption: "Group discussion" },
+  { src: dsc02045, caption: "Q&A moment" },
+  { src: dsc02053, caption: "Side conversations" },
+  { src: frame136, caption: "Camp atmosphere" },
+  { src: frame139, caption: "Hallway chat" },
+  { src: frame140, caption: "Networking break" },
+  { src: group137, caption: "The whole crew" },
+  { src: rect94, caption: "Speaker on stage" },
+  { src: rect95, caption: "Workshop time" },
+  { src: rect96, caption: "Sharing ideas" },
+  { src: rect97, caption: "Wrap-up of the day" },
 ];
 
 const team: { name: string; photo?: string }[] = [
@@ -207,72 +249,11 @@ export default function Year2025() {
         {/* SECTION 2 — EVENT PHOTOS */}
         <section style={{ background: LIGHT_GREY, ...sectionPad }}>
           <div style={innerWrap}>
-            <h2 className="uxc-h2" style={{ marginBottom: 24 }}>
-              Impressions from #UXcampAMS25
-            </h2>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: 8,
-              }}
-              className="uxc-y25-photo-grid"
-            >
-              {[
-                {
-                  src: photoAudience,
-                  alt: "Attendees raising hands during a session at UX Camp Amsterdam 2025",
-                },
-                {
-                  src: photoOrganizers,
-                  alt: "Organizers presenting the day's schedule at UX Camp Amsterdam 2025",
-                },
-              ].map((p, i) => (
-                <div
-                  key={i}
-                  style={{
-                    width: "100%",
-                    aspectRatio: "4 / 3",
-                    overflow: "hidden",
-                    border: `1px solid ${MID_GREY}`,
-                    background: MID_GREY,
-                    borderRadius: 0,
-                  }}
-                >
-                  <img
-                    src={p.src}
-                    alt={p.alt}
-                    loading="lazy"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block",
-                      borderRadius: 0,
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div style={{ marginTop: 24 }}>
-              <a
-                href="https://www.instagram.com/uxcampamsterdam/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  fontFamily: FONT,
-                  fontWeight: 600,
-                  fontSize: 14,
-                  color: RED,
-                  textDecoration: "none",
-                  letterSpacing: 0.5,
-                }}
-              >
-                See all photos from #UXcampAMS25 →
-              </a>
-            </div>
+            <Impressions
+              yearShort="25"
+              slides={eventPhotos}
+              seeAllHref="https://www.instagram.com/uxcampamsterdam/"
+            />
           </div>
         </section>
 

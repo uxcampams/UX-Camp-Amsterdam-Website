@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 import SessionCardList from "@/components/SessionCardList";
-import PhotoGrid from "@/components/PhotoGrid";
+import Impressions from "@/components/Impressions";
 import CtaBanner from "@/components/CtaBanner";
 import receptionImg from "../../../assets/images/2015/reception.jpg";
 import madness1Img from "../../../assets/images/2015/madness1.jpg";
@@ -30,12 +30,12 @@ const organizers: Organizer[] = [
 ];
 
 const photos = [
-  { src: receptionImg, alt: "Reception" },
-  { src: madness1Img, alt: "Madness Session 1" },
-  { src: scheduleImg, alt: "Schedule" },
-  { src: madness2Img, alt: "Madness Session 2" },
-  { src: presentationImg, alt: "Presentation" },
-  { src: foodImg, alt: "Food" },
+  { src: receptionImg, caption: "Reception" },
+  { src: madness1Img, caption: "Madness Session 1" },
+  { src: scheduleImg, caption: "Schedule" },
+  { src: madness2Img, caption: "Madness Session 2" },
+  { src: presentationImg, caption: "Presentation" },
+  { src: foodImg, caption: "Food" },
 ];
 
 const slides = [
@@ -62,7 +62,7 @@ export default function Year2015() {
       </ContentSection>
 
       <ContentSection alt>
-        <PhotoGrid images={photos} yearShort="15" seeAllHref="https://goo.gl/photos/82ZEwczoHbZfyT6R9" />
+        <Impressions yearShort="15" slides={photos} seeAllHref="https://goo.gl/photos/82ZEwczoHbZfyT6R9" />
       </ContentSection>
 
       <ContentSection>

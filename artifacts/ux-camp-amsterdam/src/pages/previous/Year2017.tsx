@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 import SessionCardList from "@/components/SessionCardList";
+import Impressions from "@/components/Impressions";
 import CtaBanner from "@/components/CtaBanner";
 import philippPhoto from "../../../assets/images/2019/Philipp_Engel.png";
 import tatianaPhoto from "../../../assets/images/2019/Tatiana_Sidorenkova.png";
@@ -47,24 +48,7 @@ export default function Year2017() {
       </ContentSection>
 
       <ContentSection alt>
-        <h2>Impressions from #UXcampAMS17</h2>
-        <p style={{ marginTop: 24 }}>
-          <a
-            href="https://goo.gl/photos/NxyPfCmuV5FTzLGXA"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontFamily: '"Open Sans", system-ui, sans-serif',
-              fontWeight: 600,
-              fontSize: 14,
-              color: "#B20101",
-              textDecoration: "none",
-              letterSpacing: 0.5,
-            }}
-          >
-            See all photos from #UXcampAMS17 →
-          </a>
-        </p>
+        <Impressions yearShort="17" seeAllHref="https://goo.gl/photos/NxyPfCmuV5FTzLGXA" />
       </ContentSection>
 
       <ContentSection>

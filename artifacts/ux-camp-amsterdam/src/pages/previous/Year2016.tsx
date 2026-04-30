@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 import SessionCardList from "@/components/SessionCardList";
-import PhotoGrid from "@/components/PhotoGrid";
+import Impressions from "@/components/Impressions";
 import CtaBanner from "@/components/CtaBanner";
 
 import event1 from "../../../assets/images/2016/event-1.jpg";
@@ -42,12 +42,12 @@ const slides = [
 ];
 
 const photos = [
-  { src: event1, alt: "Sponsors on stage" },
-  { src: event2, alt: "UXcamp team" },
-  { src: event3, alt: "Madness Session" },
-  { src: event4, alt: "Carolina Gómez presenting" },
-  { src: event5, alt: "Q&A with the audience" },
-  { src: event6, alt: "Twitter wrap-up" },
+  { src: event1, caption: "Sponsors on stage" },
+  { src: event2, caption: "UXcamp team" },
+  { src: event3, caption: "Madness Session" },
+  { src: event4, caption: "Carolina Gómez presenting" },
+  { src: event5, caption: "Q&A with the audience" },
+  { src: event6, caption: "Twitter wrap-up" },
 ];
 
 const sponsors = [
@@ -89,7 +89,7 @@ export default function Year2016() {
       </ContentSection>
 
       <ContentSection alt>
-        <PhotoGrid images={photos} yearShort="16" seeAllHref="#" />
+        <Impressions yearShort="16" slides={photos} />
         <p style={{ marginTop: 16 }}>
           Special thanks to Den Tserkovnyi &amp; Filip Mishevski for the photos.
         </p>

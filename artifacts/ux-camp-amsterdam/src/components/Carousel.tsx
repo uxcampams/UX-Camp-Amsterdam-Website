@@ -11,6 +11,10 @@ export default function Carousel({ slides }: { slides: Slide[] }) {
   const prev = () => goTo(index - 1);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (mq.matches) return;
+    }
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % total);
     }, 5000);
