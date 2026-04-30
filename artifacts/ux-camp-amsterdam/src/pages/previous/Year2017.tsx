@@ -105,7 +105,7 @@ export default function Year2017() {
       </ContentSection>
 
       <ContentSection alt>
-        <h2>Organising team</h2>
+        <h2>The people who made it happen</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>
 

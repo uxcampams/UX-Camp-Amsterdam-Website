@@ -84,7 +84,7 @@ export default function Year2023() {
       </ContentSection>
 
       <ContentSection>
-        <h2>Organising team</h2>
+        <h2>The people who made it happen</h2>
         <OrganisingTeam organizers={team} />
       </ContentSection>
 
