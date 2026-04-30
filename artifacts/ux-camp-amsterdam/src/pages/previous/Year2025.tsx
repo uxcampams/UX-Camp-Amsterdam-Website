@@ -3,6 +3,11 @@ import { Link } from "wouter";
 import CtaBanner from "@/components/CtaBanner";
 import photoAudience from "../../../assets/images/UX_Camp_Amsterdam_2025.jpg";
 import photoOrganizers from "../../../assets/images/Polina_Popravka_UX_Camp_Amsterdam.jpeg";
+import nienHuaPhoto from "../../../assets/images/2024/Nien-Hua_Gu.png";
+import mariaPhoto from "../../../assets/images/2024/Maria_Adrian.png";
+import vincentPhoto from "../../../assets/images/2024/Vincent_Vijn.png";
+import indrePhoto from "../../../assets/images/2024/Indre_Lauciute.png";
+import ritaPhoto from "../../../assets/images/2024/Rita_Costa_Pereira.png";
 
 const RED = "#B20101";
 const DARK = "#333333";
@@ -46,14 +51,14 @@ const sessions: string[] = [
   "UXR + AI by Tatiana Sidorenkova",
 ];
 
-const team = [
-  "Arunima Ved",
-  "Talita Collare",
-  "Nien-Hua Gu",
-  "María de los Ángeles Adrián",
-  "Vincent Vijn",
-  "Indre Lauciute",
-  "Rita Costa Pereira",
+const team: { name: string; photo?: string }[] = [
+  { name: "Arunima Ved" },
+  { name: "Talita Collare" },
+  { name: "Nien-Hua Gu", photo: nienHuaPhoto },
+  { name: "María de los Ángeles Adrián", photo: mariaPhoto },
+  { name: "Vincent Vijn", photo: vincentPhoto },
+  { name: "Indre Lauciute", photo: indrePhoto },
+  { name: "Rita Costa Pereira", photo: ritaPhoto },
 ];
 
 const footerNav = [
@@ -329,7 +334,7 @@ export default function Year2025() {
             </h2>
 
             <div className="uxc-grid-4">
-              {team.map((name) => {
+              {team.map(({ name, photo }) => {
                 const initial = name.trim().charAt(0).toUpperCase();
                 return (
                   <div
@@ -341,13 +346,32 @@ export default function Year2025() {
                       textAlign: "center",
                     }}
                   >
-                    <div
-                      className="uxc-team-avatar"
-                      aria-hidden="true"
-                      style={{ background: LIGHT_GREY }}
-                    >
-                      {initial}
-                    </div>
+                    {photo ? (
+                      <img
+                        src={photo}
+                        alt={name}
+                        loading="lazy"
+                        style={{
+                          width: 80,
+                          height: 80,
+                          objectFit: "cover",
+                          objectPosition: "center top",
+                          border: `2px solid ${RED}`,
+                          borderRadius: "50%",
+                          display: "block",
+                          margin: "0 auto 12px",
+                          background: WHITE,
+                        }}
+                      />
+                    ) : (
+                      <div
+                        className="uxc-team-avatar"
+                        aria-hidden="true"
+                        style={{ background: LIGHT_GREY }}
+                      >
+                        {initial}
+                      </div>
+                    )}
                     <div
                       style={{
                         fontFamily: FONT,
