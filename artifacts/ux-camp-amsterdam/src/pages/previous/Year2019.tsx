@@ -3,6 +3,12 @@ import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 import SessionCardList from "@/components/SessionCardList";
 import CtaBanner from "@/components/CtaBanner";
+import philippPhoto from "../../../assets/images/2019/Philipp_Engel.png";
+import tatianaPhoto from "../../../assets/images/2019/Tatiana_Sidorenkova.png";
+import garethPhoto from "../../../assets/images/2019/Gareth_Simms.png";
+import doronPhoto from "../../../assets/images/2019/Doron_Hirsch.png";
+import xiaoyuPhoto from "../../../assets/images/2019/Xiaoyu_Shen.jpg";
+import davePhoto from "../../../assets/images/2019/Dave_de_Bakker.jpg";
 
 const slides = [
   "Beyond visual — Dean Birkett",
@@ -15,12 +21,12 @@ const slides = [
 ];
 
 const team: Organizer[] = [
-  { name: "Philipp Engel", role: "", linkedin: "#" },
-  { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
-  { name: "Gareth Simms", role: "", linkedin: "#" },
-  { name: "Doron Hirsch", role: "", linkedin: "#" },
-  { name: "Xiaoyu Shen", role: "", linkedin: "#" },
-  { name: "Dave de Bakker", role: "", linkedin: "#" },
+  { name: "Philipp Engel", role: "", linkedin: "#", photo: philippPhoto },
+  { name: "Tatiana Sidorenkova", role: "", linkedin: "#", photo: tatianaPhoto },
+  { name: "Gareth Simms", role: "", linkedin: "#", photo: garethPhoto },
+  { name: "Doron Hirsch", role: "", linkedin: "#", photo: doronPhoto },
+  { name: "Xiaoyu Shen", role: "", linkedin: "#", photo: xiaoyuPhoto },
+  { name: "Dave de Bakker", role: "", linkedin: "#", photo: davePhoto },
 ];
 
 const sponsors = [
