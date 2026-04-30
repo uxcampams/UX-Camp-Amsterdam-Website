@@ -33,6 +33,7 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "..", "..", "attached_assets"),
     },
   },
+  assetsInclude: ['**/*.glb'],
   build: {
     outDir: "dist",
     emptyOutDir: true,

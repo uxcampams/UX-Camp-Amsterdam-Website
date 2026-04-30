@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
+import Lanyard from "../components/Lanyard/Lanyard";
 import { TICKET_URL } from "../constants";
 import heroBg from "../../assets/images/Home_hero.jpg";
 import indrePortrait from "../../assets/images/2026/Indre_Lauciute.jpg";
@@ -29,10 +30,46 @@ const WHITE = "#FFFFFF";
 const FONT = "'Open Sans', sans-serif";
 
 const stats = [
-  { value: "9th", label: "Edition" },
-  { value: "120+", label: "Participants" },
-  { value: "25+", label: "Sessions" },
+  { number: 9, suffix: "th", label: "Edition" },
+  { number: 120, suffix: "+", label: "Participants" },
+  { number: 25, suffix: "+", label: "Sessions" },
 ];
+
+function AnimatedNumber({ number, suffix }: { number: number; suffix: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          const duration = 1200;
+          const start = performance.now();
+          const tick = (now: number) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.round(eased * number));
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [number]);
+
+  return (
+    <div ref={ref}>
+      {count}{suffix}
+    </div>
+  );
+}
 
 
 const newFormats = [
@@ -192,6 +229,15 @@ export default function Home() {
         .uxc-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
         .uxc-grid-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
+        .uxc-lanyard-layout {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0;
+          align-items: center;
+        }
+        .uxc-lanyard-col { order: 2; min-width: 0; overflow: hidden; }
+        .uxc-lanyard-content { order: 1; min-width: 0; }
+
         .uxc-card {
           background: ${WHITE};
           border: 1px solid ${MID_GREY};
@@ -282,16 +328,19 @@ export default function Home() {
           .uxc-grid-4 { grid-template-columns: repeat(2, 1fr); }
           .uxc-grid-photos { grid-template-columns: repeat(2, 1fr); }
           .uxc-team-grid { grid-template-columns: repeat(2, 1fr); }
+          .uxc-lanyard-layout { grid-template-columns: 1fr; }
+          .uxc-lanyard-col { order: 1; }
+          .uxc-lanyard-content { order: 2; }
         }
         @media (max-width: 600px) {
-          .uxc-stats { flex-wrap: wrap; }
+          .uxc-stats { flex-wrap: nowrap; }
           .uxc-stat {
-            flex: 1 1 50%;
+            flex: 1 1 0;
+            min-width: 0;
             border-right: 1px solid rgba(255,255,255,0.3);
-            border-bottom: 1px solid rgba(255,255,255,0.3);
+            border-bottom: none;
           }
-          .uxc-stat:nth-child(2n) { border-right: none; }
-          .uxc-stat:nth-child(n+3) { border-bottom: none; }
+          .uxc-stat:last-child { border-right: none; }
           .uxc-grid-4 { grid-template-columns: 1fr; }
           .uxc-grid-photos { grid-template-columns: 1fr; }
         }
@@ -384,7 +433,7 @@ export default function Home() {
                     color: WHITE,
                   }}
                 >
-                  {s.value}
+                  <AnimatedNumber number={s.number} suffix={s.suffix} />
                 </div>
                 <div
                   style={{
@@ -407,63 +456,71 @@ export default function Home() {
         {/* SECTION 3 — WHAT IS THIS? */}
         <section id="how-it-works" style={{ background: LIGHT_GREY, ...sectionPad }}>
           <div style={innerWrap}>
-            <p
-              style={{
-                display: "inline-block",
-                background: WHITE,
-                padding: "6px 12px",
-                fontFamily: FONT,
-                fontWeight: 600,
-                fontSize: 13,
-                color: RED,
-                textTransform: "uppercase",
-                letterSpacing: 1,
-                margin: 0,
-                marginBottom: 16,
-              }}
-            >
-              What is this thing?
-            </p>
-            <h2
-              style={{
-                fontFamily: FONT,
-                fontWeight: 800,
-                fontSize: "clamp(32px, 4vw, 44px)",
-                color: DARK,
-                margin: 0,
-                marginBottom: 20,
-                maxWidth: 820,
-              }}
-            >
-              It's an unconference. There are no spectators. Only contributors.
-            </h2>
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 400,
-                fontSize: 17,
-                lineHeight: 1.7,
-                color: DARK,
-                margin: 0,
-                marginBottom: 40,
-                maxWidth: 820,
-              }}
-            >
-              UX Camp Amsterdam is back for its 9th edition — a community-run unconference where you set the agenda, run the sessions, and shape the day. No keynotes. No panels. No passive sitting. Everyone contributes.
-            </p>
+            <div className="uxc-lanyard-layout">
+              {/* Lanyard — right on desktop, top on mobile */}
+              <div className="uxc-lanyard-col" style={{ marginTop: -80 }}>
+                <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
+              </div>
 
-            <Link href="/how-it-works" className="uxc-link" style={{ display: "inline-block", marginBottom: 40 }}>
-              About UX Camp Amsterdam →
-            </Link>
+              {/* Text content */}
+              <div className="uxc-lanyard-content">
+                <p
+                  style={{
+                    display: "inline-block",
+                    background: WHITE,
+                    padding: "6px 12px",
+                    fontFamily: FONT,
+                    fontWeight: 600,
+                    fontSize: 13,
+                    color: RED,
+                    textTransform: "uppercase",
+                    letterSpacing: 1,
+                    margin: 0,
+                    marginBottom: 16,
+                  }}
+                >
+                  What is this thing?
+                </p>
+                <h2
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 800,
+                    fontSize: "clamp(32px, 4vw, 44px)",
+                    color: DARK,
+                    margin: 0,
+                    marginBottom: 20,
+                  }}
+                >
+                  It's an unconference. There are no spectators. Only contributors.
+                </h2>
+                <p
+                  style={{
+                    fontFamily: FONT,
+                    fontWeight: 400,
+                    fontSize: 17,
+                    lineHeight: 1.7,
+                    color: DARK,
+                    margin: 0,
+                    marginBottom: 40,
+                  }}
+                >
+                  UX Camp Amsterdam is back for its 9th edition — a community-run unconference where you set the agenda, run the sessions, and shape the day. No keynotes. No panels. No passive sitting. Everyone contributes.
+                </p>
 
+                <Link href="/how-it-works" className="uxc-link" style={{ display: "inline-block" }}>
+                  About UX Camp Amsterdam →
+                </Link>
+              </div>
+            </div>
+
+            {/* Full-width row: Here's how it works */}
             <p
               style={{
                 fontFamily: FONT,
                 fontWeight: 800,
                 fontSize: 20,
                 color: DARK,
-                margin: 0,
-                marginBottom: 24,
+                margin: "48px 0 24px",
               }}
             >
               Here's how it works:
