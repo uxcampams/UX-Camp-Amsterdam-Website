@@ -3,6 +3,8 @@ import ContentSection from "@/components/ContentSection";
 import OrganisingTeam, { type Organizer } from "@/components/OrganisingTeam";
 import SessionCardList from "@/components/SessionCardList";
 import CtaBanner from "@/components/CtaBanner";
+import indrePhoto from "../../../assets/images/2024/Indre_Lauciute.png";
+import tatianaPhoto from "../../../assets/images/2019/Tatiana_Sidorenkova.png";
 
 const sessions = [
   "Beyond visual — Dean Birkett",
@@ -16,10 +18,10 @@ const sessions = [
 
 const team: Organizer[] = [
   { name: "Lina Beltrán", role: "", linkedin: "#" },
-  { name: "Indre Lauciute", role: "", linkedin: "#" },
+  { name: "Indre Lauciute", role: "", linkedin: "#", photo: indrePhoto },
   { name: "Alona Sanbira", role: "", linkedin: "#" },
   { name: "Garima Chauhan", role: "", linkedin: "#" },
-  { name: "Tatiana Sidorenkova", role: "", linkedin: "#" },
+  { name: "Tatiana Sidorenkova", role: "", linkedin: "#", photo: tatianaPhoto },
 ];
 
 const sponsors = ["Elsevier", "Marktplaats", "Rosenfeld Media", "Axure"];
