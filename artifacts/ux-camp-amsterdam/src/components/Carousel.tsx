@@ -27,7 +27,7 @@ export default function Carousel({ slides }: { slides: Slide[] }) {
         style={{
           position: "relative",
           overflow: "hidden",
-          height: "clamp(220px, 50vw, 480px)",
+          aspectRatio: "4 / 3",
           background: "#000",
         }}
       >

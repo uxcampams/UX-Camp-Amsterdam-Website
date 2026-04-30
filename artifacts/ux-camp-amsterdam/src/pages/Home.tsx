@@ -2,12 +2,23 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { TICKET_URL } from "../constants";
 import heroBg from "../../assets/images/Home_hero.jpg";
-import photo1 from "../../assets/images/2024/event/1000014612.jpg";
-import photo2 from "../../assets/images/2024/event/1000014617.jpg";
-import photo3 from "../../assets/images/2024/event/1000014623.jpg";
-import photo4 from "../../assets/images/2024/event/1000014637.jpg";
-import photo5 from "../../assets/images/2024/event/20240629_120357.jpg";
-import photo6 from "../../assets/images/2024/event/20240629_153725.jpg";
+import indrePortrait from "../../assets/images/2026/Indre_Lauciute.jpg";
+import talitaPortrait from "../../assets/images/2026/Talita_Collares.jpg";
+import pedroPortrait from "../../assets/images/2026/Pedro_Gameiro.jpg";
+import nienHuaPortrait from "../../assets/images/2026/Nien-Hua_Gu.png";
+import vincentPortrait from "../../assets/images/2026/Vincent_Vijn.jpg";
+import minYuPortrait from "../../assets/images/2026/Min_Yu_Wu.jpg";
+import gregPortrait from "../../assets/images/2026/Greg_Weinstein.jpg";
+import mannanPortrait from "../../assets/images/2026/Mannan_Gupta.jpg";
+import sharonPortrait from "../../assets/images/2026/Sharon_Li.jpg";
+import meghanaPortrait from "../../assets/images/2026/Meghana_Gautam.jpg";
+import nivedithaPortrait from "../../assets/images/2026/Niveditha_Kulkarni.jpg";
+import photo1 from "@assets/DSC01914_1777548359984.jpg";
+import photo2 from "@assets/DSC01928_1777548359984.jpg";
+import photo3 from "@assets/DSC02022_1777548359977.jpg";
+import photo4 from "@assets/DSC02035_1777548359977.jpg";
+import photo5 from "@assets/DSC02043_1777548359978.jpg";
+import photo6 from "@assets/DSC02053_1777548359979.jpg";
 
 const RED = "#B20101";
 const DARK = "#333333";
@@ -72,17 +83,17 @@ const firstTimeItems = [
 const photos = [photo1, photo2, photo3, photo4, photo5, photo6];
 
 const team = [
-  { name: "Indre Lauciute", role: "UX Designer" },
-  { name: "Talita Collare", role: "Product Designer" },
-  { name: "Nien-Hua Gu", role: "Product Designer" },
-  { name: "Pedro", role: "[Role TBC]" },
-  { name: "Vincent Vijn", role: "Design Lead" },
-  { name: "May", role: "UX Researcher" },
-  { name: "Greg Weinstein", role: "[Role TBC]" },
-  { name: "Mannan", role: "[Role TBC]" },
-  { name: "Sharon", role: "[Role TBC]" },
-  { name: "Meghana", role: "[Role TBC]" },
-  { name: "Niveditha", role: "Product Designer" },
+  { name: "Indre Lauciute", role: "Product Designer", linkedin: "https://www.linkedin.com/in/indrelauciute/", photo: indrePortrait },
+  { name: "Talita Collares", role: "Data-driven Designer", linkedin: "https://www.linkedin.com/in/talitacollares/", photo: talitaPortrait },
+  { name: "Nien-Hua Gu", role: "Product Designer", linkedin: "https://www.linkedin.com/in/nienhua-gu/", photo: nienHuaPortrait },
+  { name: "Pedro Gameiro", role: "Design Lead", linkedin: "https://www.linkedin.com/in/pedrogameiro/", photo: pedroPortrait },
+  { name: "Vincent Vijn", role: "Design Lead", linkedin: "https://www.linkedin.com/in/vincentvijn/", photo: vincentPortrait },
+  { name: "Min Yu Wu", role: "UI/UX Designer", linkedin: "https://www.linkedin.com/in/minyuwu/", photo: minYuPortrait },
+  { name: "Greg Weinstein", role: "Inclusive Design and Accessibility Consultant", linkedin: "https://www.linkedin.com/in/gregoryweinsteinphd/", photo: gregPortrait },
+  { name: "Mannan Gupta", role: "Mixed-Methods Researcher", linkedin: "https://www.linkedin.com/in/mannangupta/", photo: mannanPortrait },
+  { name: "Sharon Li", role: "Service / Product Designer", linkedin: "https://www.linkedin.com/in/sharon-li-539a8b16a/", photo: sharonPortrait },
+  { name: "Meghana Gautam", role: "UX Researcher", linkedin: "https://www.linkedin.com/in/meghanagautam/", photo: meghanaPortrait },
+  { name: "Niveditha Kulkarni", role: "UX/UI Designer", linkedin: "https://www.linkedin.com/in/nivedithakulkarni/", photo: nivedithaPortrait },
 ];
 
 const footerNav = [
@@ -235,8 +246,8 @@ export default function Home() {
           text-align: center;
         }
         .uxc-avatar {
-          width: 72px;
-          height: 72px;
+          width: 120px;
+          height: 120px;
           border-radius: 50%;
           background: ${LIGHT_GREY};
           color: ${RED};
@@ -354,9 +365,6 @@ export default function Home() {
                 className="uxc-btn-primary"
               >
                 Grab your ticket →
-              </a>
-              <a href="#how-it-works" className="uxc-btn-outline">
-                How does it work?
               </a>
             </div>
           </div>
@@ -721,7 +729,7 @@ export default function Home() {
                 textAlign: "center",
               }}
             >
-              Impressions from #UXcampAMS24
+              Impressions from #UXcampAMS25
             </h2>
 
             <div className="uxc-grid-photos">
@@ -738,7 +746,7 @@ export default function Home() {
                 >
                   <img
                     src={src}
-                    alt={`UX Camp Amsterdam 2024 — photo ${i + 1}`}
+                    alt={`UX Camp Amsterdam 2025 — photo ${i + 1}`}
                     style={{
                       width: "100%",
                       height: "100%",
@@ -752,7 +760,7 @@ export default function Home() {
             </div>
 
             <div style={{ textAlign: "center", marginTop: 40 }}>
-              <Link href="/2024-post-event" className="uxc-link">
+              <Link href="/previous/2025" className="uxc-link">
                 See more photos →
               </Link>
             </div>
@@ -778,10 +786,26 @@ export default function Home() {
 
             <div className="uxc-team-grid">
               {team.map((member) => (
-                <div key={member.name} className="uxc-team-card">
-                  <div className="uxc-avatar" aria-hidden="true">
-                    {getInitials(member.name)}
-                  </div>
+                <a
+                  key={member.name}
+                  href={member.linkedin ?? "https://www.linkedin.com/"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="uxc-team-card"
+                  style={{ textDecoration: "none" }}
+                >
+                  {member.photo ? (
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="uxc-avatar"
+                      style={{ objectFit: "cover", objectPosition: "center top" }}
+                    />
+                  ) : (
+                    <div className="uxc-avatar" aria-hidden="true">
+                      {getInitials(member.name)}
+                    </div>
+                  )}
                   <p
                     style={{
                       fontFamily: FONT,
@@ -806,11 +830,7 @@ export default function Home() {
                   >
                     {member.role}
                   </p>
-                  <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${member.name} on LinkedIn`}
+                  <span
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -825,8 +845,8 @@ export default function Home() {
                     }}
                   >
                     in
-                  </a>
-                </div>
+                  </span>
+                </a>
               ))}
             </div>
           </div>

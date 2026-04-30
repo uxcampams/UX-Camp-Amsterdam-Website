@@ -14,14 +14,9 @@ import dsc02037 from "@assets/DSC02037_1777548359978.jpg";
 import dsc02043 from "@assets/DSC02043_1777548359978.jpg";
 import dsc02045 from "@assets/DSC02045_1777548359978.jpg";
 import dsc02053 from "@assets/DSC02053_1777548359979.jpg";
-import frame136 from "@assets/Frame_136_1777548359979.jpg";
 import frame139 from "@assets/Frame_139_1777548359979.jpg";
 import frame140 from "@assets/Frame_140_1777548359980.jpg";
 import group137 from "@assets/Group_137_1777548359980.jpg";
-import rect94 from "@assets/Rectangle_94_1777548359981.jpg";
-import rect95 from "@assets/Rectangle_95_1777548359982.jpg";
-import rect96 from "@assets/Rectangle_96_1777548359983.jpg";
-import rect97 from "@assets/Rectangle_97_1777548359983.jpg";
 import nienHuaPhoto from "../../../assets/images/2024/Nien-Hua_Gu.png";
 import mariaPhoto from "../../../assets/images/2024/Maria_Adrian.png";
 import vincentPhoto from "../../../assets/images/2024/Vincent_Vijn.jpg";
@@ -83,14 +78,9 @@ const eventPhotos = [
   { src: dsc02043, caption: "Group discussion" },
   { src: dsc02045, caption: "Q&A moment" },
   { src: dsc02053, caption: "Side conversations" },
-  { src: frame136, caption: "Camp atmosphere" },
   { src: frame139, caption: "Hallway chat" },
   { src: frame140, caption: "Networking break" },
   { src: group137, caption: "The whole crew" },
-  { src: rect94, caption: "Speaker on stage" },
-  { src: rect95, caption: "Workshop time" },
-  { src: rect96, caption: "Sharing ideas" },
-  { src: rect97, caption: "Wrap-up of the day" },
 ];
 
 const team: { name: string; photo?: string }[] = [

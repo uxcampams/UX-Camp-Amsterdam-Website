@@ -74,6 +74,11 @@ const bring: BringItem[] = [
     title: "Adapter (if presenting)",
     body: "Planning to show something? All rooms have HDMI and USB-C. Bring your own adapter just in case. And download anything you need in advance — venue Wi-Fi can be unpredictable.",
   },
+  {
+    icon: "🥪",
+    title: "Buy or bring your own lunch",
+    body: "There is a restaurant in the building on the first floor. You can buy your lunch there. Of course you can bring lunch for yourself and something small to share with your new friends.",
+  },
 ];
 
 type DayCard = {

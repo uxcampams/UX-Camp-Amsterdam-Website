@@ -6,6 +6,19 @@ import Impressions from "@/components/Impressions";
 import CtaBanner from "@/components/CtaBanner";
 import indrePhoto from "../../../assets/images/2024/Indre_Lauciute.png";
 import tatianaPhoto from "../../../assets/images/2019/Tatiana_Sidorenkova.png";
+import rect95 from "@assets/Rectangle_95_1777548359982.jpg";
+import rect96 from "@assets/Rectangle_96_1777548359983.jpg";
+import rect97 from "@assets/Rectangle_97_1777548359983.jpg";
+import frame136 from "@assets/Frame_136_1777548359979.jpg";
+import rect94 from "@assets/Rectangle_94_1777548359981.jpg";
+
+const eventPhotos = [
+  { src: rect95, caption: "Workshop time" },
+  { src: rect96, caption: "Sharing ideas" },
+  { src: rect97, caption: "Wrap-up of the day" },
+  { src: frame136, caption: "Camp atmosphere" },
+  { src: rect94, caption: "Speaker on stage" },
+];
 
 const sessions = [
   "Beyond visual — Dean Birkett",
@@ -45,7 +58,7 @@ export default function Year2023() {
       </ContentSection>
 
       <ContentSection alt>
-        <Impressions yearShort="23" seeAllHref="https://uxcampams.com/photos-23" />
+        <Impressions yearShort="23" slides={eventPhotos} seeAllHref="https://uxcampams.com/photos-23" />
       </ContentSection>
 
       <ContentSection>
