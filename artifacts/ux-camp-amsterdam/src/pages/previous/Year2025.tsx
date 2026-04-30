@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import CtaBanner from "@/components/CtaBanner";
 import Impressions from "@/components/Impressions";
 import photoAudience from "../../../assets/images/UX_Camp_Amsterdam_2025.jpg";
-import photoOrganizers from "../../../assets/images/Polina_Popravka_UX_Camp_Amsterdam.jpeg";
+import photoOrganizers from "../../../assets/images/Polina_Popravka_UX_Camp_Amsterdam.jpg";
 import dsc01914 from "@assets/DSC01914_1777548359984.jpg";
 import dsc01928 from "@assets/DSC01928_1777548359984.jpg";
 import dsc01930 from "@assets/DSC01930_1777548359975.jpg";
@@ -24,7 +24,7 @@ import rect96 from "@assets/Rectangle_96_1777548359983.jpg";
 import rect97 from "@assets/Rectangle_97_1777548359983.jpg";
 import nienHuaPhoto from "../../../assets/images/2024/Nien-Hua_Gu.png";
 import mariaPhoto from "../../../assets/images/2024/Maria_Adrian.png";
-import vincentPhoto from "../../../assets/images/2024/Vincent_Vijn.png";
+import vincentPhoto from "../../../assets/images/2024/Vincent_Vijn.jpg";
 import indrePhoto from "../../../assets/images/2024/Indre_Lauciute.png";
 import ritaPhoto from "../../../assets/images/2024/Rita_Costa_Pereira.png";
 

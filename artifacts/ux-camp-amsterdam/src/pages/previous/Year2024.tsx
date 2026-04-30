@@ -29,7 +29,7 @@ import event21 from "../../../assets/images/2024/event/IMG_9423.jpg";
 import event22 from "../../../assets/images/2024/event/IMG_9471.jpg";
 import event23 from "../../../assets/images/2024/event/IMG_9474.jpg";
 import mariaPhoto from "../../../assets/images/2024/Maria_Adrian.png";
-import vincentPhoto from "../../../assets/images/2024/Vincent_Vijn.png";
+import vincentPhoto from "../../../assets/images/2024/Vincent_Vijn.jpg";
 import indrePhoto from "../../../assets/images/2024/Indre_Lauciute.png";
 import ritaPhoto from "../../../assets/images/2024/Rita_Costa_Pereira.png";
 import tatianaPhoto from "../../../assets/images/2024/Tatiana_Sidorenkova.png";

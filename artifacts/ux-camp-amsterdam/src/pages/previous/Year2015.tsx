@@ -10,14 +10,14 @@ import scheduleImg from "../../../assets/images/2015/schedule.jpg";
 import madness2Img from "../../../assets/images/2015/madness2.jpg";
 import presentationImg from "../../../assets/images/2015/presentation.jpg";
 import foodImg from "../../../assets/images/2015/food.jpg";
-import sponsorA4 from "../../../assets/images/companies-logos/sponsor-a4.png";
+import sponsorA4 from "../../../assets/images/companies-logos/sponsor-a4.jpg";
 import sponsorAdyen from "../../../assets/images/companies-logos/sponsor-adyen-2015.png";
 import sponsorNedap from "../../../assets/images/companies-logos/sponsor-nedap.png";
 import orgTatiana from "../../../assets/images/2015/organizer-tatiana.png";
-import orgDoron from "../../../assets/images/2015/organizer-doron.png";
+import orgDoron from "../../../assets/images/2015/organizer-doron.jpg";
 import orgDave from "../../../assets/images/2015/organizer-dave.jpg";
 import orgDaniel from "../../../assets/images/2015/organizer-daniel.jpg";
-import orgNing from "../../../assets/images/2015/organizer-ning.jpeg";
+import orgNing from "../../../assets/images/2015/organizer-ning.jpg";
 import orgLiang from "../../../assets/images/2015/organizer-liang.jpg";
 
 const organizers: Organizer[] = [

@@ -18,16 +18,16 @@ import sponsorMarktplaats from "../../../assets/images/companies-logos/sponsor-m
 import sponsorMirabeau from "../../../assets/images/companies-logos/sponsor-mirabeau.png";
 import sponsorNomensa from "../../../assets/images/companies-logos/sponsor-nomensa.png";
 
-import orgPhilipp from "../../../assets/images/2016/organizer-philipp.png";
+import orgPhilipp from "../../../assets/images/2016/organizer-philipp.jpg";
 import orgTatiana from "../../../assets/images/2016/organizer-tatiana.png";
-import orgGareth from "../../../assets/images/2016/organizer-gareth.png";
-import orgDoron from "../../../assets/images/2016/organizer-doron.png";
-import orgPeter from "../../../assets/images/2016/organizer-peter.png";
+import orgGareth from "../../../assets/images/2016/organizer-gareth.jpg";
+import orgDoron from "../../../assets/images/2016/organizer-doron.jpg";
+import orgPeter from "../../../assets/images/2016/organizer-peter.jpg";
 import orgDave from "../../../assets/images/2016/organizer-dave.jpg";
 import orgCarolina from "../../../assets/images/2016/organizer-carolina.jpg";
 import orgMarcel from "../../../assets/images/2016/organizer-marcel.jpg";
 import orgDaniel from "../../../assets/images/2016/organizer-daniel.jpg";
-import orgNing from "../../../assets/images/2016/organizer-ning.jpeg";
+import orgNing from "../../../assets/images/2016/organizer-ning.jpg";
 import orgLiang from "../../../assets/images/2016/organizer-liang.jpg";
 
 const slides = [

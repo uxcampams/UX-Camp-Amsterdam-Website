@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "wouter";
 import heroBg from "../../assets/images/Sponsorship_hero.jpg";
-import sponsorA4 from "../../assets/images/companies-logos/sponsor-a4.png";
+import sponsorA4 from "../../assets/images/companies-logos/sponsor-a4.jpg";
 import sponsorAdyen from "../../assets/images/companies-logos/sponsor-adyen.png";
 import sponsorIcemobile from "../../assets/images/companies-logos/sponsor-icemobile.png";
 import sponsorMarktplaats from "../../assets/images/companies-logos/sponsor-marktplaats.png";
