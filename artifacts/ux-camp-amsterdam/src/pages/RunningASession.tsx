@@ -507,18 +507,6 @@ export default function RunningASession() {
               >
                 A chance to talk through your idea, get some feedback, and feel more confident before the day. Details will be shared in your ticket confirmation email.
               </p>
-              <p
-                style={{
-                  fontFamily: FONT,
-                  fontWeight: 400,
-                  fontStyle: "italic",
-                  fontSize: 14,
-                  color: MID_GREY,
-                  margin: 0,
-                }}
-              >
-                Add speaker webinar date and link here once confirmed.
-              </p>
             </div>
           </div>
         </section>

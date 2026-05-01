@@ -101,29 +101,14 @@ const dayCards: DayCard[] = [
     body: "Check the schedule board. Move between rooms freely.",
   },
   {
-    time: "All day",
+    time: "To be announced",
     title: "Portfolio Review Corner",
     body: "Sign up at the whiteboard for a 25-min review. Morning and afternoon slots.",
   },
   {
-    time: "All day",
+    time: "To be announced",
     title: "Speed Networking",
     body: "Join a table, grab a prompt card. Meet a lot of people in a short amount of time.",
-  },
-  {
-    time: "All day",
-    title: "Insight Wall",
-    body: "Add your thoughts to the prompts on the wall. Open all day.",
-  },
-  {
-    time: "All day",
-    title: "UX Therapy Booth",
-    body: "Write something anonymously. Hear it read back later.",
-  },
-  {
-    time: "All day",
-    title: "Micro-Exhibition",
-    body: "Browse anytime — startups, student work, UX games, book exchange.",
   },
   {
     time: "17:00",
@@ -141,11 +126,6 @@ const dayCards: DayCard[] = [
 const accessibility = [
   { icon: "🤫", title: "Quiet room", body: "Available all day — no sign-up needed." },
   { icon: "🤱", title: "Nursing room", body: "Available on the day — check at the registration desk on arrival." },
-  {
-    icon: "🎤",
-    title: "Please use the mic",
-    body: "During sessions, please use the microphone — the person at the back will thank you.",
-  },
 ];
 
 const footerNav = [
