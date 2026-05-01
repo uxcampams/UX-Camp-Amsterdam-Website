@@ -18,7 +18,8 @@ export default function Navbar() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, [mobileOpen]);
 
-  const closeMenu = () => setMobileOpen(false);
+  const [pastOpen, setPastOpen] = useState(false);
+  const closeMenu = () => { setMobileOpen(false); setPastOpen(false); };
 
   return (
     <nav ref={navRef} className="navbar" role="navigation" aria-label="Main navigation">
@@ -119,15 +120,25 @@ export default function Navbar() {
         <Link href="/prepare-for-the-day" onClick={closeMenu}>Prepare for the Day</Link>
         <a href="https://www.instagram.com/uxcampamsterdam/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Instagram</a>
         <a href="https://www.linkedin.com/company/amsterdamux/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>LinkedIn</a>
-        <Link href="/previous/2025" onClick={closeMenu}>UXcamp Ams '25</Link>
-        <Link href="/2024-post-event" onClick={closeMenu}>UXcamp Ams '24</Link>
-        <Link href="/uxcamp-ams-2023" onClick={closeMenu}>UXcamp Ams '23</Link>
-        <Link href="/uxcamp-ams-2019" onClick={closeMenu}>UXcamp Ams '19</Link>
-        <Link href="/welcome" onClick={closeMenu}>UXcamp Ams '18</Link>
-        <Link href="/uxcampams17" onClick={closeMenu}>UXcamp Ams '17</Link>
-        <Link href="/2016" onClick={closeMenu}>UXcamp Ams '16</Link>
-        <Link href="/2015" onClick={closeMenu}>UXcamp Ams '15</Link>
-        <Link href="/alumni" onClick={closeMenu}>Alumni</Link>
+        <button
+          className="navbar__mobile-group-toggle"
+          onClick={() => setPastOpen(o => !o)}
+          aria-expanded={pastOpen}
+        >
+          Past events {pastOpen ? "▴" : "▾"}
+        </button>
+        {pastOpen && (
+          <div className="navbar__mobile-group">
+            <Link href="/previous/2025" onClick={closeMenu}>UXcamp Ams '25</Link>
+            <Link href="/2024-post-event" onClick={closeMenu}>UXcamp Ams '24</Link>
+            <Link href="/uxcamp-ams-2023" onClick={closeMenu}>UXcamp Ams '23</Link>
+            <Link href="/uxcamp-ams-2019" onClick={closeMenu}>UXcamp Ams '19</Link>
+            <Link href="/welcome" onClick={closeMenu}>UXcamp Ams '18</Link>
+            <Link href="/uxcampams17" onClick={closeMenu}>UXcamp Ams '17</Link>
+            <Link href="/2016" onClick={closeMenu}>UXcamp Ams '16</Link>
+            <Link href="/2015" onClick={closeMenu}>UXcamp Ams '15</Link>
+          </div>
+        )}
       </nav>
     </nav>
   );

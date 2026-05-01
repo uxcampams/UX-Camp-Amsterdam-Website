@@ -229,7 +229,7 @@ export default function Home() {
         .uxc-stat {
           flex: 1 1 0;
           text-align: center;
-          padding: 56px 24px;
+          padding: 32px 16px;
           border-right: 1px solid rgba(255,255,255,0.3);
         }
         .uxc-stat:last-child { border-right: none; }
@@ -339,7 +339,7 @@ export default function Home() {
         .uxc-hero-marquee {
           position: absolute;
           right: 0; top: 0; bottom: 0;
-          width: 600px;
+          width: 800px;
           overflow: hidden;
           pointer-events: none;
           display: flex;
@@ -379,6 +379,9 @@ export default function Home() {
         @keyframes uxc-marquee-down {
           from { transform: translateY(-50%); }
           to { transform: translateY(0); }
+        }
+        @media (min-width: 1400px) {
+          .uxc-hero-marquee { width: 1000px; }
         }
         @media (max-width: 900px) {
           .uxc-hero { padding-top: 400px !important; }
@@ -514,7 +517,7 @@ export default function Home() {
                   style={{
                     fontFamily: FONT,
                     fontWeight: 800,
-                    fontSize: 48,
+                    fontSize: 36,
                     lineHeight: 1,
                     color: WHITE,
                   }}
