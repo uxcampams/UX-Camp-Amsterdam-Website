@@ -188,6 +188,10 @@ export default function Home() {
         }
         .uxc-btn-primary:hover { background: ${DARK}; border-color: ${DARK}; }
 
+        .uxc-h2 { font-family: ${FONT}; font-weight: 800; font-size: 32px; line-height: 1.2; color: ${DARK}; margin: 0; }
+        .uxc-eyebrow { font-family: ${FONT}; font-weight: 300; font-size: 13px; color: ${RED}; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 12px 0; }
+        .uxc-grid-60-40 { display: grid; grid-template-columns: 60fr 40fr; gap: 48px; align-items: start; }
+
         .uxc-btn-outline {
           display: inline-block;
           background: transparent;
@@ -323,6 +327,8 @@ export default function Home() {
         .uxc-footer-nav a:hover { color: ${RED}; }
 
         @media (max-width: 900px) {
+          .uxc-grid-60-40 { grid-template-columns: 1fr; gap: 24px; }
+          .uxc-h2 { font-size: 26px; }
           .uxc-grid-2 { grid-template-columns: 1fr; gap: 32px; }
           .uxc-grid-3 { grid-template-columns: 1fr; }
           .uxc-grid-4 { grid-template-columns: repeat(2, 1fr); }
@@ -824,8 +830,90 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECTION 7 — THE TEAM */}
+        {/* SECTION 7 — LOCATION */}
         <section style={{ background: WHITE, ...sectionPad }}>
+          <div style={innerWrap}>
+            <p className="uxc-eyebrow">Where and when</p>
+            <h2 className="uxc-h2" style={{ marginBottom: 32 }}>Time &amp; location</h2>
+
+            <div className="uxc-grid-60-40">
+              <div>
+                <dl style={{ margin: 0 }}>
+                  {[
+                    { label: "Date", value: "Saturday, July 4, 2026" },
+                    { label: "Doors open", value: "9:30 — Registration closes at 12:30" },
+                    { label: "Venue", value: "HvA Corry Tendeloohuis (CTH)" },
+                    { label: "Address", value: "Fraijlemaborg 133, 1102 CV Amsterdam" },
+                  ].map((item) => (
+                    <div
+                      key={item.label}
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "140px 1fr",
+                        gap: 16,
+                        padding: "14px 0",
+                        borderBottom: `1px solid ${MID_GREY}`,
+                        alignItems: "baseline",
+                      }}
+                    >
+                      <dt
+                        style={{
+                          fontFamily: FONT,
+                          fontWeight: 600,
+                          fontSize: 13,
+                          color: MID_GREY,
+                          textTransform: "uppercase",
+                          letterSpacing: 1,
+                          margin: 0,
+                        }}
+                      >
+                        {item.label}
+                      </dt>
+                      <dd
+                        style={{
+                          fontFamily: FONT,
+                          fontWeight: 400,
+                          fontSize: 16,
+                          color: DARK,
+                          margin: 0,
+                        }}
+                      >
+                        {item.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+                <div style={{ marginTop: 24 }}>
+                  <a
+                    href="https://share.google/yLOQSabwIkGrJnmXW"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="uxc-btn-outline"
+                  >
+                    Get directions →
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ width: "100%", minHeight: 280 }}>
+                <iframe
+                  title="UX Camp Amsterdam venue map — Fraijlemaborg 133, 1102 CV Amsterdam"
+                  width="100%"
+                  height={400}
+                  frameBorder={0}
+                  scrolling="no"
+                  marginHeight={0}
+                  marginWidth={0}
+                  src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=%20Fraijlemaborg%20133,%201102%20CV%20Amsterdam+(undefined)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                  style={{ display: "block", border: 0 }}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 8 — THE TEAM */}
+        <section style={{ background: LIGHT_GREY, ...sectionPad }}>
           <div style={innerWrap}>
             <h2
               style={{
