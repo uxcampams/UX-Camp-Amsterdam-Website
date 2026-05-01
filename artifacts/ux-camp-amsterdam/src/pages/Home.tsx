@@ -20,6 +20,12 @@ import photo3 from "@assets/DSC02022_1777548359977.jpg";
 import photo4 from "@assets/DSC02035_1777548359977.jpg";
 import photo5 from "@assets/DSC02043_1777548359978.jpg";
 import photo6 from "@assets/DSC02053_1777548359979.jpg";
+import marq1 from "@assets/DSC01930_1777548359975.jpg";
+import marq2 from "@assets/DSC01931_1777548359977.jpg";
+import marq3 from "@assets/DSC02037_1777548359978.jpg";
+import marq4 from "@assets/DSC02045_1777548359978.jpg";
+import marq5 from "@assets/Frame_139_1777548359979.jpg";
+import marq6 from "@assets/Group_137_1777548359980.jpg";
 
 const RED = "#B20101";
 const DARK = "#333333";
@@ -326,6 +332,74 @@ export default function Home() {
         .uxc-footer-nav a { color: ${WHITE}; font-size: 14px; }
         .uxc-footer-nav a:hover { color: ${RED}; }
 
+        .uxc-hero .uxc-btn-primary { background: ${DARK}; border-color: ${DARK}; }
+        .uxc-hero .uxc-btn-primary:hover { background: ${WHITE}; color: ${DARK}; border-color: ${WHITE}; }
+
+
+        .uxc-hero-marquee {
+          position: absolute;
+          right: 0; top: 0; bottom: 0;
+          width: 600px;
+          overflow: hidden;
+          pointer-events: none;
+          display: flex;
+          gap: 8px;
+        }
+        .uxc-hero-marquee::before {
+          content: '';
+          position: absolute;
+          left: 0; right: 0; bottom: 0;
+          height: 160px;
+          background: linear-gradient(to top, ${RED}, transparent);
+          z-index: 2;
+        }
+        .uxc-hero-marquee-col {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .uxc-hero-marquee-col.up {
+          animation: uxc-marquee-up 28s linear infinite;
+        }
+        .uxc-hero-marquee-col.down {
+          animation: uxc-marquee-down 24s linear infinite;
+        }
+        .uxc-hero-marquee-col img {
+          width: 100%;
+          height: 220px;
+          object-fit: cover;
+          display: block;
+          opacity: 0.55;
+        }
+        @keyframes uxc-marquee-up {
+          from { transform: translateY(0); }
+          to { transform: translateY(-50%); }
+        }
+        @keyframes uxc-marquee-down {
+          from { transform: translateY(-50%); }
+          to { transform: translateY(0); }
+        }
+        @media (max-width: 900px) {
+          .uxc-hero { padding-top: 400px !important; }
+          .uxc-hero-marquee {
+            top: 0;
+            bottom: auto;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 360px;
+          }
+          .uxc-hero-marquee::before {
+            left: 0; right: 0; top: auto;
+            bottom: 0;
+            width: auto;
+            height: 80px;
+            background: linear-gradient(to top, ${RED}, transparent);
+          }
+          .uxc-hero-marquee-col img { height: 360px; }
+        }
+
         @media (max-width: 900px) {
           .uxc-grid-60-40 { grid-template-columns: 1fr; gap: 24px; }
           .uxc-h2 { font-size: 26px; }
@@ -353,18 +427,24 @@ export default function Home() {
       `}</style>
 
       <div className="uxc-home">
-        {/* SECTION 1 — HERO (reduced height) */}
-        <section
-          style={{
-            backgroundImage: `linear-gradient(rgba(51,51,51,0.6), rgba(51,51,51,0.6)), url(${heroBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            color: WHITE,
-            padding: "100px 5% 80px",
-          }}
-        >
-          <div style={{ ...innerWrap, textAlign: "left" }}>
+        {/* SECTION 1 — HERO */}
+        <section className="uxc-hero" style={{ position: "relative", overflow: "hidden", background: RED, color: WHITE, padding: "100px 5% 80px" }}>
+          {/* Vertical photo marquee — 3 columns, alternating directions */}
+          <div className="uxc-hero-marquee">
+            {([
+              { photos: [photo1, photo2, marq1, marq2], dir: "up" },
+              { photos: [photo3, marq3, photo4, marq4], dir: "down" },
+              { photos: [marq5, photo5, marq6, photo6], dir: "up" },
+            ] as { photos: string[]; dir: string }[]).map(({ photos, dir }, ci) => (
+              <div key={ci} className={`uxc-hero-marquee-col ${dir}`}>
+                {[...photos, ...photos].map((src, i) => (
+                  <img key={i} src={src} alt="" aria-hidden="true" />
+                ))}
+              </div>
+            ))}
+          </div>
+
+          <div style={{ ...innerWrap, textAlign: "left", position: "relative", zIndex: 1 }}>
             <p
               style={{
                 display: "inline-block",
@@ -426,7 +506,7 @@ export default function Home() {
         </section>
 
         {/* SECTION 2 — STATS / EVENT AT A GLANCE */}
-        <section style={{ background: RED, color: WHITE }}>
+        <section style={{ background: RED, color: WHITE, borderTop: "1px solid rgba(255,255,255,0.3)" }}>
           <div className="uxc-stats">
             {stats.map((s) => (
               <div key={s.label} className="uxc-stat">
@@ -681,6 +761,14 @@ export default function Home() {
             >
               Come as you are
             </h2>
+
+            <div style={{ marginBottom: 48, width: "100%", aspectRatio: "16 / 7", overflow: "hidden" }}>
+              <img
+                src={heroBg}
+                alt="Group photo from UX Camp Amsterdam"
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }}
+              />
+            </div>
 
             <div className="uxc-grid-3">
               {audienceCards.map((c) => (
