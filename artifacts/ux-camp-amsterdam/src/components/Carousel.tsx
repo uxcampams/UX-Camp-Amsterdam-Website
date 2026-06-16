@@ -2,8 +2,14 @@ import { useEffect, useState } from "react";
 
 type Slide = { src: string; caption: string };
 
+function getReducedMotion() {
+  return typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 export default function Carousel({ slides }: { slides: Slide[] }) {
   const [index, setIndex] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(getReducedMotion);
   const total = slides.length;
 
   const goTo = (i: number) => setIndex((i + total) % total);
@@ -11,15 +17,19 @@ export default function Carousel({ slides }: { slides: Slide[] }) {
   const prev = () => goTo(index - 1);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (mq.matches) return;
-    }
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) return;
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % total);
     }, 5000);
     return () => clearInterval(id);
-  }, [total]);
+  }, [total, reducedMotion]);
 
   return (
     <div style={{ position: "relative", width: "100%" }}>
@@ -37,7 +47,7 @@ export default function Carousel({ slides }: { slides: Slide[] }) {
             height: "100%",
             width: "100%",
             transform: `translateX(-${index * 100}%)`,
-            transition: "transform 700ms ease-in-out",
+            transition: reducedMotion ? "none" : "transform 700ms ease-in-out",
           }}
         >
           {slides.map((s, i) => (
