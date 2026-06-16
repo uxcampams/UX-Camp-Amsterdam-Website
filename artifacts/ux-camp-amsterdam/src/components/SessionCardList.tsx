@@ -57,7 +57,7 @@ export default function SessionCardList({ sessions }: SessionCardListProps) {
                   fontFamily: FONT,
                   fontWeight: 400,
                   fontSize: 14,
-                  color: MID_GREY,
+                  color: "var(--color-text-muted)",
                   lineHeight: 1.4,
                 }}
               >

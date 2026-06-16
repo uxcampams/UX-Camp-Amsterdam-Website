@@ -199,7 +199,7 @@ export default function Prepare() {
           font-family: ${FONT};
           font-style: italic;
           font-size: 14px;
-          color: ${MID_GREY};
+          color: var(--color-text-muted);
           margin-top: 12px;
         }
 
@@ -291,7 +291,7 @@ export default function Prepare() {
                           fontFamily: FONT,
                           fontWeight: 600,
                           fontSize: 13,
-                          color: MID_GREY,
+                          color: "var(--color-text-muted)",
                           textTransform: "uppercase",
                           letterSpacing: 1,
                           margin: 0,

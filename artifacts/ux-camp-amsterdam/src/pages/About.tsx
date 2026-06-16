@@ -302,7 +302,7 @@ export default function About() {
                     fontFamily: FONT,
                     fontWeight: 400,
                     fontSize: 14,
-                    color: MID_GREY,
+                    color: "var(--color-text-muted)",
                     margin: 0,
                   }}
                 >
@@ -473,7 +473,7 @@ export default function About() {
                 fontFamily: FONT,
                 fontWeight: 400,
                 fontSize: 14,
-                color: MID_GREY,
+                color: "var(--color-text-muted)",
                 margin: 0,
                 marginBottom: 12,
               }}

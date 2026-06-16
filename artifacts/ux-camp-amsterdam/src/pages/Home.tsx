@@ -952,7 +952,7 @@ export default function Home() {
                           fontFamily: FONT,
                           fontWeight: 600,
                           fontSize: 13,
-                          color: MID_GREY,
+                          color: "var(--color-text-muted)",
                           textTransform: "uppercase",
                           letterSpacing: 1,
                           margin: 0,

@@ -391,7 +391,7 @@ export default function Sponsorship() {
                 fontFamily: FONT,
                 fontWeight: 300,
                 fontSize: 16,
-                color: MID_GREY,
+                color: "var(--color-text-muted)",
                 margin: 0,
                 marginBottom: 48,
                 textAlign: "center",
