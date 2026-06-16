@@ -172,7 +172,8 @@ h1, h2, h3, h4 {
 }
 
 .nav-dropdown:hover .nav-dropdown__menu,
-.nav-dropdown__menu:hover {
+.nav-dropdown__menu:hover,
+.nav-dropdown__menu.is-open {
   display: block;
 }
 
