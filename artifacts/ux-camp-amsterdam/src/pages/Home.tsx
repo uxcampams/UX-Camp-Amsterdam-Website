@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import Lanyard from "../components/Lanyard/Lanyard";
+import PortfolioCornerModal from "../components/PortfolioCornerModal";
 import { TICKET_URL } from "../constants";
 import heroBg from "../../assets/images/Home_hero.jpg";
 import indrePortrait from "../../assets/images/2026/Indre_Lauciute.jpg";
@@ -171,6 +172,8 @@ function getInitials(name: string): string {
 }
 
 export default function Home() {
+  const [portfolioOpen, setPortfolioOpen] = useState(false);
+
   return (
     <main style={{ fontFamily: FONT, color: DARK }}>
       <style>{`
@@ -718,37 +721,73 @@ export default function Home() {
             </p>
 
             <div className="uxc-grid-2" style={{ gap: 24, marginBottom: 32 }}>
-              {newFormats.map((f) => (
-                <div key={f.title} className="uxc-card">
-                  <h3
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 700,
-                      fontSize: 17,
-                      color: DARK,
-                      margin: 0,
-                      marginBottom: 10,
-                    }}
+              {newFormats.map((f) => {
+                const isPortfolioCorner = f.title === "Portfolio Review Corner";
+                return (
+                  <div
+                    key={f.title}
+                    className="uxc-card"
+                    role={isPortfolioCorner ? "button" : undefined}
+                    tabIndex={isPortfolioCorner ? 0 : undefined}
+                    onClick={isPortfolioCorner ? () => setPortfolioOpen(true) : undefined}
+                    onKeyDown={
+                      isPortfolioCorner
+                        ? (e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              setPortfolioOpen(true);
+                            }
+                          }
+                        : undefined
+                    }
+                    style={isPortfolioCorner ? { cursor: "pointer" } : undefined}
                   >
-                    {f.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 400,
-                      fontSize: 15,
-                      lineHeight: 1.6,
-                      color: DARK,
-                      margin: 0,
-                    }}
-                  >
-                    {f.body}
-                  </p>
-                </div>
-              ))}
+                    <h3
+                      style={{
+                        fontFamily: FONT,
+                        fontWeight: 700,
+                        fontSize: 17,
+                        color: DARK,
+                        margin: 0,
+                        marginBottom: 10,
+                      }}
+                    >
+                      {f.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: FONT,
+                        fontWeight: 400,
+                        fontSize: 15,
+                        lineHeight: 1.6,
+                        color: DARK,
+                        margin: 0,
+                      }}
+                    >
+                      {f.body}
+                    </p>
+                    {isPortfolioCorner && (
+                      <span
+                        style={{
+                          display: "inline-block",
+                          fontFamily: FONT,
+                          fontWeight: 600,
+                          fontSize: 14,
+                          color: RED,
+                          marginTop: 12,
+                        }}
+                      >
+                        Learn more →
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
+
+        <PortfolioCornerModal open={portfolioOpen} onOpenChange={setPortfolioOpen} />
 
         {/* SECTION 5 — COME AS YOU ARE */}
         <section style={{ background: LIGHT_GREY, ...sectionPad }}>

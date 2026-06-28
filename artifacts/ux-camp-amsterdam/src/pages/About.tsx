@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Link } from "wouter";
 import { TICKET_URL } from "../constants";
 import heroBg from "../../assets/images/About_hero.jpg";
+import PortfolioCornerModal from "../components/PortfolioCornerModal";
 
 const RED = "#B20101";
 const DARK = "#333333";
@@ -75,6 +77,8 @@ const sectionPad: React.CSSProperties = { padding: "80px 5%" };
 const innerWrap: React.CSSProperties = { maxWidth: 1200, margin: "0 auto" };
 
 export default function About() {
+  const [portfolioOpen, setPortfolioOpen] = useState(false);
+
   return (
     <main style={{ fontFamily: FONT, color: DARK }}>
       <style>{`
@@ -408,47 +412,83 @@ export default function About() {
             </p>
 
             <div className="uxc-grid-3">
-              {newFormats.map((f) => (
-                <div key={f.title} className="uxc-card">
-                  <div style={{ fontSize: 32, marginBottom: 16, lineHeight: 1 }}>{f.icon}</div>
-                  <h3
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 600,
-                      fontSize: 18,
-                      color: DARK,
-                      margin: 0,
-                      marginBottom: 12,
-                    }}
+              {newFormats.map((f) => {
+                const isPortfolioCorner = f.title === "Portfolio Review Corner";
+                return (
+                  <div
+                    key={f.title}
+                    className="uxc-card"
+                    role={isPortfolioCorner ? "button" : undefined}
+                    tabIndex={isPortfolioCorner ? 0 : undefined}
+                    onClick={isPortfolioCorner ? () => setPortfolioOpen(true) : undefined}
+                    onKeyDown={
+                      isPortfolioCorner
+                        ? (e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              setPortfolioOpen(true);
+                            }
+                          }
+                        : undefined
+                    }
+                    style={isPortfolioCorner ? { cursor: "pointer" } : undefined}
                   >
-                    {f.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 400,
-                      fontSize: 14,
-                      lineHeight: 1.6,
-                      color: DARK,
-                      margin: 0,
-                    }}
-                  >
-                    {f.body}
-                  </p>
-                  {f.pills && (
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
-                      {f.pills.map((p) => (
-                        <span key={p} className="uxc-mini-pill">
-                          {p}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+                    <div style={{ fontSize: 32, marginBottom: 16, lineHeight: 1 }}>{f.icon}</div>
+                    <h3
+                      style={{
+                        fontFamily: FONT,
+                        fontWeight: 600,
+                        fontSize: 18,
+                        color: DARK,
+                        margin: 0,
+                        marginBottom: 12,
+                      }}
+                    >
+                      {f.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: FONT,
+                        fontWeight: 400,
+                        fontSize: 14,
+                        lineHeight: 1.6,
+                        color: DARK,
+                        margin: 0,
+                      }}
+                    >
+                      {f.body}
+                    </p>
+                    {f.pills && (
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 16 }}>
+                        {f.pills.map((p) => (
+                          <span key={p} className="uxc-mini-pill">
+                            {p}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    {isPortfolioCorner && (
+                      <span
+                        style={{
+                          display: "inline-block",
+                          fontFamily: FONT,
+                          fontWeight: 600,
+                          fontSize: 14,
+                          color: RED,
+                          marginTop: 16,
+                        }}
+                      >
+                        Learn more →
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
+
+        <PortfolioCornerModal open={portfolioOpen} onOpenChange={setPortfolioOpen} />
 
         {/* SECTION 5 — SESSION FORMATS */}
         <section style={{ background: WHITE, ...sectionPad }}>
