@@ -79,6 +79,24 @@ function AnimatedNumber({ number, suffix }: { number: number; suffix: string }) 
 }
 
 
+const topicVideos = [
+  {
+    youtubeId: "vpw6BFK_yuA",
+    topic: "3 reasons why product teams are unable to reach their goals",
+    name: "Lade Tawak",
+  },
+  {
+    youtubeId: "dEMChLx_USc",
+    topic: "Claude Code for designers",
+    name: "Sen Lin",
+  },
+  {
+    youtubeId: "NbQy5Jw4bQk",
+    topic: "How to be a designer in the era of AI",
+    name: "Andreas Kruszakin-Liboska",
+  },
+];
+
 const newFormats = [
   {
     title: "Speed Networking",
@@ -255,6 +273,12 @@ export default function Home() {
           gap: 8px 48px;
         }
 
+        .uxc-topic-video-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+
         .uxc-card {
           background: ${WHITE};
           border: 1px solid ${MID_GREY};
@@ -419,6 +443,7 @@ export default function Home() {
           .uxc-lanyard-col { order: 1; }
           .uxc-lanyard-content { order: 2; }
           .uxc-timeline-grid { grid-template-columns: 1fr; }
+          .uxc-topic-video-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
         }
         @media (max-width: 600px) {
           .uxc-stats { flex-wrap: nowrap; }
@@ -788,6 +813,93 @@ export default function Home() {
         </section>
 
         <PortfolioCornerModal open={portfolioOpen} onOpenChange={setPortfolioOpen} />
+
+        {/* SECTION 4B — SNEAK PEEK ON TOPICS */}
+        <section id="sneak-peek" style={{ background: DARK, color: WHITE, ...sectionPad }}>
+          <div style={innerWrap}>
+            <span className="uxc-tag" style={{ marginBottom: 20 }}>
+              Sneak peek
+            </span>
+            <h2
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: "clamp(32px, 4vw, 44px)",
+                color: WHITE,
+                margin: 0,
+                marginTop: 16,
+                marginBottom: 16,
+              }}
+            >
+              Sneak Peak on the topics this year
+            </h2>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 400,
+                fontSize: 17,
+                lineHeight: 1.7,
+                color: MID_GREY,
+                margin: 0,
+                marginBottom: 40,
+              }}
+            >
+              Wanna share your topic?{" "}
+              <a href="mailto:info@uxcampams.com" style={{ color: WHITE, fontWeight: 600, textDecoration: "underline" }}>
+                Contact us
+              </a>{" "}
+              now.
+            </p>
+
+            <div className="uxc-topic-video-grid">
+              {topicVideos.map((v) => (
+                <div key={v.youtubeId}>
+                  <div
+                    style={{
+                      aspectRatio: "9 / 16",
+                      width: "100%",
+                      background: "#000",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <iframe
+                      src={`https://www.youtube.com/embed/${v.youtubeId}`}
+                      title={`${v.topic} — ${v.name}`}
+                      style={{ width: "100%", height: "100%", border: 0, display: "block" }}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      loading="lazy"
+                    />
+                  </div>
+                  <p
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 600,
+                      fontSize: 15,
+                      color: WHITE,
+                      margin: 0,
+                      marginTop: 16,
+                    }}
+                  >
+                    {v.topic}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 400,
+                      fontSize: 14,
+                      color: MID_GREY,
+                      margin: 0,
+                      marginTop: 4,
+                    }}
+                  >
+                    {v.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* SECTION 5 — COME AS YOU ARE */}
         <section style={{ background: LIGHT_GREY, ...sectionPad }}>
