@@ -30,6 +30,25 @@ type Step = {
   placeholder?: string;
 };
 
+const sessionFormats = [
+  {
+    title: "Talk / Presentation",
+    body: "Share knowledge on a topic you care about. Bring slides if you want, leave time for Q&A. Works best when you have a point of view, not just information.",
+  },
+  {
+    title: "Case Study",
+    body: "Show what you did, what worked, what didn't, and what you'd do differently. The honest ones are always the best.",
+  },
+  {
+    title: "Workshop",
+    body: "A hands-on session where people actually do something, apply a skill, solve a problem, make something together. Bring any specialist materials you need beyond paper and post-its. Can run as a double session of 50 minutes if you need the extra time.",
+  },
+  {
+    title: "Structured Discussion",
+    body: "Bring a frame, some questions, and a point of view. Formats like World Café or Birds of a Feather work well. The key word is structured — open-ended discussions without a guide rarely land.",
+  },
+];
+
 const steps: Step[] = [
   {
     number: "1",
@@ -44,9 +63,9 @@ const steps: Step[] = [
   {
     number: "3",
     title: "Choose a format",
-    body: "Talk, case study, workshop, or structured discussion. If you're not sure, go for a discussion — less pressure on you, more interesting for the room. Details on each format are on the About page.",
+    body: "Talk, case study, workshop, or structured discussion. If you're not sure, go for a discussion — less pressure on you, more interesting for the room.",
     pills: ["Talk", "Case Study", "Workshop", "Structured Discussion"],
-    link: { label: "See format details →", href: "/how-it-works" },
+    link: { label: "See format details →", href: "#format" },
   },
   {
     number: "4",
@@ -103,6 +122,16 @@ export default function RunningASession() {
 
         .uxc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
         .uxc-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .uxc-grid-2x2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+        .uxc-card {
+          background: ${WHITE};
+          border: 1px solid ${MID_GREY};
+          border-top: 4px solid ${RED};
+          padding: 28px;
+          display: flex;
+          flex-direction: column;
+        }
 
         .uxc-step-row {
           display: grid;
@@ -138,6 +167,7 @@ export default function RunningASession() {
         @media (max-width: 900px) {
           .uxc-grid-2 { grid-template-columns: 1fr; gap: 32px; }
           .uxc-grid-3 { grid-template-columns: 1fr; }
+          .uxc-grid-2x2 { grid-template-columns: 1fr; }
           .uxc-step-row { grid-template-columns: 1fr; gap: 12px; }
         }
       `}</style>
@@ -206,6 +236,69 @@ export default function RunningASession() {
             <a href="#how-it-works" className="uxc-btn-primary">
               Here's how it works →
             </a>
+          </div>
+        </section>
+
+        {/* SECTION 1B — FORMAT */}
+        <section id="format" style={{ background: WHITE, ...sectionPad }}>
+          <div style={innerWrap}>
+            <h2
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: 28,
+                lineHeight: 1.2,
+                color: DARK,
+                margin: 0,
+                marginBottom: 16,
+              }}
+            >
+              What is the format?
+            </h2>
+            <p
+              style={{
+                fontFamily: FONT,
+                fontWeight: 400,
+                fontSize: 18,
+                lineHeight: 1.7,
+                color: DARK,
+                margin: 0,
+                marginBottom: 32,
+              }}
+            >
+              Each session lasts 25 minutes. Workshops can run as a double session of 50 minutes if you need the extra time. Sessions come in a few different shapes, and here's what you can run.
+            </p>
+
+            <div className="uxc-grid-2x2">
+              {sessionFormats.map((f) => (
+                <div key={f.title} className="uxc-card">
+                  <h4
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 600,
+                      fontSize: 18,
+                      color: DARK,
+                      margin: 0,
+                      marginBottom: 12,
+                    }}
+                  >
+                    {f.title}
+                  </h4>
+                  <p
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 400,
+                      fontSize: 14,
+                      lineHeight: 1.6,
+                      color: DARK,
+                      margin: 0,
+                    }}
+                  >
+                    {f.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -401,9 +494,15 @@ export default function RunningASession() {
 
                     {s.link && (
                       <div style={{ marginTop: 12 }}>
-                        <Link href={s.link.href} className="uxc-link">
-                          {s.link.label}
-                        </Link>
+                        {s.link.href.startsWith("#") ? (
+                          <a href={s.link.href} className="uxc-link">
+                            {s.link.label}
+                          </a>
+                        ) : (
+                          <Link href={s.link.href} className="uxc-link">
+                            {s.link.label}
+                          </Link>
+                        )}
                       </div>
                     )}
 
