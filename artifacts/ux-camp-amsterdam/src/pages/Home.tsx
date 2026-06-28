@@ -139,17 +139,6 @@ const team = [
   { name: "Niveditha Kulkarni", role: "UX/UI Designer", linkedin: "https://www.linkedin.com/in/nivedithakulkarni/", photo: nivedithaPortrait },
 ];
 
-const footerNav = [
-  { label: "About", href: "/how-it-works" },
-  { label: "Sessions", href: "/running-a-session" },
-  { label: "Tracks", href: "/how-it-works" },
-  { label: "Sponsorship", href: "/ux-camp-amsterdam-sponsorship" },
-  { label: "Running a Session", href: "/running-a-session" },
-  { label: "Prepare for the Event", href: "/prepare-for-the-day" },
-  { label: "Previous Events", href: "/previous/2025" },
-  { label: "Alumni", href: "/alumni" },
-];
-
 const sectionPad: React.CSSProperties = {
   padding: "80px 5%",
 };
@@ -165,14 +154,6 @@ function getInitials(name: string): string {
 }
 
 export default function Home() {
-  useEffect(() => {
-    const globalFooter = document.querySelector("footer.footer") as HTMLElement | null;
-    if (globalFooter) globalFooter.style.display = "none";
-    return () => {
-      if (globalFooter) globalFooter.style.display = "";
-    };
-  }, []);
-
   return (
     <main style={{ fontFamily: FONT, color: DARK }}>
       <style>{`
@@ -328,9 +309,6 @@ export default function Home() {
           letter-spacing: 0.5px;
         }
         .uxc-social-pill:hover { background: ${WHITE}; color: ${RED}; }
-
-        .uxc-footer-nav a { color: ${WHITE}; font-size: 14px; }
-        .uxc-footer-nav a:hover { color: ${RED}; }
 
         .uxc-hero .uxc-btn-primary { background: ${DARK}; border-color: ${DARK}; }
         .uxc-hero .uxc-btn-primary:hover { background: ${WHITE}; color: ${DARK}; border-color: ${WHITE}; }
@@ -1087,166 +1065,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* SECTION 8 — SOCIAL STRIP */}
-        <section style={{ background: DARK, ...sectionPad }}>
-          <div style={{ ...innerWrap, textAlign: "center" }}>
-            <p
-              style={{
-                fontFamily: FONT,
-                fontWeight: 400,
-                fontSize: 18,
-                color: WHITE,
-                margin: 0,
-                marginBottom: 24,
-              }}
-            >
-              Follow along for updates
-            </p>
-            <div style={{ display: "inline-flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
-              <a
-                href="https://www.instagram.com/uxcampamsterdam/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="uxc-btn-outline"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://www.linkedin.com/company/amsterdamux/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="uxc-btn-outline"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* FOOTER */}
-        <footer style={{ background: DARK, color: WHITE, padding: "80px 5% 24px" }}>
-          <div style={innerWrap}>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 2fr 1fr",
-                gap: 48,
-                alignItems: "start",
-              }}
-              className="uxc-footer-grid"
-            >
-              {/* Left: logo + tagline */}
-              <div>
-                <div
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 800,
-                    fontSize: 22,
-                    color: WHITE,
-                    lineHeight: 1.1,
-                    letterSpacing: 1,
-                  }}
-                >
-                  UXCAMP
-                </div>
-                <div
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 400,
-                    fontSize: 18,
-                    color: WHITE,
-                    lineHeight: 1.1,
-                    letterSpacing: 1,
-                    marginBottom: 16,
-                  }}
-                >
-                  AMSTERDAM
-                </div>
-                <p
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 300,
-                    fontSize: 14,
-                    color: MID_GREY,
-                    margin: 0,
-                  }}
-                >
-                  All eXperiences start with yoU!
-                </p>
-              </div>
-
-              {/* Center: nav */}
-              <ul
-                className="uxc-footer-nav"
-                style={{
-                  listStyle: "none",
-                  margin: 0,
-                  padding: 0,
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "12px 24px",
-                }}
-              >
-                {footerNav.map((item) => (
-                  <li key={item.label}>
-                    <Link href={item.href}>{item.label}</Link>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Right: social */}
-              <div>
-                <a
-                  href="https://www.instagram.com/uxcampamsterdam/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: "block", fontFamily: FONT, fontWeight: 600, fontSize: 14, color: WHITE, marginBottom: 8 }}
-                >
-                  Instagram @uxcampamsterdam
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/amsterdamux/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ display: "block", fontFamily: FONT, fontWeight: 600, fontSize: 14, color: WHITE, marginBottom: 8 }}
-                >
-                  LinkedIn Amsterdam UX
-                </a>
-                <span
-                  style={{
-                    fontFamily: FONT,
-                    fontWeight: 400,
-                    fontSize: 14,
-                    color: MID_GREY,
-                  }}
-                >
-                  #UXcampAMS26
-                </span>
-              </div>
-            </div>
-
-            <div
-              style={{
-                marginTop: 48,
-                paddingTop: 24,
-                borderTop: `1px solid ${MID_GREY}`,
-                fontFamily: FONT,
-                fontWeight: 400,
-                fontSize: 13,
-                color: MID_GREY,
-              }}
-            >
-              © 2026 UX Camp Amsterdam
-            </div>
-          </div>
-
-          <style>{`
-            @media (max-width: 900px) {
-              .uxc-footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-            }
-          `}</style>
-        </footer>
       </div>
     </main>
   );
