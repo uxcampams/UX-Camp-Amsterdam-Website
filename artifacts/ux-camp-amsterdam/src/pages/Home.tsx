@@ -113,6 +113,23 @@ const audienceCards = [
   },
 ];
 
+const schedule: { time: string; label: string; highlight?: boolean }[] = [
+  { time: "9:30", label: "Doors open — registration, coffee, saying hi to strangers" },
+  { time: "10:00", label: "Welcome & Madness Session — pitches, voting, live schedule built" },
+  { time: "11:00–11:25", label: "Session 1" },
+  { time: "11:30–11:55", label: "Session 2" },
+  { time: "12:00–12:25", label: "Session 3" },
+  { time: "12:30", label: "Lunch" },
+  { time: "13:30–13:55", label: "Session 4" },
+  { time: "14:00–14:25", label: "Session 5" },
+  { time: "14:30–14:55", label: "Session 6" },
+  { time: "15:00", label: "Break" },
+  { time: "15:30–15:55", label: "Session 7" },
+  { time: "16:00–16:25", label: "Session 8" },
+  { time: "17:00", label: "Closing — highlights, thank yous, prizes" },
+  { time: "17:15", label: "After party — drinks, the best conversations of the day 🎉", highlight: true },
+];
+
 const firstTimeItems = [
   { icon: "🎫", title: "", text: "Your ticket — Eventbrite, on your phone is fine" },
   {
@@ -228,6 +245,12 @@ export default function Home() {
         }
         .uxc-lanyard-col { order: 2; min-width: 0; overflow: hidden; }
         .uxc-lanyard-content { order: 1; min-width: 0; }
+
+        .uxc-timeline-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 8px 48px;
+        }
 
         .uxc-card {
           background: ${WHITE};
@@ -392,6 +415,7 @@ export default function Home() {
           .uxc-lanyard-layout { grid-template-columns: 1fr; }
           .uxc-lanyard-col { order: 1; }
           .uxc-lanyard-content { order: 2; }
+          .uxc-timeline-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
           .uxc-stats { flex-wrap: nowrap; }
@@ -841,7 +865,7 @@ export default function Home() {
 
             <div style={{ textAlign: "center", marginTop: 40 }}>
               <Link href="/prepare-for-the-day" className="uxc-link">
-                Full details on what to expect →
+                Everything you need before you arrive →
               </Link>
             </div>
           </div>
@@ -981,8 +1005,86 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECTION 8 — THE TEAM */}
+        {/* SECTION 7B — HOW THE DAY FLOWS */}
         <section style={{ background: LIGHT_GREY, ...sectionPad }}>
+          <div style={innerWrap}>
+            <h3
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: 24,
+                color: DARK,
+                margin: 0,
+                marginBottom: 32,
+                textAlign: "center",
+              }}
+            >
+              How the day flows
+            </h3>
+
+            <div
+              className="uxc-timeline-grid"
+              style={{
+                maxWidth: 1000,
+                margin: "0 auto",
+              }}
+            >
+              {schedule.map((item) => (
+                <div
+                  key={item.time}
+                  className="uxc-timeline-item"
+                  style={{
+                    position: "relative",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 24,
+                    paddingLeft: 32,
+                    paddingBottom: 24,
+                    borderLeft: `2px solid ${MID_GREY}`,
+                  }}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      left: -6,
+                      top: 6,
+                      width: 10,
+                      height: 10,
+                      background: RED,
+                      borderRadius: "50%",
+                    }}
+                  />
+                  <div
+                    style={{
+                      minWidth: 120,
+                      fontFamily: FONT,
+                      fontWeight: 600,
+                      fontSize: 16,
+                      color: RED,
+                    }}
+                  >
+                    {item.time}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: FONT,
+                      fontWeight: 400,
+                      fontSize: 16,
+                      lineHeight: 1.6,
+                      color: item.highlight ? RED : DARK,
+                    }}
+                  >
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 8 — THE TEAM */}
+        <section style={{ background: WHITE, ...sectionPad }}>
           <div style={innerWrap}>
             <h2
               style={{

@@ -80,48 +80,6 @@ const bring: BringItem[] = [
   },
 ];
 
-type DayCard = {
-  time: string;
-  title: string;
-  body: string;
-  highlight?: boolean;
-  placeholderInner?: string;
-};
-
-const dayCards: DayCard[] = [
-  {
-    time: "10:00",
-    title: "Madness Session",
-    body: "Where the day's programme gets built. Grab a pitch card if you want to run a session.",
-  },
-  {
-    time: "11:00+",
-    title: "Sessions",
-    body: "Check the schedule board. Move between rooms freely.",
-  },
-  {
-    time: "To be announced",
-    title: "Portfolio Review Corner",
-    body: "Sign up at the whiteboard for a 25-min review. Morning and afternoon slots.",
-  },
-  {
-    time: "To be announced",
-    title: "Speed Networking",
-    body: "Join a table, grab a prompt card. Meet a lot of people in a short amount of time.",
-  },
-  {
-    time: "17:00",
-    title: "Closing",
-    body: "Highlights, thank yous, prizes.",
-  },
-  {
-    time: "17:15",
-    title: "After party 🎉",
-    body: "",
-    highlight: true,
-  },
-];
-
 const accessibility = [
   { icon: "🤫", title: "Quiet room", body: "Available all day — no sign-up needed." },
   { icon: "🤱", title: "Nursing room", body: "Available on the day — check at the registration desk on arrival." },
@@ -170,7 +128,6 @@ export default function Prepare() {
 
         .uxc-grid-60-40 { display: grid; grid-template-columns: 60fr 40fr; gap: 48px; align-items: start; }
         .uxc-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .uxc-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
         .uxc-placeholder {
           background: ${WHITE};
@@ -186,7 +143,6 @@ export default function Prepare() {
         @media (max-width: 900px) {
           .uxc-grid-60-40 { grid-template-columns: 1fr; gap: 24px; }
           .uxc-grid-3 { grid-template-columns: 1fr; }
-          .uxc-grid-2 { grid-template-columns: 1fr; }
           .uxc-h2 { font-size: 26px; }
         }
       `}</style>
@@ -210,7 +166,7 @@ export default function Prepare() {
                 marginBottom: 24,
               }}
             >
-              July 4, 2026
+              For ticket holders
             </p>
             <h1
               style={{
@@ -223,7 +179,7 @@ export default function Prepare() {
                 maxWidth: 780,
               }}
             >
-              See you on July 4th! Here's everything you need.
+              Got your ticket? Here's your last reminder before July 4th.
             </h1>
             <p
               style={{
@@ -237,7 +193,7 @@ export default function Prepare() {
                 maxWidth: 640,
               }}
             >
-              We're so excited to welcome you to #UXcampAMS26. Here's a quick guide to help your day run smoothly.
+              The practical stuff for right before the event: when to arrive, how to get there, and what to bring.
             </p>
           </div>
         </section>
@@ -428,89 +384,6 @@ export default function Prepare() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 5 — WHAT'S HAPPENING ON THE DAY */}
-        <section style={{ background: WHITE, ...sectionPad }}>
-          <div style={innerWrap}>
-            <p className="uxc-eyebrow">On the day</p>
-            <h2 className="uxc-h2" style={{ marginBottom: 32 }}>What's happening</h2>
-
-            <div className="uxc-grid-2">
-              {dayCards.map((c, i) => {
-                const isHighlight = !!c.highlight;
-                const cardBg = isHighlight ? DARK : LIGHT_GREY;
-                const titleColor = isHighlight ? WHITE : DARK;
-                const bodyColor = isHighlight ? MID_GREY : DARK;
-                return (
-                  <div
-                    key={i}
-                    style={{
-                      background: cardBg,
-                      border: `1px solid ${MID_GREY}`,
-                      padding: "20px 24px",
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontFamily: FONT,
-                        fontWeight: 600,
-                        fontSize: 13,
-                        color: isHighlight ? WHITE : RED,
-                        textTransform: "uppercase",
-                        letterSpacing: 1,
-                        marginBottom: 8,
-                      }}
-                    >
-                      {c.time}
-                    </div>
-                    <h3
-                      style={{
-                        fontFamily: FONT,
-                        fontWeight: 600,
-                        fontSize: 16,
-                        color: titleColor,
-                        margin: 0,
-                        marginBottom: 8,
-                      }}
-                    >
-                      {c.title}
-                    </h3>
-                    {c.body && (
-                      <p
-                        style={{
-                          fontFamily: FONT,
-                          fontWeight: 400,
-                          fontSize: 14,
-                          lineHeight: 1.6,
-                          color: bodyColor,
-                          margin: 0,
-                        }}
-                      >
-                        {c.body}
-                      </p>
-                    )}
-                    {c.placeholderInner && (
-                      <div
-                        style={{
-                          background: "transparent",
-                          border: `1px solid rgba(255,255,255,0.3)`,
-                          padding: 12,
-                          marginTop: 8,
-                          fontFamily: FONT,
-                          fontStyle: "italic",
-                          fontSize: 14,
-                          color: WHITE,
-                        }}
-                      >
-                        {c.placeholderInner}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
             </div>
           </div>
         </section>

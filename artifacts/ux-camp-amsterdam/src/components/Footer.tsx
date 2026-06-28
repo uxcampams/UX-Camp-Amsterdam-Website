@@ -18,7 +18,7 @@ const footerNav = [
   { label: "Tracks", href: "/how-it-works" },
   { label: "Sponsorship", href: "/ux-camp-amsterdam-sponsorship" },
   { label: "Running a Session", href: "/running-a-session" },
-  { label: "Prepare for the Event", href: "/prepare-for-the-day" },
+  { label: "Before You Arrive", href: "/prepare-for-the-day" },
   { label: "Previous Events", href: "/previous/2025" },
   { label: "Alumni", href: "/alumni" },
 ];

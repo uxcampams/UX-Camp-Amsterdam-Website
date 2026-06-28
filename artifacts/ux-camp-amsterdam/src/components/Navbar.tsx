@@ -102,7 +102,7 @@ export default function Navbar() {
                 <li><Link href="/how-it-works">About UXcamp Amsterdam</Link></li>
                 <li><Link href="/ux-camp-amsterdam-sponsorship">Sponsorship</Link></li>
                 <li><Link href="/running-a-session">Running a Session</Link></li>
-                <li><Link href="/prepare-for-the-day">Prepare for the Day</Link></li>
+                <li><Link href="/prepare-for-the-day">Before You Arrive</Link></li>
               </ul>
             </li>
             <li className="nav-dropdown" onBlur={handleDropdownBlur}>
@@ -196,7 +196,7 @@ export default function Navbar() {
         <Link href="/how-it-works" onClick={closeMenu}>About UXcamp Amsterdam</Link>
         <Link href="/ux-camp-amsterdam-sponsorship" onClick={closeMenu}>Sponsorship</Link>
         <Link href="/running-a-session" onClick={closeMenu}>Running a Session</Link>
-        <Link href="/prepare-for-the-day" onClick={closeMenu}>Prepare for the Day</Link>
+        <Link href="/prepare-for-the-day" onClick={closeMenu}>Before You Arrive</Link>
         <a href="https://www.instagram.com/uxcampamsterdam/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Instagram</a>
         <a href="https://www.linkedin.com/company/amsterdamux/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>LinkedIn</a>
         <button

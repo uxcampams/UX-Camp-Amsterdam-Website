@@ -13,11 +13,16 @@ const FONT = "'Open Sans', sans-serif";
 const schedule: { time: string; label: string; highlight?: boolean }[] = [
   { time: "9:30", label: "Doors open — registration, coffee, saying hi to strangers" },
   { time: "10:00", label: "Welcome & Madness Session — pitches, voting, live schedule built" },
-  { time: "11:00", label: "Session rounds begin across all tracks" },
+  { time: "11:00–11:25", label: "Session 1" },
+  { time: "11:30–11:55", label: "Session 2" },
+  { time: "12:00–12:25", label: "Session 3" },
   { time: "12:30", label: "Lunch" },
-  { time: "13:30", label: "Afternoon sessions" },
+  { time: "13:30–13:55", label: "Session 4" },
+  { time: "14:00–14:25", label: "Session 5" },
+  { time: "14:30–14:55", label: "Session 6" },
   { time: "15:00", label: "Break" },
-  { time: "15:30", label: "Final session rounds" },
+  { time: "15:30–15:55", label: "Session 7" },
+  { time: "16:00–16:25", label: "Session 8" },
   { time: "17:00", label: "Closing — highlights, thank yous, prizes" },
   { time: "17:15", label: "After party — drinks, the best conversations of the day 🎉", highlight: true },
 ];
@@ -105,6 +110,7 @@ export default function About() {
         .uxc-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
         .uxc-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .uxc-grid-2x2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .uxc-timeline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 48px; }
 
         .uxc-card {
           background: ${WHITE};
@@ -144,6 +150,7 @@ export default function About() {
           .uxc-grid-2 { grid-template-columns: 1fr; gap: 32px; }
           .uxc-grid-3 { grid-template-columns: 1fr; }
           .uxc-grid-2x2 { grid-template-columns: 1fr; }
+          .uxc-timeline-grid { grid-template-columns: 1fr; }
         }
       `}</style>
 
@@ -308,30 +315,31 @@ export default function About() {
             </h2>
 
             <div
+              className="uxc-timeline-grid"
               style={{
-                position: "relative",
-                paddingLeft: 32,
-                borderLeft: `2px solid ${MID_GREY}`,
-                maxWidth: 820,
+                maxWidth: 1000,
                 margin: "0 auto",
               }}
             >
               {schedule.map((item) => (
                 <div
                   key={item.time}
+                  className="uxc-timeline-item"
                   style={{
                     position: "relative",
                     display: "flex",
                     alignItems: "flex-start",
                     gap: 24,
+                    paddingLeft: 32,
                     paddingBottom: 24,
+                    borderLeft: `2px solid ${MID_GREY}`,
                   }}
                 >
                   <span
                     aria-hidden="true"
                     style={{
                       position: "absolute",
-                      left: -38,
+                      left: -6,
                       top: 6,
                       width: 10,
                       height: 10,
@@ -341,7 +349,7 @@ export default function About() {
                   />
                   <div
                     style={{
-                      minWidth: 80,
+                      minWidth: 120,
                       fontFamily: FONT,
                       fontWeight: 600,
                       fontSize: 16,
