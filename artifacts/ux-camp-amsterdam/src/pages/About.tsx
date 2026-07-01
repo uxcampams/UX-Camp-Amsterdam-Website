@@ -25,7 +25,7 @@ const schedule: { time: string; label: string; highlight?: boolean }[] = [
   { time: "15:00", label: "Break" },
   { time: "15:30–15:55", label: "Session 7" },
   { time: "16:00–16:25", label: "Session 8" },
-  { time: "17:00", label: "Closing — highlights, thank yous, prizes" },
+  { time: "16:40", label: "Closing — highlights, thank yous, prizes" },
   { time: "17:15", label: "After party — drinks, the best conversations of the day 🎉", highlight: true },
 ];
 
@@ -115,6 +115,7 @@ export default function About() {
         .uxc-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .uxc-grid-2x2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
         .uxc-timeline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 48px; }
+        .uxc-timeline-col { display: flex; flex-direction: column; }
 
         .uxc-card {
           background: ${WHITE};
@@ -325,56 +326,62 @@ export default function About() {
                 margin: "0 auto",
               }}
             >
-              {schedule.map((item) => (
-                <div
-                  key={item.time}
-                  className="uxc-timeline-item"
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: 24,
-                    paddingLeft: 32,
-                    paddingBottom: 24,
-                    borderLeft: `2px solid ${MID_GREY}`,
-                  }}
-                >
-                  <span
-                    aria-hidden="true"
-                    style={{
-                      position: "absolute",
-                      left: -6,
-                      top: 6,
-                      width: 10,
-                      height: 10,
-                      background: RED,
-                      borderRadius: "50%",
-                    }}
-                  />
-                  <div
-                    style={{
-                      minWidth: 120,
-                      fontFamily: FONT,
-                      fontWeight: 600,
-                      fontSize: 16,
-                      color: RED,
-                    }}
-                  >
-                    {item.time}
+              {[schedule.slice(0, Math.ceil(schedule.length / 2)), schedule.slice(Math.ceil(schedule.length / 2))].map(
+                (col, colIndex) => (
+                  <div key={colIndex} className="uxc-timeline-col">
+                    {col.map((item) => (
+                      <div
+                        key={item.time}
+                        className="uxc-timeline-item"
+                        style={{
+                          position: "relative",
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: 24,
+                          paddingLeft: 32,
+                          paddingBottom: 24,
+                          borderLeft: `2px solid ${MID_GREY}`,
+                        }}
+                      >
+                        <span
+                          aria-hidden="true"
+                          style={{
+                            position: "absolute",
+                            left: -6,
+                            top: 6,
+                            width: 10,
+                            height: 10,
+                            background: RED,
+                            borderRadius: "50%",
+                          }}
+                        />
+                        <div
+                          style={{
+                            minWidth: 120,
+                            fontFamily: FONT,
+                            fontWeight: 600,
+                            fontSize: 16,
+                            color: RED,
+                          }}
+                        >
+                          {item.time}
+                        </div>
+                        <div
+                          style={{
+                            fontFamily: FONT,
+                            fontWeight: 400,
+                            fontSize: 16,
+                            lineHeight: 1.6,
+                            color: item.highlight ? RED : DARK,
+                          }}
+                        >
+                          {item.label}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <div
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 400,
-                      fontSize: 16,
-                      lineHeight: 1.6,
-                      color: item.highlight ? RED : DARK,
-                    }}
-                  >
-                    {item.label}
-                  </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </div>
         </section>

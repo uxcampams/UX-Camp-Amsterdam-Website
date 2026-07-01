@@ -15,6 +15,8 @@ import mannanPortrait from "../../assets/images/2026/Mannan_Gupta.jpg";
 import sharonPortrait from "../../assets/images/2026/Sharon_Li.jpg";
 import meghanaPortrait from "../../assets/images/2026/Meghana_Gautam.jpg";
 import nivedithaPortrait from "../../assets/images/2026/Niveditha_Kulkarni.jpg";
+import ixdfLogo from "../../assets/ixdf-logo-full-expanded.png";
+import cdaHvaLogo from "../../assets/cda_hva.png";
 import photo1 from "@assets/DSC01914_1777548359984.jpg";
 import photo2 from "@assets/DSC01928_1777548359984.jpg";
 import photo3 from "@assets/DSC02022_1777548359977.jpg";
@@ -145,7 +147,7 @@ const schedule: { time: string; label: string; highlight?: boolean }[] = [
   { time: "15:00", label: "Break" },
   { time: "15:30–15:55", label: "Session 7" },
   { time: "16:00–16:25", label: "Session 8" },
-  { time: "17:00", label: "Closing — highlights, thank yous, prizes" },
+  { time: "16:40", label: "Closing — highlights, thank yous, prizes" },
   { time: "17:15", label: "After party — drinks, the best conversations of the day 🎉", highlight: true },
 ];
 
@@ -272,11 +274,39 @@ export default function Home() {
           grid-template-columns: 1fr 1fr;
           gap: 8px 48px;
         }
+        .uxc-timeline-col { display: flex; flex-direction: column; }
 
         .uxc-topic-video-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 24px;
+        }
+
+        .uxc-logo-wall {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 40px;
+          align-items: center;
+          justify-content: center;
+          margin-top: 32px;
+        }
+        .uxc-logo-wall img {
+          height: 60px;
+          width: auto;
+          max-width: 200px;
+          object-fit: contain;
+          opacity: 0.8;
+          transition: opacity 0.2s ease;
+        }
+        .uxc-logo-wall img:hover { opacity: 1; }
+
+        .uxc-sponsor-grid {
+          display: flex;
+          justify-content: center;
+          gap: 80px;
+          align-items: flex-end;
+          margin-top: 40px;
+          flex-wrap: wrap;
         }
 
         .uxc-card {
@@ -1180,62 +1210,127 @@ export default function Home() {
                 margin: "0 auto",
               }}
             >
-              {schedule.map((item) => (
-                <div
-                  key={item.time}
-                  className="uxc-timeline-item"
-                  style={{
-                    position: "relative",
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: 24,
-                    paddingLeft: 32,
-                    paddingBottom: 24,
-                    borderLeft: `2px solid ${MID_GREY}`,
-                  }}
-                >
-                  <span
-                    aria-hidden="true"
+              {[schedule.slice(0, Math.ceil(schedule.length / 2)), schedule.slice(Math.ceil(schedule.length / 2))].map(
+                (col, colIndex) => (
+                  <div key={colIndex} className="uxc-timeline-col">
+                    {col.map((item) => (
+                      <div
+                        key={item.time}
+                        className="uxc-timeline-item"
+                        style={{
+                          position: "relative",
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: 24,
+                          paddingLeft: 32,
+                          paddingBottom: 24,
+                          borderLeft: `2px solid ${MID_GREY}`,
+                        }}
+                      >
+                        <span
+                          aria-hidden="true"
+                          style={{
+                            position: "absolute",
+                            left: -6,
+                            top: 6,
+                            width: 10,
+                            height: 10,
+                            background: RED,
+                            borderRadius: "50%",
+                          }}
+                        />
+                        <div
+                          style={{
+                            minWidth: 120,
+                            fontFamily: FONT,
+                            fontWeight: 600,
+                            fontSize: 16,
+                            color: RED,
+                          }}
+                        >
+                          {item.time}
+                        </div>
+                        <div
+                          style={{
+                            fontFamily: FONT,
+                            fontWeight: 400,
+                            fontSize: 16,
+                            lineHeight: 1.6,
+                            color: item.highlight ? RED : DARK,
+                          }}
+                        >
+                          {item.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 8 — SPONSORS */}
+        <section style={{ background: WHITE, ...sectionPad }}>
+          <div style={innerWrap}>
+            <p className="uxc-eyebrow" style={{ textAlign: "center" }}>Supported by</p>
+            <h2
+              style={{
+                fontFamily: FONT,
+                fontWeight: 800,
+                fontSize: "clamp(28px, 3.5vw, 36px)",
+                color: DARK,
+                margin: 0,
+                marginTop: 8,
+                textAlign: "center",
+              }}
+            >
+              Our sponsors
+            </h2>
+
+            <div className="uxc-sponsor-grid">
+              {[
+                {
+                  label: "Venue Sponsor",
+                  href: "https://cmd-amsterdam.nl/",
+                  logo: cdaHvaLogo,
+                  alt: "Communication and Multimedia Design — Amsterdam University of Applied Sciences",
+                  height: 80,
+                },
+                {
+                  label: "Product Sponsor",
+                  href: "https://ixdf.org/",
+                  logo: ixdfLogo,
+                  alt: "Interaction Design Foundation",
+                  height: 60,
+                },
+              ].map((s) => (
+                <div key={s.label} style={{ textAlign: "center" }}>
+                  <p
                     style={{
-                      position: "absolute",
-                      left: -6,
-                      top: 6,
-                      width: 10,
-                      height: 10,
-                      background: RED,
-                      borderRadius: "50%",
-                    }}
-                  />
-                  <div
-                    style={{
-                      minWidth: 120,
                       fontFamily: FONT,
                       fontWeight: 600,
-                      fontSize: 16,
-                      color: RED,
+                      fontSize: 11,
+                      color: "var(--color-text-muted)",
+                      textTransform: "uppercase",
+                      letterSpacing: 2,
+                      margin: 0,
+                      marginBottom: 20,
                     }}
                   >
-                    {item.time}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: FONT,
-                      fontWeight: 400,
-                      fontSize: 16,
-                      lineHeight: 1.6,
-                      color: item.highlight ? RED : DARK,
-                    }}
-                  >
-                    {item.label}
-                  </div>
+                    {s.label}
+                  </p>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer">
+                    <img src={s.logo} alt={s.alt} loading="lazy" style={{ height: s.height, width: "auto", maxWidth: 220, objectFit: "contain", opacity: 0.85, transition: "opacity 0.2s ease" }} />
+                  </a>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* SECTION 8 — THE TEAM */}
-        <section style={{ background: WHITE, ...sectionPad }}>
+        {/* SECTION 9 — THE TEAM */}
+        <section style={{ background: LIGHT_GREY, ...sectionPad }}>
           <div style={innerWrap}>
             <h2
               style={{
