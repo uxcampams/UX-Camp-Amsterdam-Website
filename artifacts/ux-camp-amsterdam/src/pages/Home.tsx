@@ -304,7 +304,7 @@ export default function Home() {
           display: flex;
           justify-content: center;
           gap: 80px;
-          align-items: flex-end;
+          align-items: flex-start;
           margin-top: 40px;
           flex-wrap: wrap;
         }
